@@ -1,0 +1,15 @@
+pandoc: 1.19.2.1
+pkgdown: 0.1.0.9000
+pkgdown_sha: 7d8b4882c4eb650f0f869a618f5c445c657313f0
+articles:
+  v01-Introduction_to_singleCellTK: v01-Introduction_to_singleCellTK.html
+  v02-Processing_and_Visualizing_Data_in_the_SingleCellTK: v02-Processing_and_Visualizing_Data_in_the_SingleCellTK.html
+  v03-tab01_Upload: v03-tab01_Upload.html
+  v04-tab02_Data-Summary-and-Filtering: v04-tab02_Data-Summary-and-Filtering.html
+  v05-tab03_Dimensionality-Reduction-and-Clustering: v05-tab03_Dimensionality-Reduction-and-Clustering.html
+  v06-tab04_Batch-Correction: v06-tab04_Batch-Correction.html
+  v07-tab05_Differential-Expression: v07-tab05_Differential-Expression.html
+  v08-tab06_Pathway-Activity-Analysis: v08-tab06_Pathway-Activity-Analysis.html
+  v09-tab07_Sample-Size: v09-tab07_Sample-Size.html
+  v10-Aligning_and_Quantifying_scRNA-Seq_Data: v10-Aligning_and_Quantifying_scRNA-Seq_Data.html
+
