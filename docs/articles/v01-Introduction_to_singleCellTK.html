@@ -29,7 +29,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">singleCellTK</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.0</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.3</span>
       </span>
     </div>
 
@@ -180,13 +180,13 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 <a href="#creating-a-singlecellexperiment-object" class="anchor"></a>Creating a SingleCellExperiment object</h3>
 <p>To create a SingleCellExperiment object, we have provided the <code><a href="../reference/createSCE.html">createSCE()</a></code> function:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(singleCellTK)
-<span class="kw">data</span>(<span class="st">"mouse_brain_subset_sce"</span>)
-counts_mat &lt;-<span class="st"> </span><span class="kw">assay</span>(mouse_brain_subset_sce, <span class="st">"counts"</span>)
-sample_annot &lt;-<span class="st"> </span><span class="kw">colData</span>(mouse_brain_subset_sce)
-row_annot &lt;-<span class="st"> </span><span class="kw">rowData</span>(mouse_brain_subset_sce)
-newSCE &lt;-<span class="st"> </span><span class="kw"><a href="../reference/createSCE.html">createSCE</a></span>(<span class="dt">assayfile =</span> counts_mat, <span class="dt">annotfile =</span> sample_annot, 
-                    <span class="dt">featurefile =</span> row_annot, <span class="dt">assay_name =</span> <span class="st">"counts"</span>,
-                    <span class="dt">inputdataframes =</span> <span class="ot">TRUE</span>, <span class="dt">create_logcounts =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<span class="kw">data</span>(<span class="st">"mouseBrainSubsetSCE"</span>)
+counts_mat &lt;-<span class="st"> </span><span class="kw">assay</span>(mouseBrainSubsetSCE, <span class="st">"counts"</span>)
+sample_annot &lt;-<span class="st"> </span><span class="kw">colData</span>(mouseBrainSubsetSCE)
+row_annot &lt;-<span class="st"> </span><span class="kw">rowData</span>(mouseBrainSubsetSCE)
+newSCE &lt;-<span class="st"> </span><span class="kw"><a href="../reference/createSCE.html">createSCE</a></span>(<span class="dt">assayFile =</span> counts_mat, <span class="dt">annotFile =</span> sample_annot, 
+                    <span class="dt">featureFile =</span> row_annot, <span class="dt">assayName =</span> <span class="st">"counts"</span>,
+                    <span class="dt">inputDataFrames =</span> <span class="ot">TRUE</span>, <span class="dt">createLogCounts =</span> <span class="ot">TRUE</span>)</code></pre></div>
 </div>
 <div id="loading-data-stored-in-a-singlecellexperiment-object" class="section level3">
 <h3 class="hasAnchor">
@@ -227,7 +227,7 @@ newSCE &lt;-<span class="st"> </span><span class="kw"><a href="../reference/crea
 <a href="#session-info" class="anchor"></a>Session info</h1>
 <pre><code>## R Under development (unstable) (2018-03-09 r74376)
 ## Platform: x86_64-apple-darwin15.6.0 (64-bit)
-## Running under: macOS High Sierra 10.13.3
+## Running under: macOS High Sierra 10.13.4
 ## 
 ## Matrix products: default
 ## BLAS: /Library/Frameworks/R.framework/Versions/3.5/Resources/lib/libRblas.0.dylib
@@ -241,19 +241,19 @@ newSCE &lt;-<span class="st"> </span><span class="kw"><a href="../reference/crea
 ## [8] methods   base     
 ## 
 ## other attached packages:
-##  [1] singleCellTK_0.99.0         SingleCellExperiment_1.1.2 
-##  [3] SummarizedExperiment_1.9.15 DelayedArray_0.5.22        
+##  [1] singleCellTK_0.99.3         SingleCellExperiment_1.1.2 
+##  [3] SummarizedExperiment_1.9.16 DelayedArray_0.5.23        
 ##  [5] BiocParallel_1.13.3         matrixStats_0.53.1         
-##  [7] Biobase_2.39.2              GenomicRanges_1.31.22      
+##  [7] Biobase_2.39.2              GenomicRanges_1.31.23      
 ##  [9] GenomeInfoDb_1.15.5         IRanges_2.13.28            
-## [11] S4Vectors_0.17.37           BiocGenerics_0.25.3        
+## [11] S4Vectors_0.17.39           BiocGenerics_0.25.3        
 ## [13] BiocStyle_2.7.8            
 ## 
 ## loaded via a namespace (and not attached):
 ##  [1] Rcpp_0.12.16           compiler_3.5.0         XVector_0.19.9        
 ##  [4] bitops_1.0-6           tools_3.5.0            zlibbioc_1.25.0       
 ##  [7] digest_0.6.15          lattice_0.20-35        evaluate_0.10.1       
-## [10] memoise_1.1.0          rlang_0.2.0            Matrix_1.2-12         
+## [10] memoise_1.1.0          rlang_0.2.0            Matrix_1.2-13         
 ## [13] rstudioapi_0.7         commonmark_1.4         yaml_2.1.18           
 ## [16] pkgdown_0.1.0.9000     xfun_0.1               GenomeInfoDbData_1.1.0
 ## [19] stringr_1.3.0          roxygen2_6.0.1         xml2_1.2.0            

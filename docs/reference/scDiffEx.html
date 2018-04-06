@@ -57,7 +57,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">singleCellTK</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.0</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.3</span>
       </span>
     </div>
 
@@ -143,9 +143,9 @@
     <p>Create a heatmap for differential expression analysis</p>
     
 
-    <pre class="usage"><span class='fu'>scDiffEx</span>(<span class='no'>inSCESet</span>, <span class='kw'>use_assay</span> <span class='kw'>=</span> <span class='st'>"logcounts"</span>, <span class='no'>condition</span>, <span class='kw'>covariates</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+    <pre class="usage"><span class='fu'>scDiffEx</span>(<span class='no'>inSCESet</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"logcounts"</span>, <span class='no'>condition</span>, <span class='kw'>covariates</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>significance</span> <span class='kw'>=</span> <span class='fl'>0.05</span>, <span class='kw'>ntop</span> <span class='kw'>=</span> <span class='fl'>500</span>, <span class='kw'>usesig</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='no'>diffexmethod</span>,
-  <span class='kw'>levelofinterest</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>analysis_type</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>controlLevel</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>levelofinterest</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>analysisType</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>controlLevel</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>adjust</span> <span class='kw'>=</span> <span class='st'>"fdr"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -156,7 +156,7 @@
       <td><p>Input SCtkExperiment object. Required</p></td>
     </tr>
     <tr>
-      <th>use_assay</th>
+      <th>useAssay</th>
       <td><p>Indicate which assay to use. Default is "logcounts"</p></td>
     </tr>
     <tr>
@@ -197,10 +197,10 @@ expression results will compare the factor in levelofinterest to all other
 data.</p></td>
     </tr>
     <tr>
-      <th>analysis_type</th>
+      <th>analysisType</th>
       <td><p>For conditions with more than two levels, limma and
-DESeq2 can be run using multiple methods. See scDiffEx_limma() and
-scDiffEx_deseq2() for details.</p></td>
+DESeq2 can be run using multiple methods. See scDiffExlimma() and
+scDiffExDESeq2() for details.</p></td>
     </tr>
     <tr>
       <th>controlLevel</th>
@@ -220,9 +220,9 @@ The default is fdr.</p></td>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>data</span>(<span class='st'>"mouse_brain_subset_sce"</span>)
-<span class='no'>res</span> <span class='kw'>&lt;-</span> <span class='fu'>scDiffEx</span>(<span class='no'>mouse_brain_subset_sce</span>,
-                <span class='kw'>use_assay</span> <span class='kw'>=</span> <span class='st'>"logcounts"</span>,
+    <pre class="examples"><div class='input'><span class='fu'>data</span>(<span class='st'>"mouseBrainSubsetSCE"</span>)
+<span class='no'>res</span> <span class='kw'>&lt;-</span> <span class='fu'>scDiffEx</span>(<span class='no'>mouseBrainSubsetSCE</span>,
+                <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"logcounts"</span>,
                 <span class='st'>"level1class"</span>,
                 <span class='kw'>diffexmethod</span> <span class='kw'>=</span> <span class='st'>"limma"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: Zero sample variances detected, have been offset away from zero</span></div><div class='output co'>#&gt; <span class='message'>Removing intercept from test coefficients</span></div><div class='input'>
 </div></pre>

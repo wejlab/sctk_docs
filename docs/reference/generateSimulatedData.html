@@ -60,7 +60,7 @@ matrix." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">singleCellTK</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.0</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.3</span>
       </span>
     </div>
 
@@ -182,11 +182,11 @@ labels for each virtual cell.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>data</span>(<span class='st'>"mouse_brain_subset_sce"</span>)
+    <pre class="examples"><div class='input'><span class='fu'>data</span>(<span class='st'>"mouseBrainSubsetSCE"</span>)
 <span class='no'>res</span> <span class='kw'>&lt;-</span> <span class='fu'>generateSimulatedData</span>(
          <span class='kw'>totalReads</span> <span class='kw'>=</span> <span class='fl'>1000</span>, <span class='kw'>cells</span><span class='kw'>=</span><span class='fl'>10</span>,
-         <span class='kw'>originalData</span> <span class='kw'>=</span> <span class='fu'>assay</span>(<span class='no'>mouse_brain_subset_sce</span>, <span class='st'>"counts"</span>),
-         <span class='kw'>realLabels</span> <span class='kw'>=</span> <span class='fu'>colData</span>(<span class='no'>mouse_brain_subset_sce</span>)[, <span class='st'>"level1class"</span>])</div></pre>
+         <span class='kw'>originalData</span> <span class='kw'>=</span> <span class='fu'>assay</span>(<span class='no'>mouseBrainSubsetSCE</span>, <span class='st'>"counts"</span>),
+         <span class='kw'>realLabels</span> <span class='kw'>=</span> <span class='fu'>colData</span>(<span class='no'>mouseBrainSubsetSCE</span>)[, <span class='st'>"level1class"</span>])</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

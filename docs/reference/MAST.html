@@ -57,7 +57,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">singleCellTK</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.0</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.3</span>
       </span>
     </div>
 
@@ -144,8 +144,8 @@
     
 
     <pre class="usage"><span class='fu'>MAST</span>(<span class='no'>SCEdata</span>, <span class='kw'>condition</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>interest.level</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>freq_expressed</span> <span class='kw'>=</span> <span class='fl'>0.1</span>, <span class='kw'>fc_threshold</span> <span class='kw'>=</span> <span class='fu'>log2</span>(<span class='fl'>1.5</span>), <span class='kw'>p.value</span> <span class='kw'>=</span> <span class='fl'>0.05</span>,
-  <span class='kw'>usethresh</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>use_assay</span> <span class='kw'>=</span> <span class='st'>"logcounts"</span>)</pre>
+  <span class='kw'>freqExpressed</span> <span class='kw'>=</span> <span class='fl'>0.1</span>, <span class='kw'>fcThreshold</span> <span class='kw'>=</span> <span class='fu'>log2</span>(<span class='fl'>1.5</span>), <span class='kw'>p.value</span> <span class='kw'>=</span> <span class='fl'>0.05</span>,
+  <span class='kw'>useThresh</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"logcounts"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -164,12 +164,12 @@
 indicate which level should be used to compare to all other samples.</p></td>
     </tr>
     <tr>
-      <th>freq_expressed</th>
+      <th>freqExpressed</th>
       <td><p>Filter genes that are expressed in at least this
 fraction of cells. The default is expression in 0.1 of samples.</p></td>
     </tr>
     <tr>
-      <th>fc_threshold</th>
+      <th>fcThreshold</th>
       <td><p>Minimum fold change for differentially expressed gene.</p></td>
     </tr>
     <tr>
@@ -177,12 +177,12 @@ fraction of cells. The default is expression in 0.1 of samples.</p></td>
       <td><p>p values for selecting the hurdle result, default is 0.05</p></td>
     </tr>
     <tr>
-      <th>usethresh</th>
+      <th>useThresh</th>
       <td><p>Use adaptive thresholding to filter genes. The default is
 FALSE.</p></td>
     </tr>
     <tr>
-      <th>use_assay</th>
+      <th>useAssay</th>
       <td><p>The assay to use for the MAST calculations. The default is
 "logcounts"</p></td>
     </tr>

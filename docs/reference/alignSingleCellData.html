@@ -57,7 +57,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">singleCellTK</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.0</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.3</span>
       </span>
     </div>
 
@@ -143,10 +143,10 @@
     <p>Align Single Cell RNA-Seq Data and Create a SCESet Object</p>
     
 
-    <pre class="usage"><span class='fu'>alignSingleCellData</span>(<span class='no'>inputfile1</span>, <span class='kw'>inputfile2</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>index_path</span>, <span class='no'>gtf_annotation</span>,
-  <span class='kw'>output_dir</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>sample_annotations</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>feature_annotations</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>threads</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>save_bam</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>save_count_files</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>isPairedEnd</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>alignSingleCellData</span>(<span class='no'>inputfile1</span>, <span class='kw'>inputfile2</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>indexPath</span>, <span class='no'>gtfAnnotation</span>,
+  <span class='kw'>outputDir</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>sampleAnnotations</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>featureAnnotations</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>threads</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>saveBam</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>saveCountFiles</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>isPairedEnd</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -164,28 +164,28 @@ endings.</p></td>
 corresponding paired fastq files, if applicable.</p></td>
     </tr>
     <tr>
-      <th>index_path</th>
+      <th>indexPath</th>
       <td><p>Path to the Rsubread genome index.</p></td>
     </tr>
     <tr>
-      <th>gtf_annotation</th>
+      <th>gtfAnnotation</th>
       <td><p>Path to the GTF gene annotation to use. This must
-correspond to the genome specified in index_path.</p></td>
+correspond to the genome specified in indexPath.</p></td>
     </tr>
     <tr>
-      <th>output_dir</th>
-      <td><p>If save_bam or save_count_files is TRUE, specify a
+      <th>outputDir</th>
+      <td><p>If saveBam or saveCountFiles is TRUE, specify a
 directory in which to save the output files.</p></td>
     </tr>
     <tr>
-      <th>sample_annotations</th>
+      <th>sampleAnnotations</th>
       <td><p>A data.frame of sample annotations, with samples
 as rows and annotations in columns. The sample names must be identical to
 and in the same order as the list of files in inputfile1. Alignment
 statistics will be added to the annotation data frame.</p></td>
     </tr>
     <tr>
-      <th>feature_annotations</th>
+      <th>featureAnnotations</th>
       <td><p>An optional data.frame of probe annotations, with
 probes as rows and probe annotations in columns.</p></td>
     </tr>
@@ -194,14 +194,14 @@ probes as rows and probe annotations in columns.</p></td>
       <td><p>Number of threads to use during alignment. The default is 1.</p></td>
     </tr>
     <tr>
-      <th>save_bam</th>
-      <td><p>If TRUE, bam alignment files will be saved in the output_dir.
+      <th>saveBam</th>
+      <td><p>If TRUE, bam alignment files will be saved in the outputDir.
 The default is FALSE.</p></td>
     </tr>
     <tr>
-      <th>save_count_files</th>
+      <th>saveCountFiles</th>
       <td><p>If TRUE, per sample gene count files will be saved in
-the output_dir. The default is FALSE.</p></td>
+the outputDir. The default is FALSE.</p></td>
     </tr>
     <tr>
       <th>isPairedEnd</th>
@@ -222,9 +222,9 @@ files are paired end.</p></td>
                  <span class='st'>"/path/to/sample2_1.fastq.gz"</span>),
   <span class='kw'>inputfile2</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"/path/to/sample1_2.fastq.gz"</span>,
                  <span class='st'>"/path/to/sample2_2.fastq.gz"</span>),
-  <span class='kw'>index_path</span> <span class='kw'>=</span> <span class='st'>"/path/to/genome/index"</span>,
-  <span class='kw'>gtf_annotation</span> <span class='kw'>=</span> <span class='st'>"/path/to/gene/annotations.gtf"</span>,
-  <span class='kw'>sample_annotations</span> <span class='kw'>=</span> <span class='no'>sample.annotation.df</span>,
+  <span class='kw'>indexPath</span> <span class='kw'>=</span> <span class='st'>"/path/to/genome/index"</span>,
+  <span class='kw'>gtfAnnotation</span> <span class='kw'>=</span> <span class='st'>"/path/to/gene/annotations.gtf"</span>,
+  <span class='kw'>sampleAnnotations</span> <span class='kw'>=</span> <span class='no'>sample.annotation.df</span>,
   <span class='kw'>threads</span><span class='kw'>=</span><span class='fl'>4</span>)
 <span class='co'># }</span><div class='input'>
 </div></pre>

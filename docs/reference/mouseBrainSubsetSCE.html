@@ -6,7 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Returns significance data from a snapshot. — iterateSimulations • singleCellTK</title>
+<title>Example Single Cell RNA-Seq data in SCtkExperiment Object, GSE60361
+subset — mouseBrainSubsetSCE • singleCellTK</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -25,9 +26,14 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-<meta property="og:title" content="Returns significance data from a snapshot. — iterateSimulations" />
+<meta property="og:title" content="Example Single Cell RNA-Seq data in SCtkExperiment Object, GSE60361
+subset — mouseBrainSubsetSCE" />
 
-<meta property="og:description" content="Returns significance data from a snapshot." />
+<meta property="og:description" content="A subset of 30 samples from a single cell RNA-Seq experiment from Zeisel, et
+al. Science 2015. The data was produced from cells from the mouse
+somatosensory cortex (S1) and hippocampus (CA1). 15 of the cells were
+identified as oligodendrocytes and 15 of the cell were identified as
+microglia." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -135,61 +141,40 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Returns significance data from a snapshot.</h1>
+    <h1>Example Single Cell RNA-Seq data in SCtkExperiment Object, GSE60361
+subset</h1>
     
     </div>
 
     
-    <p>Returns significance data from a snapshot.</p>
+    <p>A subset of 30 samples from a single cell RNA-Seq experiment from Zeisel, et
+al. Science 2015. The data was produced from cells from the mouse
+somatosensory cortex (S1) and hippocampus (CA1). 15 of the cells were
+identified as oligodendrocytes and 15 of the cell were identified as
+microglia.</p>
     
 
-    <pre class="usage"><span class='fu'>iterateSimulations</span>(<span class='no'>originalData</span>, <span class='no'>realLabels</span>, <span class='no'>totalReads</span>, <span class='no'>cells</span>, <span class='no'>iterations</span>)</pre>
-    
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>originalData</th>
-      <td><p>SCtkExperiment. The SCtkExperiment object storing all
-assay data from the shiny app.</p></td>
-    </tr>
-    <tr>
-      <th>realLabels</th>
-      <td><p>Character. The name of the condition of interest. Must match
-a name from sample data.</p></td>
-    </tr>
-    <tr>
-      <th>totalReads</th>
-      <td><p>Numeric. The total number of reads in the simulated
-dataset, to be split between all simulated cells.</p></td>
-    </tr>
-    <tr>
-      <th>cells</th>
-      <td><p>Numeric. The number of virtual cells to simulate.</p></td>
-    </tr>
-    <tr>
-      <th>iterations</th>
-      <td><p>Numeric. How many times should each experimental design be
-simulated.</p></td>
-    </tr>
-    </table>
-    
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+    <pre class="usage"><span class='no'>mouseBrainSubsetSCE</span></pre>
+        
+    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A matrix of significance information from a snapshot</p>
+    <p>SCtkExperiment</p>
+    
+    <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
+
+    <p>DOI: 10.1126/science.aaa1934</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>data</span>(<span class='st'>"mouseBrainSubsetSCE"</span>)
-<span class='no'>res</span> <span class='kw'>&lt;-</span> <span class='fu'>iterateSimulations</span>(<span class='no'>mouseBrainSubsetSCE</span>, <span class='kw'>realLabels</span> <span class='kw'>=</span> <span class='st'>"level1class"</span>,
-                          <span class='kw'>totalReads</span> <span class='kw'>=</span> <span class='fl'>1000</span>, <span class='kw'>cells</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>iterations</span> <span class='kw'>=</span> <span class='fl'>2</span>)</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>data</span>(<span class='st'>"mouseBrainSubsetSCE"</span>)</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
       
-      <li><a href="#value">Value</a></li>
+      <li><a href="#format">Format</a></li>
+
+      <li><a href="#source">Source</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>

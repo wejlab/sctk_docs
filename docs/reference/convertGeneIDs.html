@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Returns significance data from a snapshot. — iterateSimulations • singleCellTK</title>
+<title>Convert Gene IDs — convertGeneIDs • singleCellTK</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -25,9 +25,13 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-<meta property="og:title" content="Returns significance data from a snapshot. — iterateSimulations" />
+<meta property="og:title" content="Convert Gene IDs — convertGeneIDs" />
 
-<meta property="og:description" content="Returns significance data from a snapshot." />
+<meta property="og:description" content="Convert the gene IDs in a SingleCellExperiment object using Bioconductor
+org.*.eg.db data packages. Because annotation databases do not have a 1:1
+relationship, this tool removes rows with no corresponding annotation in
+your desired annotation, and remove any duplicate annotations after
+conversion." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -135,54 +139,74 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Returns significance data from a snapshot.</h1>
+    <h1>Convert Gene IDs</h1>
     
     </div>
 
     
-    <p>Returns significance data from a snapshot.</p>
+    <p>Convert the gene IDs in a SingleCellExperiment object using Bioconductor
+org.*.eg.db data packages. Because annotation databases do not have a 1:1
+relationship, this tool removes rows with no corresponding annotation in
+your desired annotation, and remove any duplicate annotations after
+conversion.</p>
     
 
-    <pre class="usage"><span class='fu'>iterateSimulations</span>(<span class='no'>originalData</span>, <span class='no'>realLabels</span>, <span class='no'>totalReads</span>, <span class='no'>cells</span>, <span class='no'>iterations</span>)</pre>
+    <pre class="usage"><span class='fu'>convertGeneIDs</span>(<span class='no'>inSCESet</span>, <span class='no'>inSymbol</span>, <span class='no'>outSymbol</span>, <span class='kw'>database</span> <span class='kw'>=</span> <span class='st'>"org.Hs.eg.db"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>originalData</th>
-      <td><p>SCtkExperiment. The SCtkExperiment object storing all
-assay data from the shiny app.</p></td>
+      <th>inSCESet</th>
+      <td><p>Input SCtkExperiment object. Required</p></td>
     </tr>
     <tr>
-      <th>realLabels</th>
-      <td><p>Character. The name of the condition of interest. Must match
-a name from sample data.</p></td>
+      <th>inSymbol</th>
+      <td><p>The input symbol type</p></td>
     </tr>
     <tr>
-      <th>totalReads</th>
-      <td><p>Numeric. The total number of reads in the simulated
-dataset, to be split between all simulated cells.</p></td>
+      <th>outSymbol</th>
+      <td><p>The output symbol type</p></td>
     </tr>
     <tr>
-      <th>cells</th>
-      <td><p>Numeric. The number of virtual cells to simulate.</p></td>
-    </tr>
-    <tr>
-      <th>iterations</th>
-      <td><p>Numeric. How many times should each experimental design be
-simulated.</p></td>
+      <th>database</th>
+      <td><p>The org.*.eg.db database to use. The default is org.Hs.eg.db</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A matrix of significance information from a snapshot</p>
+    <p>A SCtkExperiment with converted gene IDs.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>data</span>(<span class='st'>"mouseBrainSubsetSCE"</span>)
-<span class='no'>res</span> <span class='kw'>&lt;-</span> <span class='fu'>iterateSimulations</span>(<span class='no'>mouseBrainSubsetSCE</span>, <span class='kw'>realLabels</span> <span class='kw'>=</span> <span class='st'>"level1class"</span>,
-                          <span class='kw'>totalReads</span> <span class='kw'>=</span> <span class='fl'>1000</span>, <span class='kw'>cells</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>iterations</span> <span class='kw'>=</span> <span class='fl'>2</span>)</div></pre>
+    <pre class="examples"><div class='input'><span class='kw'>if</span>(<span class='fu'>requireNamespace</span>(<span class='st'>"org.Mm.eg.db"</span>, <span class='kw'>quietly</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)) {
+  <span class='co'>#convert mouse gene symbols to ensembl IDs</span>
+  <span class='fu'>library</span>(<span class='st'>"org.Mm.eg.db"</span>)
+  <span class='fu'>sample</span>(<span class='fu'>rownames</span>(<span class='no'>mouseBrainSubsetSCE</span>), <span class='fl'>50</span>)
+  <span class='no'>mouseBrainSubsetSymbol</span> <span class='kw'>&lt;-</span> <span class='fu'>convertGeneIDs</span>(<span class='kw'>inSCESet</span> <span class='kw'>=</span> <span class='no'>mouseBrainSubsetSCE</span>,
+                                              <span class='kw'>inSymbol</span> <span class='kw'>=</span> <span class='st'>"SYMBOL"</span>,
+                                              <span class='kw'>outSymbol</span> <span class='kw'>=</span> <span class='st'>"ENSEMBL"</span>,
+                                              <span class='kw'>database</span> <span class='kw'>=</span> <span class='st'>"org.Mm.eg.db"</span>)
+  <span class='fu'>sample</span>(<span class='fu'>rownames</span>(<span class='no'>mouseBrainSubsetSymbol</span>), <span class='fl'>50</span>)
+}</div><div class='output co'>#&gt; </div><div class='output co'>#&gt; <span class='message'>Loading required package: AnnotationDbi</span></div><div class='output co'>#&gt; <span class='message'>'select()' returned 1:many mapping between keys and columns</span></div><div class='output co'>#&gt; <span class='message'>1773 ENSEMBL are NA after conversion. Removing</span></div><div class='output co'>#&gt; <span class='message'>51 ENSEMBL are duplicated after conversion. Removing additional copies</span></div><div class='output co'>#&gt; <span class='message'>153 SYMBOL are duplicated after conversion. Removing additional copies</span></div><div class='output co'>#&gt; <span class='message'>19972 SYMBOL originally, 18153 ENSEMBLs</span></div><div class='output co'>#&gt;  [1] "ENSMUSG00000026818" "ENSMUSG00000025184" "ENSMUSG00000043843"
+#&gt;  [4] "ENSMUSG00000024583" "ENSMUSG00000029003" "ENSMUSG00000027306"
+#&gt;  [7] "ENSMUSG00000028332" "ENSMUSG00000020061" "ENSMUSG00000052595"
+#&gt; [10] "ENSMUSG00000018500" "ENSMUSG00000029075" "ENSMUSG00000028282"
+#&gt; [13] "ENSMUSG00000022711" "ENSMUSG00000053553" "ENSMUSG00000027206"
+#&gt; [16] "ENSMUSG00000052056" "ENSMUSG00000029212" "ENSMUSG00000047562"
+#&gt; [19] "ENSMUSG00000071860" "ENSMUSG00000062393" "ENSMUSG00000028212"
+#&gt; [22] "ENSMUSG00000030096" "ENSMUSG00000113450" "ENSMUSG00000019838"
+#&gt; [25] "ENSMUSG00000065452" "ENSMUSG00000108356" "ENSMUSG00000070284"
+#&gt; [28] "ENSMUSG00000093411" "ENSMUSG00000054752" "ENSMUSG00000055403"
+#&gt; [31] "ENSMUSG00000031953" "ENSMUSG00000001674" "ENSMUSG00000074881"
+#&gt; [34] "ENSMUSG00000048118" "ENSMUSG00000043924" "ENSMUSG00000058325"
+#&gt; [37] "ENSMUSG00000007892" "ENSMUSG00000029679" "ENSMUSG00000036816"
+#&gt; [40] "ENSMUSG00000001415" "ENSMUSG00000031216" "ENSMUSG00000020940"
+#&gt; [43] "ENSMUSG00000030917" "ENSMUSG00000092203" "ENSMUSG00000025531"
+#&gt; [46] "ENSMUSG00000067049" "ENSMUSG00000087107" "ENSMUSG00000050866"
+#&gt; [49] "ENSMUSG00000070583" "ENSMUSG00000054702"</div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

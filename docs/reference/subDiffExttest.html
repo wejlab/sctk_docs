@@ -6,7 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Returns significance data from a snapshot. — iterateSimulations • singleCellTK</title>
+<title>Runs t-tests on all genes in a simulated dataset with 2 conditions, and
+adjusts for FDR. — subDiffExttest • singleCellTK</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -25,9 +26,11 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-<meta property="og:title" content="Returns significance data from a snapshot. — iterateSimulations" />
+<meta property="og:title" content="Runs t-tests on all genes in a simulated dataset with 2 conditions, and
+adjusts for FDR. — subDiffExttest" />
 
-<meta property="og:description" content="Returns significance data from a snapshot." />
+<meta property="og:description" content="Runs t-tests on all genes in a simulated dataset with 2 conditions, and
+adjusts for FDR." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -135,54 +138,56 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Returns significance data from a snapshot.</h1>
+    <h1>Runs t-tests on all genes in a simulated dataset with 2 conditions, and
+adjusts for FDR.</h1>
     
     </div>
 
     
-    <p>Returns significance data from a snapshot.</p>
+    <p>Runs t-tests on all genes in a simulated dataset with 2 conditions, and
+adjusts for FDR.</p>
     
 
-    <pre class="usage"><span class='fu'>iterateSimulations</span>(<span class='no'>originalData</span>, <span class='no'>realLabels</span>, <span class='no'>totalReads</span>, <span class='no'>cells</span>, <span class='no'>iterations</span>)</pre>
+    <pre class="usage"><span class='fu'>subDiffExttest</span>(<span class='no'>dataset</span>, <span class='no'>class.labels</span>, <span class='kw'>test.type</span> <span class='kw'>=</span> <span class='st'>"t.equalvar"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>originalData</th>
-      <td><p>SCtkExperiment. The SCtkExperiment object storing all
-assay data from the shiny app.</p></td>
+      <th>dataset</th>
+      <td><p>Matrix. A simulated counts matrix, sans labels.</p></td>
     </tr>
     <tr>
-      <th>realLabels</th>
-      <td><p>Character. The name of the condition of interest. Must match
-a name from sample data.</p></td>
+      <th>class.labels</th>
+      <td><p>Factor. The condition labels for the simulated cells.
+Will be coerced into 1's and 0's.</p></td>
     </tr>
     <tr>
-      <th>totalReads</th>
-      <td><p>Numeric. The total number of reads in the simulated
-dataset, to be split between all simulated cells.</p></td>
-    </tr>
-    <tr>
-      <th>cells</th>
-      <td><p>Numeric. The number of virtual cells to simulate.</p></td>
-    </tr>
-    <tr>
-      <th>iterations</th>
-      <td><p>Numeric. How many times should each experimental design be
-simulated.</p></td>
+      <th>test.type</th>
+      <td><p>Type of test to perform. The default is t.equalvar.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A matrix of significance information from a snapshot</p>
+    <p>A vector of fdr-adjusted p-values for all genes. Nonviable results
+(such as for genes with 0 counts in a simulated dataset) are coerced to 1.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>data</span>(<span class='st'>"mouseBrainSubsetSCE"</span>)
-<span class='no'>res</span> <span class='kw'>&lt;-</span> <span class='fu'>iterateSimulations</span>(<span class='no'>mouseBrainSubsetSCE</span>, <span class='kw'>realLabels</span> <span class='kw'>=</span> <span class='st'>"level1class"</span>,
-                          <span class='kw'>totalReads</span> <span class='kw'>=</span> <span class='fl'>1000</span>, <span class='kw'>cells</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>iterations</span> <span class='kw'>=</span> <span class='fl'>2</span>)</div></pre>
+<span class='co'>#sort first 100 expressed genes</span>
+<span class='no'>ord</span> <span class='kw'>&lt;-</span> <span class='fu'>rownames</span>(<span class='no'>mouseBrainSubsetSCE</span>)[
+  <span class='fu'>order</span>(<span class='fu'>rowSums</span>(<span class='fu'>assay</span>(<span class='no'>mouseBrainSubsetSCE</span>, <span class='st'>"counts"</span>)),
+        <span class='kw'>decreasing</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)][<span class='fl'>1</span>:<span class='fl'>100</span>]
+<span class='co'>#subset to those first 100 genes</span>
+<span class='no'>subset</span> <span class='kw'>&lt;-</span> <span class='no'>mouseBrainSubsetSCE</span>[<span class='no'>ord</span>, ]
+<span class='no'>res</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='generateSimulatedData.html'>generateSimulatedData</a></span>(<span class='kw'>totalReads</span> <span class='kw'>=</span> <span class='fl'>1000</span>, <span class='kw'>cells</span><span class='kw'>=</span><span class='fl'>10</span>,
+                             <span class='kw'>originalData</span> <span class='kw'>=</span> <span class='fu'>assay</span>(<span class='no'>subset</span>, <span class='st'>"counts"</span>),
+                             <span class='kw'>realLabels</span> <span class='kw'>=</span> <span class='fu'>colData</span>(<span class='no'>subset</span>)[, <span class='st'>"level1class"</span>])
+<span class='no'>realLabels</span> <span class='kw'>&lt;-</span> <span class='no'>res</span>[<span class='fl'>1</span>, ]
+<span class='no'>output</span> <span class='kw'>&lt;-</span> <span class='no'>res</span>[-<span class='fl'>1</span>, ]
+<span class='no'>fdr</span> <span class='kw'>&lt;-</span> <span class='fu'>subDiffExttest</span>(<span class='no'>output</span>, <span class='no'>realLabels</span>)</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

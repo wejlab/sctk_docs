@@ -57,7 +57,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">singleCellTK</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.0</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.3</span>
       </span>
     </div>
 
@@ -143,9 +143,9 @@
     <p>Filter Genes and Samples from a Single Cell Object</p>
     
 
-    <pre class="usage"><span class='fu'>filterSCData</span>(<span class='no'>insceset</span>, <span class='kw'>use_assay</span> <span class='kw'>=</span> <span class='st'>"counts"</span>, <span class='kw'>deletesamples</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>remove_noexpress</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>remove_bottom</span> <span class='kw'>=</span> <span class='fl'>0.5</span>,
-  <span class='kw'>minimum_detect_genes</span> <span class='kw'>=</span> <span class='fl'>1700</span>, <span class='kw'>filter_spike</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>filterSCData</span>(<span class='no'>insceset</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"counts"</span>, <span class='kw'>deletesamples</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>removeNoExpress</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>removeBottom</span> <span class='kw'>=</span> <span class='fl'>0.5</span>, <span class='kw'>minimumDetectGenes</span> <span class='kw'>=</span> <span class='fl'>1700</span>,
+  <span class='kw'>filterSpike</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -155,7 +155,7 @@
       <td><p>Input single cell object, required</p></td>
     </tr>
     <tr>
-      <th>use_assay</th>
+      <th>useAssay</th>
       <td><p>Indicate which assay to use for filtering. Default is
 "counts"</p></td>
     </tr>
@@ -164,22 +164,22 @@
       <td><p>List of samples to delete from the object.</p></td>
     </tr>
     <tr>
-      <th>remove_noexpress</th>
+      <th>removeNoExpress</th>
       <td><p>Remove genes that have no expression across all
 samples. The default is true</p></td>
     </tr>
     <tr>
-      <th>remove_bottom</th>
+      <th>removeBottom</th>
       <td><p>Fraction of low expression genes to remove from the
-single cell object. This occurs after remove_noexpress. The default is 0.50.</p></td>
+single cell object. This occurs after removeNoExpress. The default is 0.50.</p></td>
     </tr>
     <tr>
-      <th>minimum_detect_genes</th>
+      <th>minimumDetectGenes</th>
       <td><p>Minimum number of genes with at least 1
 count to include a sample in the single cell object. The default is 1700.</p></td>
     </tr>
     <tr>
-      <th>filter_spike</th>
+      <th>filterSpike</th>
       <td><p>Apply filtering to Spike in controls (indicated by
 isSpike).
 The default is TRUE.</p></td>
@@ -192,8 +192,8 @@ The default is TRUE.</p></td>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>data</span>(<span class='st'>"mouse_brain_subset_sce"</span>)
-<span class='no'>mouse_brain_subset_sce</span> <span class='kw'>&lt;-</span> <span class='fu'>filterSCData</span>(<span class='no'>mouse_brain_subset_sce</span>,
+    <pre class="examples"><div class='input'><span class='fu'>data</span>(<span class='st'>"mouseBrainSubsetSCE"</span>)
+<span class='no'>mouseBrainSubsetSCE</span> <span class='kw'>&lt;-</span> <span class='fu'>filterSCData</span>(<span class='no'>mouseBrainSubsetSCE</span>,
                                     <span class='kw'>deletesamples</span><span class='kw'>=</span><span class='st'>"X1772063061_G11"</span>)</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

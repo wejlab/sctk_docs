@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Returns significance data from a snapshot. — iterateSimulations • singleCellTK</title>
+<title>Get PCA variances — pcaVariances • singleCellTK</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -25,9 +25,11 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-<meta property="og:title" content="Returns significance data from a snapshot. — iterateSimulations" />
+<meta property="og:title" content="Get PCA variances — pcaVariances" />
 
-<meta property="og:description" content="Returns significance data from a snapshot." />
+<meta property="og:description" content="Get PCA variances
+Get PCA variances
+Set PCA variances" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -135,54 +137,63 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Returns significance data from a snapshot.</h1>
+    <h1>Get PCA variances</h1>
     
     </div>
 
     
-    <p>Returns significance data from a snapshot.</p>
+    <p>Get PCA variances</p>
+<p>Get PCA variances</p>
+<p>Set PCA variances</p>
     
 
-    <pre class="usage"><span class='fu'>iterateSimulations</span>(<span class='no'>originalData</span>, <span class='no'>realLabels</span>, <span class='no'>totalReads</span>, <span class='no'>cells</span>, <span class='no'>iterations</span>)</pre>
+    <pre class="usage"><span class='fu'>pcaVariances</span>(<span class='no'>x</span>, <span class='no'>...</span>)
+
+<span class='co'># S4 method for SCtkExperiment</span>
+<span class='fu'>pcaVariances</span>(<span class='no'>x</span>)
+
+<span class='co'># S4 method for SCtkExperiment</span>
+<span class='fu'>pcaVariances</span>(<span class='no'>x</span>) <span class='kw'>&lt;-</span> <span class='no'>value</span></pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>originalData</th>
-      <td><p>SCtkExperiment. The SCtkExperiment object storing all
-assay data from the shiny app.</p></td>
+      <th>x</th>
+      <td><p>SCtkE object</p></td>
     </tr>
     <tr>
-      <th>realLabels</th>
-      <td><p>Character. The name of the condition of interest. Must match
-a name from sample data.</p></td>
+      <th>...</th>
+      <td><p>other parameters</p></td>
     </tr>
     <tr>
-      <th>totalReads</th>
-      <td><p>Numeric. The total number of reads in the simulated
-dataset, to be split between all simulated cells.</p></td>
-    </tr>
-    <tr>
-      <th>cells</th>
-      <td><p>Numeric. The number of virtual cells to simulate.</p></td>
-    </tr>
-    <tr>
-      <th>iterations</th>
-      <td><p>Numeric. How many times should each experimental design be
-simulated.</p></td>
+      <th>value</th>
+      <td><p>The DataFrame of pcaVariances</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A matrix of significance information from a snapshot</p>
+    <p>A data frame of percent variation explained by each PC.</p>
+<p>A SCtkExperiment object with the pcaVariances object set.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>data</span>(<span class='st'>"mouseBrainSubsetSCE"</span>)
-<span class='no'>res</span> <span class='kw'>&lt;-</span> <span class='fu'>iterateSimulations</span>(<span class='no'>mouseBrainSubsetSCE</span>, <span class='kw'>realLabels</span> <span class='kw'>=</span> <span class='st'>"level1class"</span>,
-                          <span class='kw'>totalReads</span> <span class='kw'>=</span> <span class='fl'>1000</span>, <span class='kw'>cells</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>iterations</span> <span class='kw'>=</span> <span class='fl'>2</span>)</div></pre>
+<span class='fu'>pcaVariances</span>(<span class='no'>mouseBrainSubsetSCE</span>)</div><div class='output co'>#&gt; DataFrame with 30 rows and 1 column
+#&gt;                percentVar
+#&gt;                 &lt;numeric&gt;
+#&gt; PC1     0.376778280679595
+#&gt; PC2    0.0875963271424538
+#&gt; PC3    0.0569427048789942
+#&gt; PC4    0.0351617720708411
+#&gt; PC5    0.0325555270275067
+#&gt; ...                   ...
+#&gt; PC26   0.0115455313977834
+#&gt; PC27    0.010417876363479
+#&gt; PC28  0.00964415338175974
+#&gt; PC29  0.00895702448717734
+#&gt; PC30 7.43064138911304e-32</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

@@ -57,7 +57,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">singleCellTK</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.0</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.3</span>
       </span>
     </div>
 
@@ -143,7 +143,7 @@
     <p>Creates a table of summary metrics from an input SCtkExperiment.</p>
     
 
-    <pre class="usage"><span class='fu'>summarizeTable</span>(<span class='no'>indata</span>, <span class='kw'>use_assay</span> <span class='kw'>=</span> <span class='st'>"counts"</span>, <span class='kw'>expression_cutoff</span> <span class='kw'>=</span> <span class='fl'>1700</span>)</pre>
+    <pre class="usage"><span class='fu'>summarizeTable</span>(<span class='no'>indata</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"counts"</span>, <span class='kw'>expressionCutoff</span> <span class='kw'>=</span> <span class='fl'>1700</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -153,13 +153,13 @@
       <td><p>Input SCtkExperiment</p></td>
     </tr>
     <tr>
-      <th>use_assay</th>
+      <th>useAssay</th>
       <td><p>Indicate which assay to summarize. Default is "counts"</p></td>
     </tr>
     <tr>
-      <th>expression_cutoff</th>
+      <th>expressionCutoff</th>
       <td><p>Count number of samples with fewer than
-expression_cutoff genes. The default is 1700.</p></td>
+expressionCutoff genes. The default is 1700.</p></td>
     </tr>
     </table>
     
@@ -169,8 +169,8 @@ expression_cutoff genes. The default is 1700.</p></td>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>data</span>(<span class='st'>"mouse_brain_subset_sce"</span>)
-<span class='fu'>summarizeTable</span>(<span class='no'>mouse_brain_subset_sce</span>)</div><div class='output co'>#&gt;                                        Metric Value
+    <pre class="examples"><div class='input'><span class='fu'>data</span>(<span class='st'>"mouseBrainSubsetSCE"</span>)
+<span class='fu'>summarizeTable</span>(<span class='no'>mouseBrainSubsetSCE</span>)</div><div class='output co'>#&gt;                                        Metric Value
 #&gt; 1                           Number of Samples    30
 #&gt; 2                             Number of Genes 19972
 #&gt; 3            Average number of reads per cell  8008

@@ -58,7 +58,7 @@ continuous expression of the genes." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">singleCellTK</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.0</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.3</span>
       </span>
     </div>
 
@@ -145,13 +145,13 @@ continuous expression of the genes." />
 continuous expression of the genes.</p>
     
 
-    <pre class="usage"><span class='fu'>getBiomarker</span>(<span class='no'>count_data</span>, <span class='no'>gene</span>, <span class='kw'>binary</span> <span class='kw'>=</span> <span class='st'>"Binary"</span>, <span class='kw'>use_assay</span> <span class='kw'>=</span> <span class='st'>"counts"</span>)</pre>
+    <pre class="usage"><span class='fu'>getBiomarker</span>(<span class='no'>countData</span>, <span class='no'>gene</span>, <span class='kw'>binary</span> <span class='kw'>=</span> <span class='st'>"Binary"</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"counts"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>count_data</th>
+      <th>countData</th>
       <td><p>A SCtkExperiment object</p></td>
     </tr>
     <tr>
@@ -164,7 +164,7 @@ continuous expression of the genes.</p>
 Default: "Binary"</p></td>
     </tr>
     <tr>
-      <th>use_assay</th>
+      <th>useAssay</th>
       <td><p>Indicate which assay to use for PCA. Default is "logcounts"</p></td>
     </tr>
     </table>
@@ -175,7 +175,7 @@ Default: "Binary"</p></td>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>getBiomarker</span>(<span class='no'>mouse_brain_subset_sce</span>, <span class='kw'>gene</span><span class='kw'>=</span><span class='st'>"C1qa"</span>)</div><div class='output co'>#&gt;                          sample  C1qa
+    <pre class="examples"><div class='input'><span class='fu'>getBiomarker</span>(<span class='no'>mouseBrainSubsetSCE</span>, <span class='kw'>gene</span><span class='kw'>=</span><span class='st'>"C1qa"</span>)</div><div class='output co'>#&gt;                          sample  C1qa
 #&gt; X1772063061_G11 X1772063061_G11 FALSE
 #&gt; X1772067064_C10 X1772067064_C10 FALSE
 #&gt; X1772062113_D09 X1772062113_D09 FALSE

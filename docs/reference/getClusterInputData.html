@@ -57,7 +57,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">singleCellTK</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.0</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.3</span>
       </span>
     </div>
 
@@ -143,14 +143,14 @@
     <p>Get data to use as input clustering algorithms</p>
     
 
-    <pre class="usage"><span class='fu'>getClusterInputData</span>(<span class='no'>count_data</span>, <span class='no'>inputData</span>, <span class='kw'>use_assay</span> <span class='kw'>=</span> <span class='st'>"logcounts"</span>,
+    <pre class="usage"><span class='fu'>getClusterInputData</span>(<span class='no'>countData</span>, <span class='no'>inputData</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"logcounts"</span>,
   <span class='kw'>reducedDimName</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>count_data</th>
+      <th>countData</th>
       <td><p>A SCE object</p></td>
     </tr>
     <tr>
@@ -158,7 +158,7 @@
       <td><p>A string ("Raw Data", "PCA Components", "tSNE Components")</p></td>
     </tr>
     <tr>
-      <th>use_assay</th>
+      <th>useAssay</th>
       <td><p>Indicate which assay to use for PCA. Default is "logcounts"</p></td>
     </tr>
     <tr>
@@ -174,9 +174,9 @@ The toolkit will store data with the pattern &lt;ASSAY&gt;_&lt;ALGORITHM&gt;.</p
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>data</span>(<span class='st'>"mouse_brain_subset_sce"</span>)
-<span class='fu'>getClusterInputData</span>(<span class='no'>mouse_brain_subset_sce</span>, <span class='st'>"PCA Components"</span>,
-                    <span class='kw'>use_assay</span> <span class='kw'>=</span> <span class='st'>"logcounts"</span>, <span class='kw'>reducedDimName</span> <span class='kw'>=</span> <span class='st'>"PCA_logcounts"</span>)</div><div class='output co'>#&gt;                        PC1          PC2          PC3        PC4         PC5
+    <pre class="examples"><div class='input'><span class='fu'>data</span>(<span class='st'>"mouseBrainSubsetSCE"</span>)
+<span class='fu'>getClusterInputData</span>(<span class='no'>mouseBrainSubsetSCE</span>, <span class='st'>"PCA Components"</span>,
+                    <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"logcounts"</span>, <span class='kw'>reducedDimName</span> <span class='kw'>=</span> <span class='st'>"PCA_logcounts"</span>)</div><div class='output co'>#&gt;                        PC1          PC2          PC3        PC4         PC5
 #&gt; X1772063061_G11  -4.965731  10.97920765  -0.04381621  2.3068016 -4.13081305
 #&gt; X1772067064_C10 -18.890459   0.95582759   5.31525459 -9.1213043  1.86047705
 #&gt; X1772062113_D09 -18.406337  -3.35364459  -1.19246897  0.1815060  0.35969359

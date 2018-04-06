@@ -60,7 +60,7 @@ additional information." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">singleCellTK</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.0</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.3</span>
       </span>
     </div>
 
@@ -154,34 +154,34 @@ additional information.</p>
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>value</th>
-      <td><p>The DataFrame of pca_variances</p></td>
+      <td><p>The DataFrame of pcaVariances</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A SingleCellExperiment like object with an addition pca_variances
+    <p>A SingleCellExperiment like object with an addition pcaVariances
 slot.</p>
     
     <h2 class="hasAnchor" id="slots"><a class="anchor" href="#slots"></a>Slots</h2>
 
     
     <dl class='dl-horizontal'>
-<dt><code>pca_variances</code></dt><dd><p>The percent variation contained in each PCA dimension</p></dd>
+<dt><code>pcaVariances</code></dt><dd><p>The percent variation contained in each PCA dimension</p></dd>
 </dl>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>data</span>(<span class='st'>"mouse_brain_subset_sce"</span>)
-<span class='no'>counts_mat</span> <span class='kw'>&lt;-</span> <span class='fu'>assay</span>(<span class='no'>mouse_brain_subset_sce</span>, <span class='st'>"counts"</span>)
-<span class='no'>sample_annot</span> <span class='kw'>&lt;-</span> <span class='fu'>colData</span>(<span class='no'>mouse_brain_subset_sce</span>)
-<span class='no'>row_annot</span> <span class='kw'>&lt;-</span> <span class='fu'>rowData</span>(<span class='no'>mouse_brain_subset_sce</span>)
+    <pre class="examples"><div class='input'><span class='fu'>data</span>(<span class='st'>"mouseBrainSubsetSCE"</span>)
+<span class='no'>counts_mat</span> <span class='kw'>&lt;-</span> <span class='fu'>assay</span>(<span class='no'>mouseBrainSubsetSCE</span>, <span class='st'>"counts"</span>)
+<span class='no'>sample_annot</span> <span class='kw'>&lt;-</span> <span class='fu'>colData</span>(<span class='no'>mouseBrainSubsetSCE</span>)
+<span class='no'>row_annot</span> <span class='kw'>&lt;-</span> <span class='fu'>rowData</span>(<span class='no'>mouseBrainSubsetSCE</span>)
 <span class='no'>newSCE</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='SCtkExperiment.html'>SCtkExperiment</a></span>(<span class='kw'>assays</span><span class='kw'>=</span><span class='fu'>list</span>(<span class='kw'>counts</span><span class='kw'>=</span><span class='no'>counts_mat</span>),
                          <span class='kw'>colData</span><span class='kw'>=</span><span class='no'>sample_annot</span>,
                          <span class='kw'>rowData</span><span class='kw'>=</span><span class='no'>row_annot</span>)
-<span class='no'>newSCE</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='getPCA.html'>getPCA</a></span>(<span class='no'>newSCE</span>, <span class='kw'>use_assay</span> <span class='kw'>=</span> <span class='st'>"counts"</span>)
+<span class='no'>newSCE</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='getPCA.html'>getPCA</a></span>(<span class='no'>newSCE</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"counts"</span>)
 <span class='co'>#View the percent variation of the PCA</span>
-<span class='fu'><a href='pca_variances.html'>pca_variances</a></span>(<span class='no'>newSCE</span>)</div><div class='output co'>#&gt; DataFrame with 30 rows and 1 column
+<span class='fu'><a href='pcaVariances.html'>pcaVariances</a></span>(<span class='no'>newSCE</span>)</div><div class='output co'>#&gt; DataFrame with 30 rows and 1 column
 #&gt;                percentVar
 #&gt;                 &lt;numeric&gt;
 #&gt; PC1      0.37202971325744

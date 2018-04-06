@@ -57,7 +57,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">singleCellTK</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.0</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.3</span>
       </span>
     </div>
 
@@ -143,14 +143,14 @@
     <p>Use this function to plot t-SNE results</p>
     
 
-    <pre class="usage"><span class='fu'>plotTSNE</span>(<span class='no'>count_data</span>, <span class='kw'>colorBy</span> <span class='kw'>=</span> <span class='st'>"No Color"</span>, <span class='kw'>shape</span> <span class='kw'>=</span> <span class='st'>"No Shape"</span>,
-  <span class='kw'>reducedDimName</span> <span class='kw'>=</span> <span class='st'>"TSNE"</span>, <span class='kw'>runTSNE</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>use_assay</span> <span class='kw'>=</span> <span class='st'>"logcounts"</span>)</pre>
+    <pre class="usage"><span class='fu'>plotTSNE</span>(<span class='no'>countData</span>, <span class='kw'>colorBy</span> <span class='kw'>=</span> <span class='st'>"No Color"</span>, <span class='kw'>shape</span> <span class='kw'>=</span> <span class='st'>"No Shape"</span>,
+  <span class='kw'>reducedDimName</span> <span class='kw'>=</span> <span class='st'>"TSNE"</span>, <span class='kw'>runTSNE</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"logcounts"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>count_data</th>
+      <th>countData</th>
       <td><p>A SCE object</p></td>
     </tr>
     <tr>
@@ -172,7 +172,7 @@ The toolkit will store data with the pattern &lt;ASSAY&gt;_&lt;ALGORITHM&gt;.</p
 FALSE.</p></td>
     </tr>
     <tr>
-      <th>use_assay</th>
+      <th>useAssay</th>
       <td><p>Indicate which assay to use for t-SNE if you are running it.
 Default is "counts"</p></td>
     </tr>
@@ -184,8 +184,8 @@ Default is "counts"</p></td>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>data</span>(<span class='st'>"mouse_brain_subset_sce"</span>)
-<span class='fu'>plotTSNE</span>(<span class='no'>mouse_brain_subset_sce</span>, <span class='kw'>colorBy</span> <span class='kw'>=</span> <span class='st'>"level1class"</span>,
+    <pre class="examples"><div class='input'><span class='fu'>data</span>(<span class='st'>"mouseBrainSubsetSCE"</span>)
+<span class='fu'>plotTSNE</span>(<span class='no'>mouseBrainSubsetSCE</span>, <span class='kw'>colorBy</span> <span class='kw'>=</span> <span class='st'>"level1class"</span>,
          <span class='kw'>reducedDimName</span> <span class='kw'>=</span> <span class='st'>"TSNE_counts"</span>)</div><div class='img'><img src='plotTSNE-1.png' alt='' width='700' height='433' /></div><div class='input'>
 </div></pre>
   </div>
