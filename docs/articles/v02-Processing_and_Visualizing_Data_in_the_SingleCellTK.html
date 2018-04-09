@@ -29,7 +29,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">singleCellTK</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.3</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.4</span>
       </span>
     </div>
 
@@ -103,11 +103,7 @@
 <!--/.navbar -->
 
       
-      </header><script src="v02-Processing_and_Visualizing_Data_in_the_SingleCellTK_files/htmlwidgets-1.0/htmlwidgets.js"></script><script src="v02-Processing_and_Visualizing_Data_in_the_SingleCellTK_files/jquery-1.12.4/jquery.min.js"></script><link href="v02-Processing_and_Visualizing_Data_in_the_SingleCellTK_files/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
-<script src="v02-Processing_and_Visualizing_Data_in_the_SingleCellTK_files/datatables-binding-0.4/datatables.js"></script><link href="v02-Processing_and_Visualizing_Data_in_the_SingleCellTK_files/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
-<link href="v02-Processing_and_Visualizing_Data_in_the_SingleCellTK_files/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet">
-<script src="v02-Processing_and_Visualizing_Data_in_the_SingleCellTK_files/dt-core-1.10.16/js/jquery.dataTables.min.js"></script><link href="v02-Processing_and_Visualizing_Data_in_the_SingleCellTK_files/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet">
-<script src="v02-Processing_and_Visualizing_Data_in_the_SingleCellTK_files/crosstalk-1.0.0/js/crosstalk.min.js"></script><div class="row">
+      </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1>Processing and Visualizing Data in the Single Cell Toolkit</h1>
@@ -139,7 +135,7 @@
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">suppressPackageStartupMessages</span>({
   <span class="kw">library</span>(MAST)
   <span class="kw">library</span>(singleCellTK)
-  <span class="kw">library</span>(DT)
+  <span class="kw">library</span>(xtable)
 })
 
 <span class="kw">data</span>(maits, <span class="dt">package=</span><span class="st">"MAST"</span>)
@@ -154,9 +150,70 @@ maits_sce &lt;-<span class="st"> </span><span class="kw"><a href="../reference/c
 <h2 class="hasAnchor">
 <a href="#summarizetable" class="anchor"></a>summarizeTable</h2>
 <p>You can get summary metrics with the <code>summarizeTable</code> function:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="http://www.rdocumentation.org/packages/DT/topics/datatable">datatable</a></span>(<span class="kw"><a href="../reference/summarizeTable.html">summarizeTable</a></span>(maits_sce, <span class="dt">useAssay =</span> <span class="st">"logtpm"</span>))</code></pre></div>
-<div id="htmlwidget-84006e6f6ff0f1041f50" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-84006e6f6ff0f1041f50">{"x":{"filter":"none","data":[["1","2","3","4","5","6"],["Number of Samples","Number of Genes","Average number of reads per cell","Average number of genes per cell","Samples with &lt;1700 detected genes","Genes with no expression across all samples"],[96,16302,17867,6833,5,0]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Metric<\/th>\n      <th>Value<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><p>Typically, these summary statistics would be run on a “counts” matrix, but here we have log(tpm) values so the average number of reads per cell is calculated from the normalized values instead of raw counts.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(<span class="kw"><a href="http://www.rdocumentation.org/packages/xtable/topics/xtable">xtable</a></span>(<span class="kw"><a href="../reference/summarizeTable.html">summarizeTable</a></span>(maits_sce, <span class="dt">useAssay =</span> <span class="st">"logtpm"</span>)),
+      <span class="dt">type=</span><span class="st">"html"</span>, <span class="dt">include.rownames=</span><span class="ot">FALSE</span>,
+      <span class="dt">html.table.attributes=</span><span class="st">'class="table table-condensed"'</span>)</code></pre></div>
+<!-- html table generated in R 3.5.0 by xtable 1.8-2 package -->
+<!-- Mon Apr  9 15:41:25 2018 -->
+<table class="table">
+<tr>
+<th>
+Metric
+</th>
+<th>
+Value
+</th>
+</tr>
+<tr>
+<td>
+Number of Samples
+</td>
+<td align="right">
+96
+</td>
+</tr>
+<tr>
+<td>
+Number of Genes
+</td>
+<td align="right">
+16302
+</td>
+</tr>
+<tr>
+<td>
+Average number of reads per cell
+</td>
+<td align="right">
+17867
+</td>
+</tr>
+<tr>
+<td>
+Average number of genes per cell
+</td>
+<td align="right">
+6833
+</td>
+</tr>
+<tr>
+<td>
+Samples with &lt;1700 detected genes
+</td>
+<td align="right">
+5
+</td>
+</tr>
+<tr>
+<td>
+Genes with no expression across all samples
+</td>
+<td align="right">
+0
+</td>
+</tr>
+</table>
+<p>Typically, these summary statistics would be run on a “counts” matrix, but here we have log(tpm) values so the average number of reads per cell is calculated from the normalized values instead of raw counts.</p>
 </div>
 <div id="filtering-by-annotation" class="section level2">
 <h2 class="hasAnchor">
@@ -180,9 +237,69 @@ maits_sce &lt;-<span class="st"> </span><span class="kw"><a href="../reference/c
 <pre><code>## 
 ## TRUE 
 ##   74</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="http://www.rdocumentation.org/packages/DT/topics/datatable">datatable</a></span>(<span class="kw"><a href="../reference/summarizeTable.html">summarizeTable</a></span>(maits_subset, <span class="dt">useAssay =</span> <span class="st">"logtpm"</span>))</code></pre></div>
-<div id="htmlwidget-cffced7b2f3ba51d4947" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-cffced7b2f3ba51d4947">{"x":{"filter":"none","data":[["1","2","3","4","5","6"],["Number of Samples","Number of Genes","Average number of reads per cell","Average number of genes per cell","Samples with &lt;1700 detected genes","Genes with no expression across all samples"],[74,16302,16292,7539,0,157]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Metric<\/th>\n      <th>Value<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(<span class="kw"><a href="http://www.rdocumentation.org/packages/xtable/topics/xtable">xtable</a></span>(<span class="kw"><a href="../reference/summarizeTable.html">summarizeTable</a></span>(maits_subset, <span class="dt">useAssay =</span> <span class="st">"logtpm"</span>)),
+      <span class="dt">type=</span><span class="st">"html"</span>, <span class="dt">include.rownames=</span><span class="ot">FALSE</span>,
+      <span class="dt">html.table.attributes=</span><span class="st">'class="table table-condensed"'</span>)</code></pre></div>
+<!-- html table generated in R 3.5.0 by xtable 1.8-2 package -->
+<!-- Mon Apr  9 15:41:25 2018 -->
+<table class="table">
+<tr>
+<th>
+Metric
+</th>
+<th>
+Value
+</th>
+</tr>
+<tr>
+<td>
+Number of Samples
+</td>
+<td align="right">
+74
+</td>
+</tr>
+<tr>
+<td>
+Number of Genes
+</td>
+<td align="right">
+16302
+</td>
+</tr>
+<tr>
+<td>
+Average number of reads per cell
+</td>
+<td align="right">
+16292
+</td>
+</tr>
+<tr>
+<td>
+Average number of genes per cell
+</td>
+<td align="right">
+7539
+</td>
+</tr>
+<tr>
+<td>
+Samples with &lt;1700 detected genes
+</td>
+<td align="right">
+0
+</td>
+</tr>
+<tr>
+<td>
+Genes with no expression across all samples
+</td>
+<td align="right">
+157
+</td>
+</tr>
+</table>
 </div>
 <div id="visualization" class="section level2">
 <h2 class="hasAnchor">
@@ -386,7 +503,7 @@ bladder_sctke &lt;-<span class="st"> </span><span class="kw"><a href="../referen
 ##  [1] bladderbatch_1.17.0         GSEABase_1.41.2            
 ##  [3] graph_1.57.1                annotate_1.57.3            
 ##  [5] XML_3.98-1.10               org.Hs.eg.db_3.5.0         
-##  [7] AnnotationDbi_1.41.4        DT_0.4                     
+##  [7] AnnotationDbi_1.41.4        xtable_1.8-2               
 ##  [9] singleCellTK_0.99.3         MAST_1.5.2                 
 ## [11] SingleCellExperiment_1.1.2  SummarizedExperiment_1.9.16
 ## [13] DelayedArray_0.5.23         BiocParallel_1.13.3        
@@ -396,8 +513,8 @@ bladder_sctke &lt;-<span class="st"> </span><span class="kw"><a href="../referen
 ## [21] BiocGenerics_0.25.3         BiocStyle_2.7.8            
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] nlme_3.1-136           GSVA_1.27.2            bitops_1.0-6          
-##  [4] fs_1.2.2               bit64_0.9-7            RColorBrewer_1.1-2    
+##  [1] nlme_3.1-136           bitops_1.0-6           fs_1.2.2              
+##  [4] GSVA_1.27.2            bit64_0.9-7            RColorBrewer_1.1-2    
 ##  [7] rprojroot_1.3-2        tools_3.5.0            backports_1.1.2       
 ## [10] R6_2.2.2               mgcv_1.8-23            DBI_0.8               
 ## [13] lazyeval_0.2.1         colorspace_1.3-2       GetoptLong_0.1.6      
@@ -406,24 +523,22 @@ bladder_sctke &lt;-<span class="st"> </span><span class="kw"><a href="../referen
 ## [22] scales_0.5.0           genefilter_1.61.1      pkgdown_0.1.0.9000    
 ## [25] commonmark_1.4         stringr_1.3.0          digest_0.6.15         
 ## [28] rmarkdown_1.9          XVector_0.19.9         pkgconfig_2.0.1       
-## [31] htmltools_0.3.6        limma_3.35.14          htmlwidgets_1.0       
-## [34] rlang_0.2.0            GlobalOptions_0.0.13   rstudioapi_0.7        
-## [37] RSQLite_2.1.0          shiny_1.0.5            shape_1.4.4           
-## [40] jsonlite_1.5           crosstalk_1.0.0        RCurl_1.95-4.10       
-## [43] magrittr_1.5           GenomeInfoDbData_1.1.0 Matrix_1.2-13         
-## [46] Rcpp_0.12.16           munsell_0.4.3          abind_1.4-5           
-## [49] stringi_1.1.7          yaml_2.1.18            MASS_7.3-49           
-## [52] zlibbioc_1.25.0        Rtsne_0.13             plyr_1.8.4            
-## [55] grid_3.5.0             blob_1.1.1             crayon_1.3.4          
-## [58] lattice_0.20-35        splines_3.5.0          circlize_0.4.3        
-## [61] knitr_1.20             ComplexHeatmap_1.17.1  pillar_1.2.1          
-## [64] rjson_0.2.15           geneplotter_1.57.0     reshape2_1.4.3        
-## [67] evaluate_0.10.1        data.table_1.10.4-3    httpuv_1.3.6.2        
-## [70] gtable_0.2.0           assertthat_0.2.0       ggplot2_2.2.1         
-## [73] xfun_0.1               mime_0.5               xtable_1.8-2          
-## [76] GSVAdata_1.15.0        roxygen2_6.0.1         survival_2.41-3       
-## [79] tibble_1.4.2           shinythemes_1.1.1      memoise_1.1.0         
-## [82] sva_3.27.0</code></pre>
+## [31] htmltools_0.3.6        limma_3.35.14          rlang_0.2.0           
+## [34] GlobalOptions_0.0.13   rstudioapi_0.7         RSQLite_2.1.0         
+## [37] shiny_1.0.5            shape_1.4.4            RCurl_1.95-4.10       
+## [40] magrittr_1.5           GenomeInfoDbData_1.1.0 Matrix_1.2-13         
+## [43] Rcpp_0.12.16           munsell_0.4.3          abind_1.4-5           
+## [46] stringi_1.1.7          yaml_2.1.18            MASS_7.3-49           
+## [49] zlibbioc_1.25.0        Rtsne_0.13             plyr_1.8.4            
+## [52] grid_3.5.0             blob_1.1.1             crayon_1.3.4          
+## [55] lattice_0.20-35        splines_3.5.0          circlize_0.4.3        
+## [58] knitr_1.20             ComplexHeatmap_1.17.1  pillar_1.2.1          
+## [61] rjson_0.2.15           geneplotter_1.57.0     reshape2_1.4.3        
+## [64] evaluate_0.10.1        data.table_1.10.4-3    httpuv_1.3.6.2        
+## [67] gtable_0.2.0           assertthat_0.2.0       ggplot2_2.2.1         
+## [70] xfun_0.1               mime_0.5               GSVAdata_1.15.0       
+## [73] roxygen2_6.0.1         survival_2.41-3        tibble_1.4.2          
+## [76] shinythemes_1.1.1      memoise_1.1.0          sva_3.27.0</code></pre>
 </div>
   </div>
 
