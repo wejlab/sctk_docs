@@ -29,7 +29,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">singleCellTK</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.4</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.8</span>
       </span>
     </div>
 
@@ -154,7 +154,7 @@ maits_sce &lt;-<span class="st"> </span><span class="kw"><a href="../reference/c
       <span class="dt">type=</span><span class="st">"html"</span>, <span class="dt">include.rownames=</span><span class="ot">FALSE</span>,
       <span class="dt">html.table.attributes=</span><span class="st">'class="table table-condensed"'</span>)</code></pre></div>
 <!-- html table generated in R 3.5.0 by xtable 1.8-2 package -->
-<!-- Mon Apr  9 15:41:25 2018 -->
+<!-- Fri Apr 13 14:56:55 2018 -->
 <table class="table">
 <tr>
 <th>
@@ -241,7 +241,7 @@ Genes with no expression across all samples
       <span class="dt">type=</span><span class="st">"html"</span>, <span class="dt">include.rownames=</span><span class="ot">FALSE</span>,
       <span class="dt">html.table.attributes=</span><span class="st">'class="table table-condensed"'</span>)</code></pre></div>
 <!-- html table generated in R 3.5.0 by xtable 1.8-2 package -->
-<!-- Mon Apr  9 15:41:25 2018 -->
+<!-- Fri Apr 13 14:56:56 2018 -->
 <table class="table">
 <tr>
 <th>
@@ -310,7 +310,7 @@ Genes with no expression across all samples
 <p>PCA and t-SNE can be added to the object with the getPCA() and getTSNE() functions:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">maits_subset &lt;-<span class="st"> </span><span class="kw"><a href="../reference/getPCA.html">getPCA</a></span>(maits_subset, <span class="dt">useAssay =</span> <span class="st">"logtpm"</span>,
                        <span class="dt">reducedDimName =</span> <span class="st">"PCA_logtpm"</span>)
-maits_subset &lt;-<span class="st"> </span><span class="kw"><a href="../reference/getTSNE.html">getTSNE</a></span>(maits_subset, <span class="dt">useAssay =</span> <span class="st">"logtpm"</span>,
+maits_subset &lt;-<span class="st"> </span><span class="kw"><a href="../reference/getPCA.html">getTSNE</a></span>(maits_subset, <span class="dt">useAssay =</span> <span class="st">"logtpm"</span>,
                         <span class="dt">reducedDimName =</span> <span class="st">"TSNE_logtpm"</span>)
 <span class="kw">reducedDims</span>(maits_subset)</code></pre></div>
 <pre><code>## List of length 2
@@ -319,14 +319,14 @@ maits_subset &lt;-<span class="st"> </span><span class="kw"><a href="../referenc
 <h3 class="hasAnchor">
 <a href="#pca" class="anchor"></a>PCA</h3>
 <p>PCA data can be visualized with the plotPCA() function:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/plotPCA.html">plotPCA</a></span>(maits_subset, <span class="dt">reducedDimName =</span> <span class="st">"PCA_logtpm"</span>, <span class="dt">colorBy =</span> <span class="st">"condition"</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/getPCA.html">plotPCA</a></span>(maits_subset, <span class="dt">reducedDimName =</span> <span class="st">"PCA_logtpm"</span>, <span class="dt">colorBy =</span> <span class="st">"condition"</span>)</code></pre></div>
 <p><img src="v02-Processing_and_Visualizing_Data_in_the_SingleCellTK_files/figure-html/maits_pca-1.png" width="700"></p>
 </div>
 <div id="t-sne" class="section level3">
 <h3 class="hasAnchor">
 <a href="#t-sne" class="anchor"></a>t-SNE</h3>
 <p>t-SNE data can be visualized with the plotTSNE() function:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/plotTSNE.html">plotTSNE</a></span>(maits_subset, <span class="dt">reducedDimName =</span> <span class="st">"TSNE_logtpm"</span>, <span class="dt">colorBy =</span> <span class="st">"condition"</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/getPCA.html">plotTSNE</a></span>(maits_subset, <span class="dt">reducedDimName =</span> <span class="st">"TSNE_logtpm"</span>, <span class="dt">colorBy =</span> <span class="st">"condition"</span>)</code></pre></div>
 <p><img src="v02-Processing_and_Visualizing_Data_in_the_SingleCellTK_files/figure-html/maits_tsne-1.png" width="700"></p>
 </div>
 </div>
@@ -351,7 +351,7 @@ maits_subset &lt;-<span class="st"> </span><span class="kw"><a href="../referenc
 <h3 class="hasAnchor">
 <a href="#adaptive-thresholding" class="anchor"></a>Adaptive Thresholding</h3>
 <p>First, an adaptive threshold is calculated by binning genes with similar expression levels.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">thresholds &lt;-<span class="st"> </span><span class="kw"><a href="../reference/thresholdGenes.html">thresholdGenes</a></span>(maits_subset, <span class="dt">useAssay =</span> <span class="st">"logtpm"</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">thresholds &lt;-<span class="st"> </span><span class="kw"><a href="../reference/MAST.html">thresholdGenes</a></span>(maits_subset, <span class="dt">useAssay =</span> <span class="st">"logtpm"</span>)</code></pre></div>
 <pre><code>## (0.0144,0.163]  (0.163,0.334]   (0.334,0.53]   (0.53,0.755]   (0.755,1.01] 
 ##       1.104946       1.104946       1.104946       1.104946       1.104946 
 ##    (1.01,1.31]    (1.31,1.65]    (1.65,2.04]    (2.04,2.48]    (2.48,2.99] 
@@ -380,8 +380,8 @@ maits_subset &lt;-<span class="st"> </span><span class="kw"><a href="../referenc
 ##    (6.92,8.08]    (8.08,9.42]    (9.42,10.9]    (10.9,14.7] 
 ##       3.177592       4.004409       5.044739       7.947253</code></pre>
 <p>The resulting significantly differentially expressed genes can be visualized using a violin plot, linear model, or heatmap:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/MASTviolin.html">MASTviolin</a></span>(maits_subset, <span class="dt">useAssay =</span> <span class="st">"logtpm"</span>, <span class="dt">fcHurdleSig =</span> mast_results,
-           <span class="dt">threshP =</span> <span class="ot">TRUE</span>, <span class="dt">variable =</span> <span class="st">"condition"</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/MAST.html">MASTviolin</a></span>(maits_subset, <span class="dt">useAssay =</span> <span class="st">"logtpm"</span>, <span class="dt">fcHurdleSig =</span> mast_results,
+           <span class="dt">threshP =</span> <span class="ot">TRUE</span>, <span class="dt">condition =</span> <span class="st">"condition"</span>)</code></pre></div>
 <pre><code>## (0.0144,0.163]  (0.163,0.334]   (0.334,0.53]   (0.53,0.755]   (0.755,1.01] 
 ##       1.104946       1.104946       1.104946       1.104946       1.104946 
 ##    (1.01,1.31]    (1.31,1.65]    (1.65,2.04]    (2.04,2.48]    (2.48,2.99] 
@@ -391,8 +391,8 @@ maits_subset &lt;-<span class="st"> </span><span class="kw"><a href="../referenc
 ##    (6.92,8.08]    (8.08,9.42]    (9.42,10.9]    (10.9,14.7] 
 ##       3.177592       4.004409       5.044739       7.947253</code></pre>
 <p><img src="v02-Processing_and_Visualizing_Data_in_the_SingleCellTK_files/figure-html/maits_violin-1.png" width="700"></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/MASTregression.html">MASTregression</a></span>(maits_subset, <span class="dt">useAssay =</span> <span class="st">"logtpm"</span>, <span class="dt">fcHurdleSig =</span> mast_results,
-               <span class="dt">threshP =</span> <span class="ot">TRUE</span>, <span class="dt">variable =</span> <span class="st">"condition"</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/MAST.html">MASTregression</a></span>(maits_subset, <span class="dt">useAssay =</span> <span class="st">"logtpm"</span>, <span class="dt">fcHurdleSig =</span> mast_results,
+               <span class="dt">threshP =</span> <span class="ot">TRUE</span>, <span class="dt">condition =</span> <span class="st">"condition"</span>)</code></pre></div>
 <pre><code>## (0.0144,0.163]  (0.163,0.334]   (0.334,0.53]   (0.53,0.755]   (0.755,1.01] 
 ##       1.104946       1.104946       1.104946       1.104946       1.104946 
 ##    (1.01,1.31]    (1.31,1.65]    (1.65,2.04]    (2.04,2.48]    (2.48,2.99] 
@@ -453,9 +453,9 @@ maits_subset &lt;-<span class="st"> </span><span class="kw"><a href="../referenc
   |                                                                       
   |=================================================================| 100%</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">1234</span>)
-<span class="kw"><a href="../reference/gsvaPlot.html">gsvaPlot</a></span>(maits_subset, gsvaRes, <span class="st">"Violin"</span>, <span class="st">"condition"</span>)</code></pre></div>
+<span class="kw"><a href="../reference/gsvaSCE.html">gsvaPlot</a></span>(maits_subset, gsvaRes, <span class="st">"Violin"</span>, <span class="st">"condition"</span>)</code></pre></div>
 <p><img src="v02-Processing_and_Visualizing_Data_in_the_SingleCellTK_files/figure-html/maits_gsva-1.png" width="700"></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/gsvaPlot.html">gsvaPlot</a></span>(maits_subset, gsvaRes, <span class="st">"Heatmap"</span>, <span class="st">"condition"</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/gsvaSCE.html">gsvaPlot</a></span>(maits_subset, gsvaRes, <span class="st">"Heatmap"</span>, <span class="st">"condition"</span>)</code></pre></div>
 <p><img src="v02-Processing_and_Visualizing_Data_in_the_SingleCellTK_files/figure-html/maits_gsva-2.png" width="700"></p>
 </div>
 </div>
@@ -475,7 +475,7 @@ bladder_sctke &lt;-<span class="st"> </span><span class="kw"><a href="../referen
                            <span class="dt">assayName =</span> <span class="st">"microarray"</span>,
                            <span class="dt">inputDataFrames =</span> <span class="ot">TRUE</span>,
                            <span class="dt">createLogCounts =</span> <span class="ot">FALSE</span>)
-<span class="kw">assay</span>(bladder_sctke, <span class="st">"combat"</span>) &lt;-<span class="st"> </span><span class="kw"><a href="../reference/ComBatSCE.html">ComBatSCE</a></span>(<span class="dt">SCEdata =</span> bladder_sctke,
+<span class="kw">assay</span>(bladder_sctke, <span class="st">"combat"</span>) &lt;-<span class="st"> </span><span class="kw"><a href="../reference/ComBatSCE.html">ComBatSCE</a></span>(<span class="dt">inSCE =</span> bladder_sctke,
                                             <span class="dt">batch =</span> <span class="st">"batch"</span>,
                                             <span class="dt">useAssay =</span> <span class="st">"microarray"</span>,
                                             <span class="dt">covariates =</span> <span class="st">"cancer"</span>)</code></pre></div>
@@ -504,16 +504,16 @@ bladder_sctke &lt;-<span class="st"> </span><span class="kw"><a href="../referen
 ##  [3] graph_1.57.1                annotate_1.57.3            
 ##  [5] XML_3.98-1.10               org.Hs.eg.db_3.5.0         
 ##  [7] AnnotationDbi_1.41.4        xtable_1.8-2               
-##  [9] singleCellTK_0.99.3         MAST_1.5.2                 
+##  [9] singleCellTK_0.99.5         MAST_1.5.2                 
 ## [11] SingleCellExperiment_1.1.2  SummarizedExperiment_1.9.16
-## [13] DelayedArray_0.5.23         BiocParallel_1.13.3        
+## [13] DelayedArray_0.5.30         BiocParallel_1.13.3        
 ## [15] matrixStats_0.53.1          Biobase_2.39.2             
 ## [17] GenomicRanges_1.31.23       GenomeInfoDb_1.15.5        
-## [19] IRanges_2.13.28             S4Vectors_0.17.39          
+## [19] IRanges_2.13.28             S4Vectors_0.17.41          
 ## [21] BiocGenerics_0.25.3         BiocStyle_2.7.8            
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] nlme_3.1-136           bitops_1.0-6           fs_1.2.2              
+##  [1] nlme_3.1-137           bitops_1.0-6           fs_1.2.2              
 ##  [4] GSVA_1.27.2            bit64_0.9-7            RColorBrewer_1.1-2    
 ##  [7] rprojroot_1.3-2        tools_3.5.0            backports_1.1.2       
 ## [10] R6_2.2.2               mgcv_1.8-23            DBI_0.8               
@@ -526,7 +526,7 @@ bladder_sctke &lt;-<span class="st"> </span><span class="kw"><a href="../referen
 ## [31] htmltools_0.3.6        limma_3.35.14          rlang_0.2.0           
 ## [34] GlobalOptions_0.0.13   rstudioapi_0.7         RSQLite_2.1.0         
 ## [37] shiny_1.0.5            shape_1.4.4            RCurl_1.95-4.10       
-## [40] magrittr_1.5           GenomeInfoDbData_1.1.0 Matrix_1.2-13         
+## [40] magrittr_1.5           GenomeInfoDbData_1.1.0 Matrix_1.2-14         
 ## [43] Rcpp_0.12.16           munsell_0.4.3          abind_1.4-5           
 ## [46] stringi_1.1.7          yaml_2.1.18            MASS_7.3-49           
 ## [49] zlibbioc_1.25.0        Rtsne_0.13             plyr_1.8.4            

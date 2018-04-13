@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get PCA components for a SCtkE object — getPCA • singleCellTK</title>
+<title>Get and plot PCA and t-SCE components for a SCtkE object — getBiomarker • singleCellTK</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -25,11 +25,11 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-<meta property="og:title" content="Get PCA components for a SCtkE object — getPCA" />
+<meta property="og:title" content="Get and plot PCA and t-SCE components for a SCtkE object — getBiomarker" />
 
 <meta property="og:description" content="Selects the 500 most variable genes in the SCE, performs
-PCA based on them and stores the PCA values in the reducedDims slot of the
-SCE object." />
+PCA or t-SNE based on them and stores the values in the reducedDims slot of
+the SCE object." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -59,7 +59,7 @@ SCE object." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">singleCellTK</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.4</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.8</span>
       </span>
     </div>
 
@@ -137,24 +137,48 @@ SCE object." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Get PCA components for a SCtkE object</h1>
+    <h1>Get and plot PCA and t-SCE components for a SCtkE object</h1>
     
     </div>
 
     
     <p>Selects the 500 most variable genes in the SCE, performs
-PCA based on them and stores the PCA values in the reducedDims slot of the
-SCE object.</p>
+PCA or t-SNE based on them and stores the values in the reducedDims slot of
+the SCE object.</p>
     
 
-    <pre class="usage"><span class='fu'>getPCA</span>(<span class='no'>countData</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"logcounts"</span>, <span class='kw'>reducedDimName</span> <span class='kw'>=</span> <span class='st'>"PCA"</span>)</pre>
+    <pre class="usage"><span class='fu'>getBiomarker</span>(<span class='no'>inSCE</span>, <span class='no'>gene</span>, <span class='kw'>binary</span> <span class='kw'>=</span> <span class='st'>"Binary"</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"counts"</span>)
+
+<span class='fu'>getPCA</span>(<span class='no'>inSCE</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"logcounts"</span>, <span class='kw'>reducedDimName</span> <span class='kw'>=</span> <span class='st'>"PCA"</span>)
+
+<span class='fu'>getTSNE</span>(<span class='no'>inSCE</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"logcounts"</span>, <span class='kw'>reducedDimName</span> <span class='kw'>=</span> <span class='st'>"TSNE"</span>)
+
+<span class='fu'>plotBiomarker</span>(<span class='no'>inSCE</span>, <span class='no'>gene</span>, <span class='kw'>binary</span> <span class='kw'>=</span> <span class='st'>"Binary"</span>, <span class='kw'>visual</span> <span class='kw'>=</span> <span class='st'>"PCA"</span>,
+  <span class='kw'>shape</span> <span class='kw'>=</span> <span class='st'>"No Shape"</span>, <span class='kw'>x</span> <span class='kw'>=</span> <span class='st'>"PC1"</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='st'>"PC2"</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"counts"</span>,
+  <span class='kw'>reducedDimName</span> <span class='kw'>=</span> <span class='st'>"PCA"</span>)
+
+<span class='fu'>plotPCA</span>(<span class='no'>inSCE</span>, <span class='kw'>colorBy</span> <span class='kw'>=</span> <span class='st'>"No Color"</span>, <span class='kw'>shape</span> <span class='kw'>=</span> <span class='st'>"No Shape"</span>, <span class='kw'>pcX</span> <span class='kw'>=</span> <span class='st'>"PC1"</span>,
+  <span class='kw'>pcY</span> <span class='kw'>=</span> <span class='st'>"PC2"</span>, <span class='kw'>reducedDimName</span> <span class='kw'>=</span> <span class='st'>"PCA"</span>, <span class='kw'>runPCA</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"logcounts"</span>)
+
+<span class='fu'>plotTSNE</span>(<span class='no'>inSCE</span>, <span class='kw'>colorBy</span> <span class='kw'>=</span> <span class='st'>"No Color"</span>, <span class='kw'>shape</span> <span class='kw'>=</span> <span class='st'>"No Shape"</span>,
+  <span class='kw'>reducedDimName</span> <span class='kw'>=</span> <span class='st'>"TSNE"</span>, <span class='kw'>runTSNE</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"logcounts"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>countData</th>
-      <td><p>SCtkE object</p></td>
+      <th>inSCE</th>
+      <td><p>Input SCtkExperiment object. Required</p></td>
+    </tr>
+    <tr>
+      <th>gene</th>
+      <td><p>gene list</p></td>
+    </tr>
+    <tr>
+      <th>binary</th>
+      <td><p>"Binary" for binary expression or "Continuous" for a gradient.
+Default: "Binary"</p></td>
     </tr>
     <tr>
       <th>useAssay</th>
@@ -165,16 +189,104 @@ SCE object.</p>
       <td><p>Store the PCA data with this name. The default is PCA.
 The toolkit will store data with the pattern &lt;ASSAY&gt;_&lt;ALGORITHM&gt;.</p></td>
     </tr>
+    <tr>
+      <th>visual</th>
+      <td><p>Type of visualization (PCA or tSNE). Default: "PCA"</p></td>
+    </tr>
+    <tr>
+      <th>shape</th>
+      <td><p>Shape of the points</p></td>
+    </tr>
+    <tr>
+      <th>x</th>
+      <td><p>x coordinate for PCA</p></td>
+    </tr>
+    <tr>
+      <th>y</th>
+      <td><p>y coordinate for PCA</p></td>
+    </tr>
+    <tr>
+      <th>colorBy</th>
+      <td><p>The variable to color clusters by</p></td>
+    </tr>
+    <tr>
+      <th>pcX</th>
+      <td><p>User choice for the first principal component</p></td>
+    </tr>
+    <tr>
+      <th>pcY</th>
+      <td><p>User choice for the second principal component</p></td>
+    </tr>
+    <tr>
+      <th>runPCA</th>
+      <td><p>Run PCA if the reducedDimName does not exist. the Default is
+FALSE.</p></td>
+    </tr>
+    <tr>
+      <th>runTSNE</th>
+      <td><p>Run t-SNE if the reducedDimName does not exist. the Default is
+FALSE.</p></td>
+    </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A SCtkE object with the specified reduecedDim and pcaVariances
-updated</p>
+    <p>getBiomarker(): A data.frame of expression values</p>
+<p>getPCA(): A SCtkE object with the specified reduecedDim and
+pcaVariances updated</p>
+<p>getTSNE(): A SCtkE object with the specified reduecedDim and
+pcaVariances updated</p>
+<p>plotBiomarker(): A Biomarker plot</p>
+<p>plotPCA(): A PCA plot</p>
+<p>plotTSNE(): A t-SNE plot</p>
+    
+    <h2 class="hasAnchor" id="functions"><a class="anchor" href="#functions"></a>Functions</h2>
+
+    <ul>
+<li><p><code>getBiomarker</code>: Given a list of genes and a SCtkExperiment object, return
+the binary or continuous expression of the genes.</p></li>
+<li><p><code>getPCA</code>: Get PCA components for a SCtkE object</p></li>
+<li><p><code>getTSNE</code>: Get t-SNE components for a SCtkE object</p></li>
+<li><p><code>plotBiomarker</code>: Given a set of genes, return a ggplot of expression
+values.</p></li>
+<li><p><code>plotPCA</code>: plot PCA results</p></li>
+<li><p><code>plotTSNE</code>: plot t-SNE results</p></li>
+</ul>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>data</span>(<span class='st'>"mouseBrainSubsetSCE"</span>)
+    <pre class="examples"><div class='input'><span class='fu'>getBiomarker</span>(<span class='no'>mouseBrainSubsetSCE</span>, <span class='kw'>gene</span><span class='kw'>=</span><span class='st'>"C1qa"</span>)</div><div class='output co'>#&gt;                          sample  C1qa
+#&gt; X1772063061_G11 X1772063061_G11 FALSE
+#&gt; X1772067064_C10 X1772067064_C10 FALSE
+#&gt; X1772062113_D09 X1772062113_D09 FALSE
+#&gt; X1772062111_A12 X1772062111_A12 FALSE
+#&gt; X1772071040_C12 X1772071040_C12 FALSE
+#&gt; X1772062111_D09 X1772062111_D09 FALSE
+#&gt; X1772071036_G02 X1772071036_G02 FALSE
+#&gt; X1772071040_D04 X1772071040_D04 FALSE
+#&gt; X1772058177_E12 X1772058177_E12 FALSE
+#&gt; X1772066070_G10 X1772066070_G10 FALSE
+#&gt; X1772063074_G10 X1772063074_G10 FALSE
+#&gt; X1772062115_E07 X1772062115_E07 FALSE
+#&gt; X1772062109_F01 X1772062109_F01 FALSE
+#&gt; X1772060226_G05 X1772060226_G05 FALSE
+#&gt; X1772066108_D06 X1772066108_D06 FALSE
+#&gt; X1772060224_F07 X1772060224_F07  TRUE
+#&gt; X1772062111_F12 X1772062111_F12  TRUE
+#&gt; X1772063078_G02 X1772063078_G02  TRUE
+#&gt; X1772060240_H11 X1772060240_H11  TRUE
+#&gt; X1772067094_C07 X1772067094_C07  TRUE
+#&gt; X1772058177_A09 X1772058177_A09  TRUE
+#&gt; X1772058171_C05 X1772058171_C05  TRUE
+#&gt; X1772062128_B03 X1772062128_B03  TRUE
+#&gt; X1772062118_F04 X1772062118_F04  TRUE
+#&gt; X1772062109_E05 X1772062109_E05  TRUE
+#&gt; X1772062128_D02 X1772062128_D02  TRUE
+#&gt; X1772062109_E12 X1772062109_E12  TRUE
+#&gt; X1772062113_E05 X1772062113_E05  TRUE
+#&gt; X1772062128_F05 X1772062128_F05  TRUE
+#&gt; X1772062118_D09 X1772062118_D09  TRUE</div><div class='input'>
+<span class='fu'>data</span>(<span class='st'>"mouseBrainSubsetSCE"</span>)
 <span class='co'>#add a CPM assay</span>
 <span class='fu'>assay</span>(<span class='no'>mouseBrainSubsetSCE</span>, <span class='st'>"cpm"</span>) <span class='kw'>&lt;-</span> <span class='fu'>apply</span>(<span class='fu'>assay</span>(<span class='no'>mouseBrainSubsetSCE</span>,
                                                  <span class='st'>"counts"</span>),
@@ -186,6 +298,24 @@ updated</p>
                               <span class='kw'>reducedDimName</span> <span class='kw'>=</span> <span class='st'>"PCA_cpm"</span>)
 <span class='fu'>reducedDims</span>(<span class='no'>mouseBrainSubsetSCE</span>)</div><div class='output co'>#&gt; List of length 5
 #&gt; names(5): PCA_counts PCA_logcounts TSNE_counts TSNE_logcounts PCA_cpm</div><div class='input'>
+<span class='fu'>data</span>(<span class='st'>"mouseBrainSubsetSCE"</span>)
+<span class='co'>#add a CPM assay</span>
+<span class='fu'>assay</span>(<span class='no'>mouseBrainSubsetSCE</span>, <span class='st'>"cpm"</span>) <span class='kw'>&lt;-</span> <span class='fu'>apply</span>(
+  <span class='fu'>assay</span>(<span class='no'>mouseBrainSubsetSCE</span>, <span class='st'>"counts"</span>), <span class='fl'>2</span>, <span class='kw'>function</span>(<span class='no'>x</span>) {
+    <span class='no'>x</span> / (<span class='fu'>sum</span>(<span class='no'>x</span>) / <span class='fl'>1000000</span>)
+  })
+<span class='no'>mouseBrainSubsetSCE</span> <span class='kw'>&lt;-</span> <span class='fu'>getTSNE</span>(<span class='no'>mouseBrainSubsetSCE</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"cpm"</span>,
+                               <span class='kw'>reducedDimName</span> <span class='kw'>=</span> <span class='st'>"TSNE_cpm"</span>)
+<span class='fu'>reducedDims</span>(<span class='no'>mouseBrainSubsetSCE</span>)</div><div class='output co'>#&gt; List of length 6
+#&gt; names(6): PCA_counts PCA_logcounts TSNE_counts TSNE_logcounts PCA_cpm TSNE_cpm</div><div class='input'>
+<span class='fu'>data</span>(<span class='st'>"mouseBrainSubsetSCE"</span>)
+<span class='fu'>plotBiomarker</span>(<span class='no'>mouseBrainSubsetSCE</span>, <span class='kw'>gene</span><span class='kw'>=</span><span class='st'>"C1qa"</span>, <span class='kw'>shape</span><span class='kw'>=</span><span class='st'>"level1class"</span>)</div><div class='img'><img src='getPCA-1.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'>data</span>(<span class='st'>"mouseBrainSubsetSCE"</span>)
+<span class='fu'>plotPCA</span>(<span class='no'>mouseBrainSubsetSCE</span>, <span class='kw'>colorBy</span> <span class='kw'>=</span> <span class='st'>"level1class"</span>,
+        <span class='kw'>reducedDimName</span> <span class='kw'>=</span> <span class='st'>"PCA_counts"</span>)</div><div class='img'><img src='getPCA-2.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'>data</span>(<span class='st'>"mouseBrainSubsetSCE"</span>)
+<span class='fu'>plotTSNE</span>(<span class='no'>mouseBrainSubsetSCE</span>, <span class='kw'>colorBy</span> <span class='kw'>=</span> <span class='st'>"level1class"</span>,
+         <span class='kw'>reducedDimName</span> <span class='kw'>=</span> <span class='st'>"TSNE_counts"</span>)</div><div class='img'><img src='getPCA-3.png' alt='' width='700' height='433' /></div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -194,6 +324,8 @@ updated</p>
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#functions">Functions</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>

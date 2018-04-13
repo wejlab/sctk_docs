@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Create a heatmap for differential expression analysis — scDiffEx • singleCellTK</title>
+<title>Perform differential expression analysis on a SCtkExperiment object — scDiffEx • singleCellTK</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -25,9 +25,9 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-<meta property="og:title" content="Create a heatmap for differential expression analysis — scDiffEx" />
+<meta property="og:title" content="Perform differential expression analysis on a SCtkExperiment object — scDiffEx" />
 
-<meta property="og:description" content="Create a heatmap for differential expression analysis" />
+<meta property="og:description" content="Perform differential expression analysis on a SCtkExperiment object" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -57,7 +57,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">singleCellTK</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.4</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.8</span>
       </span>
     </div>
 
@@ -135,39 +135,51 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Create a heatmap for differential expression analysis</h1>
+    <h1>Perform differential expression analysis on a SCtkExperiment object</h1>
     
     </div>
 
     
-    <p>Create a heatmap for differential expression analysis</p>
+    <p>Perform differential expression analysis on a SCtkExperiment object</p>
     
 
-    <pre class="usage"><span class='fu'>scDiffEx</span>(<span class='no'>inSCESet</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"logcounts"</span>, <span class='no'>condition</span>, <span class='kw'>covariates</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+    <pre class="usage"><span class='fu'>scDiffEx</span>(<span class='no'>inSCE</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"logcounts"</span>, <span class='no'>condition</span>, <span class='kw'>covariates</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>significance</span> <span class='kw'>=</span> <span class='fl'>0.05</span>, <span class='kw'>ntop</span> <span class='kw'>=</span> <span class='fl'>500</span>, <span class='kw'>usesig</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='no'>diffexmethod</span>,
   <span class='kw'>levelofinterest</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>analysisType</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>controlLevel</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>adjust</span> <span class='kw'>=</span> <span class='st'>"fdr"</span>)
+
+<span class='fu'>scDiffExDESeq2</span>(<span class='no'>inSCE</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"counts"</span>, <span class='no'>condition</span>,
+  <span class='kw'>analysisType</span> <span class='kw'>=</span> <span class='st'>"biomarker"</span>, <span class='kw'>levelofinterest</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>controlLevel</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>covariates</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>adjust</span> <span class='kw'>=</span> <span class='st'>"fdr"</span>)
+
+<span class='fu'>scDiffExlimma</span>(<span class='no'>inSCE</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"logcounts"</span>, <span class='no'>condition</span>,
+  <span class='kw'>analysisType</span> <span class='kw'>=</span> <span class='st'>"biomarker"</span>, <span class='kw'>levelofinterest</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>covariates</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>adjust</span> <span class='kw'>=</span> <span class='st'>"fdr"</span>)
+
+<span class='fu'>scDiffExANOVA</span>(<span class='no'>inSCE</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"logcounts"</span>, <span class='no'>condition</span>, <span class='kw'>covariates</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>adjust</span> <span class='kw'>=</span> <span class='st'>"fdr"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>inSCESet</th>
-      <td><p>Input SCtkExperiment object. Required</p></td>
+      <th>inSCE</th>
+      <td><p>Input SCtkExperiment object. Requireds</p></td>
     </tr>
     <tr>
       <th>useAssay</th>
-      <td><p>Indicate which assay to use. Default is "logcounts"</p></td>
+      <td><p>Indicate which assay to use. Default is "logcounts" for limma
+and ANOVA, and "counts" for DESeq2.</p></td>
     </tr>
     <tr>
       <th>condition</th>
       <td><p>The name of the condition to use for differential
-expression. Required</p></td>
+expression. Must be a name of a column from colData that contains at least
+two labels. Required</p></td>
     </tr>
     <tr>
       <th>covariates</th>
-      <td><p>Additional covariates to add to the model. Currently only
-supported for ANOVA. Default is NULL</p></td>
+      <td><p>Additional covariates to add to the model. Default is NULL</p></td>
     </tr>
     <tr>
       <th>significance</th>
@@ -193,14 +205,19 @@ analysis. Available options are DESeq2, limma, and ANOVA. Required</p></td>
       <th>levelofinterest</th>
       <td><p>If the condition has more than two labels,
 levelofinterest should contain one factor for condition. The differential
-expression results will compare the factor in levelofinterest to all other
-data.</p></td>
+expression results will use levelofinterest depending on the analysType
+parameter.</p></td>
     </tr>
     <tr>
       <th>analysisType</th>
       <td><p>For conditions with more than two levels, limma and
-DESeq2 can be run using multiple methods. See scDiffExlimma() and
-scDiffExDESeq2() for details.</p></td>
+DESeq2 can be run using multiple methods. For DESeq2, choose "biomarker" to
+compare the levelofinterest to all other samples. Choose "contrast" to
+compare the levelofinterest to a controlLevel (see below). Choose
+"fullreduced" to perform DESeq2 in LRT mode. For limma, Choose "biomarker" to
+compare the levelofinterest to all other samples. Choose "coef" to select a
+coefficient of interset with levelofinterest (see below). Choose "allcoef" to
+test if any coefficient is different from zero.</p></td>
     </tr>
     <tr>
       <th>controlLevel</th>
@@ -216,7 +233,15 @@ The default is fdr.</p></td>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A list of differentially expressed genes.</p>
+    <p>A data frame of gene names and adjusted p-values</p>
+    
+    <h2 class="hasAnchor" id="functions"><a class="anchor" href="#functions"></a>Functions</h2>
+
+    <ul>
+<li><p><code>scDiffExDESeq2</code>: Perform differential expression analysis with DESeq2</p></li>
+<li><p><code>scDiffExlimma</code>: Perform differential expression analysis with limma</p></li>
+<li><p><code>scDiffExANOVA</code>: Perform differential expression analysis with ANOVA</p></li>
+</ul>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
@@ -225,7 +250,20 @@ The default is fdr.</p></td>
                 <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"logcounts"</span>,
                 <span class='st'>"level1class"</span>,
                 <span class='kw'>diffexmethod</span> <span class='kw'>=</span> <span class='st'>"limma"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: Zero sample variances detected, have been offset away from zero</span></div><div class='output co'>#&gt; <span class='message'>Removing intercept from test coefficients</span></div><div class='input'>
-</div></pre>
+<span class='fu'>data</span>(<span class='st'>"mouseBrainSubsetSCE"</span>)
+<span class='co'>#sort first 100 expressed genes</span>
+<span class='no'>ord</span> <span class='kw'>&lt;-</span> <span class='fu'>rownames</span>(<span class='no'>mouseBrainSubsetSCE</span>)[
+  <span class='fu'>order</span>(<span class='fu'>rowSums</span>(<span class='fu'>assay</span>(<span class='no'>mouseBrainSubsetSCE</span>, <span class='st'>"counts"</span>)),
+        <span class='kw'>decreasing</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)][<span class='fl'>1</span>:<span class='fl'>100</span>]
+<span class='co'>#subset to those first 100 genes</span>
+<span class='no'>subset</span> <span class='kw'>&lt;-</span> <span class='no'>mouseBrainSubsetSCE</span>[<span class='no'>ord</span>, ]
+<span class='no'>res</span> <span class='kw'>&lt;-</span> <span class='fu'>scDiffExDESeq2</span>(<span class='no'>subset</span>, <span class='kw'>condition</span> <span class='kw'>=</span> <span class='st'>"level1class"</span>)</div><div class='output co'>#&gt; <span class='message'>estimating size factors</span></div><div class='output co'>#&gt; <span class='message'>estimating dispersions</span></div><div class='output co'>#&gt; <span class='message'>gene-wise dispersion estimates</span></div><div class='output co'>#&gt; <span class='message'>mean-dispersion relationship</span></div><div class='output co'>#&gt; <span class='message'>-- note: fitType='parametric', but the dispersion trend was not well captured by the</span>
+#&gt; <span class='message'>   function: y = a/x + b, and a local regression fit was automatically substituted.</span>
+#&gt; <span class='message'>   specify fitType='local' or 'mean' to avoid this message next time.</span></div><div class='output co'>#&gt; <span class='message'>final dispersion estimates</span></div><div class='output co'>#&gt; <span class='message'>fitting model and testing</span></div><div class='input'>
+<span class='fu'>data</span>(<span class='st'>"mouseBrainSubsetSCE"</span>)
+<span class='no'>res</span> <span class='kw'>&lt;-</span> <span class='fu'>scDiffExlimma</span>(<span class='no'>mouseBrainSubsetSCE</span>, <span class='kw'>condition</span> <span class='kw'>=</span> <span class='st'>"level1class"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: Zero sample variances detected, have been offset away from zero</span></div><div class='output co'>#&gt; <span class='message'>Removing intercept from test coefficients</span></div><div class='input'>
+<span class='fu'>data</span>(<span class='st'>"mouseBrainSubsetSCE"</span>)
+<span class='no'>res</span> <span class='kw'>&lt;-</span> <span class='fu'>scDiffExANOVA</span>(<span class='no'>mouseBrainSubsetSCE</span>, <span class='kw'>condition</span> <span class='kw'>=</span> <span class='st'>"level1class"</span>)</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -233,6 +271,8 @@ The default is fdr.</p></td>
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#functions">Functions</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>

@@ -29,7 +29,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">singleCellTK</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.4</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.8</span>
       </span>
     </div>
 
@@ -132,21 +132,21 @@
 <a href="#downsample-depth" class="anchor"></a>Downsample Depth</h2>
 <p>In the ‘Sequencing Depth’ tab, you can see how the statistical power of simulated experiments changes as the number of sequencing reads is changed. You can specify the minimum and maximum number of reads to simulate, select whether those parameters are total reads per experiment or reads per cell (default is total reads/experiment), and choose a condition for differential expression assesment from your sample annotations. The chosen condition for differential expression should be a discrete variable. For expediency, differential expression is performed using either a t-test if exactly two groups are detected for the chosen condition, or an ANOVA if more than two groups are detected. The toolkit will only run the simulations once you click the ‘Run Subsampler’ button.</p>
 <p>Simulated datasets will not be permanently saved. Instead, summary statistics will be saved for each simulation, and plotted in the “Genes Detected”, “Minimum Detectable Effect Size”, and “Number of Diffex Genes” tabs. Solid lines represent median values at each simulated sequencing depth, wile dotted lines represent the upper and lower quartiles.</p>
-<p><img src="img/samplesize_01.png" width="400"></p>
+<p><img src="https://imgur.com/UdCCKbl.png" width="400"></p>
 </div>
 <div id="downsample-cells" class="section level2">
 <h2 class="hasAnchor">
 <a href="#downsample-cells" class="anchor"></a>Downsample Cells</h2>
 <p>In the ‘Number of Cells’ tab, you can see how the statistical power of simulated experiments changes as the number of cells is changed while keeping the total number of reads for the experiment constant. You can specify the minimum and maximum number of cells to simulate, specify how many total reads each simulated counts matrix should have, and choose a condition for differential expression assesment from your sample annotations. The chosen condition for differential expression should be a discrete variable. For expediency, differential expression is performed using either a t-test if exactly two groups are detected for the chosen condition, or an ANOVA if more than two groups are detected. The toolkit will only run the simulations once you click the ‘Run Subsampler’ button.</p>
 <p>Simulated datasets will not be permanently saved. Instead, summary statistics will be saved for each simulation, and plotted in the “Genes Detected”, “Minimum Detectable Effect Size”, and “Number of Diffex Genes” tabs. Solid lines represent median values at each simulated sequencing depth, wile dotted lines represent the upper and lower quartiles.</p>
-<p><img src="img/samplesize_02.png" width="400"></p>
+<p><img src="https://imgur.com/OpBpEaJ.png" width="400"></p>
 </div>
 <div id="snapshot" class="section level2">
 <h2 class="hasAnchor">
 <a href="#snapshot" class="anchor"></a>Snapshot</h2>
 <p>In the ‘Snapshot’ tab, you can simultaneously specify both the number of cells and the total number of reads to be produced in each simulated experiment. Rather than giving you an impression of how statistical power would be affected by a variable experimental design, this tab shows a more detailed assesment of a single proposed design.</p>
 <p>In the snapshot plot, we show a scatterplot of all genes detected in your input dataset. The x-axis represents the empirical cohen’s-d effect size for genes; cohen’s-d is defined as the mean expression level for a gene in condition A minus the mean expression level in condition B, divided by the pooled standard deviation in expression of that gene across all cells. If your chosen condition of interest has more than two groups, the largest two groups will be compared. The y-axis shows the portion of simulated datasets in which a gene was found to be significantly differentially expressed between groups. This should be interpreted as an estimate of statistical power.</p>
-<p><img src="img/samplesize_03.png" width="400"></p>
+<p><img src="https://imgur.com/lTNwWDL.png" width="400"></p>
 </div>
 </div>
 <div id="session-info" class="section level1 unnumbered">

@@ -63,7 +63,7 @@ multiple conditions, respectively." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">singleCellTK</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.4</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.8</span>
       </span>
     </div>
 
@@ -153,7 +153,11 @@ tests, picking either t-tests or ANOVA for data with only two conditions or
 multiple conditions, respectively.</p>
     
 
-    <pre class="usage"><span class='fu'>subDiffEx</span>(<span class='no'>tempData</span>)</pre>
+    <pre class="usage"><span class='fu'>subDiffEx</span>(<span class='no'>tempData</span>)
+
+<span class='fu'>subDiffExttest</span>(<span class='no'>countMatrix</span>, <span class='no'>class.labels</span>, <span class='kw'>test.type</span> <span class='kw'>=</span> <span class='st'>"t.equalvar"</span>)
+
+<span class='fu'>subDiffExANOVA</span>(<span class='no'>countMatrix</span>, <span class='no'>condition</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -163,12 +167,46 @@ multiple conditions, respectively.</p>
       <td><p>Matrix. The output of generateSimulatedData(), where the
 first row contains condition labels.</p></td>
     </tr>
+    <tr>
+      <th>countMatrix</th>
+      <td><p>Matrix. A simulated counts matrix, sans labels.</p></td>
+    </tr>
+    <tr>
+      <th>class.labels</th>
+      <td><p>Factor. The condition labels for the simulated cells.
+Will be coerced into 1's and 0's.</p></td>
+    </tr>
+    <tr>
+      <th>test.type</th>
+      <td><p>Type of test to perform. The default is t.equalvar.</p></td>
+    </tr>
+    <tr>
+      <th>condition</th>
+      <td><p>Factor. The condition labels for the simulated cells.</p></td>
+    </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A vector of fdr-adjusted p-values for all genes. Nonviable results
-(such as for genes with 0 counts in a simulated dataset) are coerced to 1.</p>
+    <p>subDiffEx(): A vector of fdr-adjusted p-values for all genes.
+Nonviable results (such as for genes with 0 counts in a simulated dataset)
+are coerced to 1.</p>
+<p>subDiffExttest(): A vector of fdr-adjusted p-values for all genes.
+Nonviable results (such as for genes with 0 counts in a simulated dataset)
+are coerced to 1.</p>
+<p>subDiffExANOVA(): A vector of fdr-adjusted p-values for all genes.
+Nonviable results (such as for genes with 0 counts in a simulated dataset)
+are coerced to 1.</p>
+    
+    <h2 class="hasAnchor" id="functions"><a class="anchor" href="#functions"></a>Functions</h2>
+
+    <ul>
+<li><p><code>subDiffEx</code>: Get PCA components for a SCtkE object</p></li>
+<li><p><code>subDiffExttest</code>: Runs t-tests on all genes in a simulated dataset with 2
+conditions, and adjusts for FDR.</p></li>
+<li><p><code>subDiffExANOVA</code>: Runs ANOVA on all genes in a simulated dataset with
+more than 2 conditions, and adjusts for FDR.</p></li>
+</ul>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
@@ -177,7 +215,35 @@ first row contains condition labels.</p></td>
          <span class='kw'>totalReads</span> <span class='kw'>=</span> <span class='fl'>1000</span>, <span class='kw'>cells</span><span class='kw'>=</span><span class='fl'>10</span>,
          <span class='kw'>originalData</span> <span class='kw'>=</span> <span class='fu'>assay</span>(<span class='no'>mouseBrainSubsetSCE</span>, <span class='st'>"counts"</span>),
          <span class='kw'>realLabels</span> <span class='kw'>=</span> <span class='fu'>colData</span>(<span class='no'>mouseBrainSubsetSCE</span>)[, <span class='st'>"level1class"</span>])
-<span class='no'>tempSigDiff</span> <span class='kw'>&lt;-</span> <span class='fu'>subDiffEx</span>(<span class='no'>res</span>)</div></pre>
+<span class='no'>tempSigDiff</span> <span class='kw'>&lt;-</span> <span class='fu'>subDiffEx</span>(<span class='no'>res</span>)
+
+<span class='fu'>data</span>(<span class='st'>"mouseBrainSubsetSCE"</span>)
+<span class='co'>#sort first 100 expressed genes</span>
+<span class='no'>ord</span> <span class='kw'>&lt;-</span> <span class='fu'>rownames</span>(<span class='no'>mouseBrainSubsetSCE</span>)[
+  <span class='fu'>order</span>(<span class='fu'>rowSums</span>(<span class='fu'>assay</span>(<span class='no'>mouseBrainSubsetSCE</span>, <span class='st'>"counts"</span>)),
+        <span class='kw'>decreasing</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)][<span class='fl'>1</span>:<span class='fl'>100</span>]
+<span class='co'>#subset to those first 100 genes</span>
+<span class='no'>subset</span> <span class='kw'>&lt;-</span> <span class='no'>mouseBrainSubsetSCE</span>[<span class='no'>ord</span>, ]
+<span class='no'>res</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='generateSimulatedData.html'>generateSimulatedData</a></span>(<span class='kw'>totalReads</span> <span class='kw'>=</span> <span class='fl'>1000</span>, <span class='kw'>cells</span><span class='kw'>=</span><span class='fl'>10</span>,
+                             <span class='kw'>originalData</span> <span class='kw'>=</span> <span class='fu'>assay</span>(<span class='no'>subset</span>, <span class='st'>"counts"</span>),
+                             <span class='kw'>realLabels</span> <span class='kw'>=</span> <span class='fu'>colData</span>(<span class='no'>subset</span>)[, <span class='st'>"level1class"</span>])
+<span class='no'>realLabels</span> <span class='kw'>&lt;-</span> <span class='no'>res</span>[<span class='fl'>1</span>, ]
+<span class='no'>output</span> <span class='kw'>&lt;-</span> <span class='no'>res</span>[-<span class='fl'>1</span>, ]
+<span class='no'>fdr</span> <span class='kw'>&lt;-</span> <span class='fu'>subDiffExttest</span>(<span class='no'>output</span>, <span class='no'>realLabels</span>)
+
+<span class='fu'>data</span>(<span class='st'>"mouseBrainSubsetSCE"</span>)
+<span class='co'>#sort first 100 expressed genes</span>
+<span class='no'>ord</span> <span class='kw'>&lt;-</span> <span class='fu'>rownames</span>(<span class='no'>mouseBrainSubsetSCE</span>)[
+  <span class='fu'>order</span>(<span class='fu'>rowSums</span>(<span class='fu'>assay</span>(<span class='no'>mouseBrainSubsetSCE</span>, <span class='st'>"counts"</span>)),
+        <span class='kw'>decreasing</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)][<span class='fl'>1</span>:<span class='fl'>100</span>]
+<span class='co'># subset to those first 100 genes</span>
+<span class='no'>subset</span> <span class='kw'>&lt;-</span> <span class='no'>mouseBrainSubsetSCE</span>[<span class='no'>ord</span>, ]
+<span class='no'>res</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='generateSimulatedData.html'>generateSimulatedData</a></span>(<span class='kw'>totalReads</span> <span class='kw'>=</span> <span class='fl'>1000</span>, <span class='kw'>cells</span><span class='kw'>=</span><span class='fl'>10</span>,
+                             <span class='kw'>originalData</span> <span class='kw'>=</span> <span class='fu'>assay</span>(<span class='no'>subset</span>, <span class='st'>"counts"</span>),
+                             <span class='kw'>realLabels</span> <span class='kw'>=</span> <span class='fu'>colData</span>(<span class='no'>subset</span>)[, <span class='st'>"level2class"</span>])
+<span class='no'>realLabels</span> <span class='kw'>&lt;-</span> <span class='no'>res</span>[<span class='fl'>1</span>, ]
+<span class='no'>output</span> <span class='kw'>&lt;-</span> <span class='no'>res</span>[-<span class='fl'>1</span>, ]
+<span class='no'>fdr</span> <span class='kw'>&lt;-</span> <span class='fu'>subDiffExANOVA</span>(<span class='no'>output</span>, <span class='no'>realLabels</span>)</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -185,6 +251,8 @@ first row contains condition labels.</p></td>
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#functions">Functions</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>

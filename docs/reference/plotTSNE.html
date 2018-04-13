@@ -57,7 +57,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">singleCellTK</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.4</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.5</span>
       </span>
     </div>
 
@@ -143,15 +143,15 @@
     <p>Use this function to plot t-SNE results</p>
     
 
-    <pre class="usage"><span class='fu'>plotTSNE</span>(<span class='no'>countData</span>, <span class='kw'>colorBy</span> <span class='kw'>=</span> <span class='st'>"No Color"</span>, <span class='kw'>shape</span> <span class='kw'>=</span> <span class='st'>"No Shape"</span>,
+    <pre class="usage"><span class='fu'>plotTSNE</span>(<span class='no'>inSCE</span>, <span class='kw'>colorBy</span> <span class='kw'>=</span> <span class='st'>"No Color"</span>, <span class='kw'>shape</span> <span class='kw'>=</span> <span class='st'>"No Shape"</span>,
   <span class='kw'>reducedDimName</span> <span class='kw'>=</span> <span class='st'>"TSNE"</span>, <span class='kw'>runTSNE</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"logcounts"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>countData</th>
-      <td><p>A SCE object</p></td>
+      <th>inSCE</th>
+      <td><p>Input SCtkExperiment object. Required</p></td>
     </tr>
     <tr>
       <th>colorBy</th>

@@ -57,7 +57,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">singleCellTK</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.4</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.8</span>
       </span>
     </div>
 
@@ -143,14 +143,14 @@
     <p>Creates a table of summary metrics from an input SCtkExperiment.</p>
     
 
-    <pre class="usage"><span class='fu'>summarizeTable</span>(<span class='no'>indata</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"counts"</span>, <span class='kw'>expressionCutoff</span> <span class='kw'>=</span> <span class='fl'>1700</span>)</pre>
+    <pre class="usage"><span class='fu'>summarizeTable</span>(<span class='no'>inSCE</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"counts"</span>, <span class='kw'>expressionCutoff</span> <span class='kw'>=</span> <span class='fl'>1700</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>indata</th>
-      <td><p>Input SCtkExperiment</p></td>
+      <th>inSCE</th>
+      <td><p>Input SCtkExperiment object. Required</p></td>
     </tr>
     <tr>
       <th>useAssay</th>

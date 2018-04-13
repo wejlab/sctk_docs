@@ -27,7 +27,7 @@
 <script src="../pkgdown.js"></script>
 <meta property="og:title" content="MAST — MAST" />
 
-<meta property="og:description" content="Run MAST analysis on a SCESet object." />
+<meta property="og:description" content="Run and visualize MAST analysis on a SCtkExperiment object." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -57,7 +57,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">singleCellTK</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.4</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.8</span>
       </span>
     </div>
 
@@ -140,19 +140,27 @@
     </div>
 
     
-    <p>Run MAST analysis on a SCESet object.</p>
+    <p>Run and visualize MAST analysis on a SCtkExperiment object.</p>
     
 
-    <pre class="usage"><span class='fu'>MAST</span>(<span class='no'>SCEdata</span>, <span class='kw'>condition</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>interest.level</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>freqExpressed</span> <span class='kw'>=</span> <span class='fl'>0.1</span>, <span class='kw'>fcThreshold</span> <span class='kw'>=</span> <span class='fu'>log2</span>(<span class='fl'>1.5</span>), <span class='kw'>p.value</span> <span class='kw'>=</span> <span class='fl'>0.05</span>,
-  <span class='kw'>useThresh</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"logcounts"</span>)</pre>
+    <pre class="usage"><span class='fu'>MAST</span>(<span class='no'>inSCE</span>, <span class='kw'>condition</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>interest.level</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>freqExpressed</span> <span class='kw'>=</span> <span class='fl'>0.1</span>,
+  <span class='kw'>fcThreshold</span> <span class='kw'>=</span> <span class='fu'>log2</span>(<span class='fl'>1.5</span>), <span class='kw'>p.value</span> <span class='kw'>=</span> <span class='fl'>0.05</span>, <span class='kw'>useThresh</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"logcounts"</span>)
+
+<span class='fu'>thresholdGenes</span>(<span class='no'>inSCE</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"logcounts"</span>)
+
+<span class='fu'>MASTviolin</span>(<span class='no'>inSCE</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"logcounts"</span>, <span class='no'>fcHurdleSig</span>, <span class='kw'>samplesize</span> <span class='kw'>=</span> <span class='fl'>49</span>,
+  <span class='kw'>threshP</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>condition</span>)
+
+<span class='fu'>MASTregression</span>(<span class='no'>inSCE</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"logcounts"</span>, <span class='no'>fcHurdleSig</span>, <span class='kw'>samplesize</span> <span class='kw'>=</span> <span class='fl'>49</span>,
+  <span class='kw'>threshP</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>condition</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>SCEdata</th>
-      <td><p>SCESet object</p></td>
+      <th>inSCE</th>
+      <td><p>Input SCtkExperiment object. Required</p></td>
     </tr>
     <tr>
       <th>condition</th>
@@ -186,13 +194,47 @@ FALSE.</p></td>
       <td><p>The assay to use for the MAST calculations. The default is
 "logcounts"</p></td>
     </tr>
+    <tr>
+      <th>fcHurdleSig</th>
+      <td><p>The filtered result from hurdle model</p></td>
+    </tr>
+    <tr>
+      <th>samplesize</th>
+      <td><p>The number of most significant genes</p></td>
+    </tr>
+    <tr>
+      <th>threshP</th>
+      <td><p>Plot threshold values from adaptive thresholding. Default is
+FALSE</p></td>
+    </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A data.frame of differentially expressed genes with p-values.</p>
+    <p>MAST(): A data.frame of differentially expressed genes with p-values.</p>
+<p>thresholdGenes(): list of thresholded counts (on natural scale),
+thresholds, bins, densities estimated on each bin, and the original data from
+MAST::thresholdSCRNACountMatrix</p>
+<p>MASTviolin(): A ggplot object of MAST violin plots.</p>
+<p>MASTregression(): A ggplot object of MAST linear regression plots.</p>
+    
+    <h2 class="hasAnchor" id="functions"><a class="anchor" href="#functions"></a>Functions</h2>
+
+    <ul>
+<li><p><code>MAST</code>: Run MAST analysis.</p></li>
+<li><p><code>thresholdGenes</code>: Identify adaptive thresholds</p></li>
+<li><p><code>MASTviolin</code>: Visualize MAST results using violin plots</p></li>
+<li><p><code>MASTregression</code>: Visualize MAST results using linear model plots</p></li>
+</ul>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>data</span>(<span class='st'>"mouseBrainSubsetSCE"</span>)
+<span class='no'>res</span> <span class='kw'>&lt;-</span> <span class='fu'>thresholdGenes</span>(<span class='no'>mouseBrainSubsetSCE</span>)</div><div class='output co'>#&gt; <span class='message'>`fData` has no primerid.  I'll make something up.</span></div><div class='output co'>#&gt; <span class='message'>`cData` has no wellKey.  I'll make something up.</span></div><div class='output co'>#&gt;    (1,1.17] (1.17,1.35] (1.35,1.55] (1.55,1.76] (1.76,1.99] (1.99,2.24] 
+#&gt;    1.302357    1.302357    1.302357    1.302357    1.302357    1.302357 
+#&gt; (2.24,2.51]  (2.51,2.8]  (2.8,3.12] (3.12,3.47] (3.47,3.84] (3.84,8.98] 
+#&gt;    1.302357    1.302357    1.302357    1.302357    1.302357    1.828119 </div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -200,7 +242,11 @@ FALSE.</p></td>
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-          </ul>
+
+      <li><a href="#functions">Functions</a></li>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

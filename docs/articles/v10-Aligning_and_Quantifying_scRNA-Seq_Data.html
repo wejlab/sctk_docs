@@ -29,7 +29,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">singleCellTK</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.4</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.8</span>
       </span>
     </div>
 
@@ -177,7 +177,7 @@
 <div id="parallelization" class="section level4">
 <h4 class="hasAnchor">
 <a href="#parallelization" class="anchor"></a>Parallelization</h4>
-<p>While setting the number of threads in the <code><a href="../reference/alignSingleCellData.html">alignSingleCellData()</a></code> function will increase the speed of each individual alignment, the function will align each sample sequentially. To save time, you may want to perform alignment and feature counting on each file in a parallel computing environment and combine the samples to create an SCtkExperiment object. The <code><a href="../reference/alignSingleCellData.html">alignSingleCellData()</a></code> function can be run on an individual file. Once individual sample objects have been created, combine them using the <code>mergeSCESet()</code> function.</p>
+<p>While setting the number of threads in the <code><a href="../reference/alignSingleCellData.html">alignSingleCellData()</a></code> function will increase the speed of each individual alignment, the function will align each sample sequentially. To save time, you may want to perform alignment and feature counting on each file in a parallel computing environment and combine the samples to create an SCtkExperiment object. The <code><a href="../reference/alignSingleCellData.html">alignSingleCellData()</a></code> function can be run on an individual file. Once individual sample objects have been created, combine them into a single SCtkExperiment object.</p>
 </div>
 </div>
 </div>

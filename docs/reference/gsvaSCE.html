@@ -27,7 +27,7 @@
 <script src="../pkgdown.js"></script>
 <meta property="og:title" content="gsvaSCE — gsvaSCE" />
 
-<meta property="og:description" content="Run GSVA analysis on a SCESet object." />
+<meta property="og:description" content="Run GSVA analysis on a SCtkExperiment object." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -57,7 +57,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">singleCellTK</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.4</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.8</span>
       </span>
     </div>
 
@@ -140,22 +140,23 @@
     </div>
 
     
-    <p>Run GSVA analysis on a SCESet object.</p>
+    <p>Run GSVA analysis on a SCtkExperiment object.</p>
     
 
-    <pre class="usage"><span class='fu'>gsvaSCE</span>(<span class='no'>SCEdata</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"logcounts"</span>, <span class='no'>pathwaySource</span>, <span class='no'>pathwayNames</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>gsvaSCE</span>(<span class='no'>inSCE</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"logcounts"</span>, <span class='no'>pathwaySource</span>, <span class='no'>pathwayNames</span>, <span class='no'>...</span>)
+
+<span class='fu'>gsvaPlot</span>(<span class='no'>inSCE</span>, <span class='no'>gsvaData</span>, <span class='no'>plotType</span>, <span class='kw'>condition</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>SCEdata</th>
-      <td><p>SCESet object</p></td>
+      <th>inSCE</th>
+      <td><p>Input SCtkExperiment object. Required</p></td>
     </tr>
     <tr>
       <th>useAssay</th>
-      <td><p>The assay to use for the MAST calculations. The default is
-"logcounts"</p></td>
+      <td><p>Indicate which assay to use. The default is "logcounts"</p></td>
     </tr>
     <tr>
       <th>pathwaySource</th>
@@ -171,13 +172,34 @@ parameter.</p></td>
     </tr>
     <tr>
       <th>...</th>
-      <td><p>Parameters to pass to gsva</p></td>
+      <td><p>Parameters to pass to gsva()</p></td>
+    </tr>
+    <tr>
+      <th>gsvaData</th>
+      <td><p>GSVA data to plot. Required.</p></td>
+    </tr>
+    <tr>
+      <th>plotType</th>
+      <td><p>The type of plot to use, "Violin" or "Heatmap". Required.</p></td>
+    </tr>
+    <tr>
+      <th>condition</th>
+      <td><p>The condition(s) to use for the Violin plot, or the
+condition(s) to add as color bars above the Heatmap. Required for Violin,
+optional for Heatmap.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A data.frame of pathway activity scores from GSVA.</p>
+    <p>gsvaSCE(): A data.frame of pathway activity scores from GSVA.</p>
+<p>gsvaPlot(): The requested plot of the GSVA results.</p>
+    
+    <h2 class="hasAnchor" id="functions"><a class="anchor" href="#functions"></a>Functions</h2>
+
+    <ul>
+<li><p><code>gsvaPlot</code>: Plot GSVA results.</p></li>
+</ul>
     
 
   </div>
@@ -187,6 +209,8 @@ parameter.</p></td>
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#functions">Functions</a></li>
           </ul>
 
   </div>

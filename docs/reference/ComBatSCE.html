@@ -57,7 +57,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">singleCellTK</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.4</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.8</span>
       </span>
     </div>
 
@@ -143,15 +143,15 @@
     <p>Run ComBat on a SCtkExperiment object</p>
     
 
-    <pre class="usage"><span class='fu'>ComBatSCE</span>(<span class='no'>SCEdata</span>, <span class='no'>batch</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"logcounts"</span>, <span class='kw'>par.prior</span> <span class='kw'>=</span> <span class='st'>"Parametric"</span>,
+    <pre class="usage"><span class='fu'>ComBatSCE</span>(<span class='no'>inSCE</span>, <span class='no'>batch</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"logcounts"</span>, <span class='kw'>par.prior</span> <span class='kw'>=</span> <span class='st'>"Parametric"</span>,
   <span class='kw'>covariates</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>mean.only</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>ref.batch</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>SCEdata</th>
-      <td><p>SCtkExperiment object. Required</p></td>
+      <th>inSCE</th>
+      <td><p>Input SCtkExperiment object. Required</p></td>
     </tr>
     <tr>
       <th>batch</th>
@@ -201,20 +201,20 @@ SCtkExperiment with assay()</p>
   <span class='no'>mod</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>stats</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/stats/topics/model.matrix'>model.matrix</a></span>(~<span class='fu'>as.factor</span>(<span class='no'>cancer</span>), <span class='kw'>data</span> <span class='kw'>=</span> <span class='fu'>colData</span>(<span class='no'>dat</span>))
 
   <span class='co'># parametric adjustment</span>
-  <span class='no'>combat_edata1</span> <span class='kw'>&lt;-</span> <span class='fu'>ComBatSCE</span>(<span class='kw'>SCEdata</span> <span class='kw'>=</span> <span class='no'>dat</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"exprs"</span>,
-                              <span class='kw'>batch</span> <span class='kw'>=</span> <span class='st'>"batch"</span>, <span class='kw'>covariates</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+  <span class='no'>combat_edata1</span> <span class='kw'>&lt;-</span> <span class='fu'>ComBatSCE</span>(<span class='kw'>inSCE</span> <span class='kw'>=</span> <span class='no'>dat</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"exprs"</span>,
+                             <span class='kw'>batch</span> <span class='kw'>=</span> <span class='st'>"batch"</span>, <span class='kw'>covariates</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
   <span class='fu'>assay</span>(<span class='no'>dat</span>, <span class='st'>"parametric_combat"</span>) <span class='kw'>&lt;-</span> <span class='no'>combat_edata1</span>
 
   <span class='co'># non-parametric adjustment, mean-only version</span>
-  <span class='no'>combat_edata2</span> <span class='kw'>&lt;-</span> <span class='fu'>ComBatSCE</span>(<span class='kw'>SCEdata</span> <span class='kw'>=</span> <span class='no'>dat</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"exprs"</span>,
-                              <span class='kw'>batch</span> <span class='kw'>=</span> <span class='st'>"batch"</span>, <span class='kw'>par.prior</span> <span class='kw'>=</span> <span class='st'>"Non-parametric"</span>,
-                              <span class='kw'>mean.only</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>covariates</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+  <span class='no'>combat_edata2</span> <span class='kw'>&lt;-</span> <span class='fu'>ComBatSCE</span>(<span class='kw'>inSCE</span> <span class='kw'>=</span> <span class='no'>dat</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"exprs"</span>,
+                             <span class='kw'>batch</span> <span class='kw'>=</span> <span class='st'>"batch"</span>, <span class='kw'>par.prior</span> <span class='kw'>=</span> <span class='st'>"Non-parametric"</span>,
+                             <span class='kw'>mean.only</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>covariates</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
   <span class='fu'>assay</span>(<span class='no'>dat</span>, <span class='st'>"nonparametric_combat_meanonly"</span>) <span class='kw'>&lt;-</span> <span class='no'>combat_edata2</span>
 
   <span class='co'># reference-batch version, with covariates</span>
-  <span class='no'>combat_edata3</span> <span class='kw'>&lt;-</span> <span class='fu'>ComBatSCE</span>(<span class='kw'>SCEdata</span> <span class='kw'>=</span> <span class='no'>dat</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"exprs"</span>,
-                              <span class='kw'>batch</span> <span class='kw'>=</span> <span class='st'>"batch"</span>, <span class='kw'>covariates</span> <span class='kw'>=</span> <span class='st'>"cancer"</span>,
-                              <span class='kw'>ref.batch</span> <span class='kw'>=</span> <span class='fl'>3</span>)
+  <span class='no'>combat_edata3</span> <span class='kw'>&lt;-</span> <span class='fu'>ComBatSCE</span>(<span class='kw'>inSCE</span> <span class='kw'>=</span> <span class='no'>dat</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"exprs"</span>,
+                             <span class='kw'>batch</span> <span class='kw'>=</span> <span class='st'>"batch"</span>, <span class='kw'>covariates</span> <span class='kw'>=</span> <span class='st'>"cancer"</span>,
+                             <span class='kw'>ref.batch</span> <span class='kw'>=</span> <span class='fl'>3</span>)
   <span class='fu'>assay</span>(<span class='no'>dat</span>, <span class='st'>"refbatch_combat_wcov"</span>) <span class='kw'>&lt;-</span> <span class='no'>combat_edata3</span>
   <span class='fu'>assays</span>(<span class='no'>dat</span>)
 }</div><div class='output co'>#&gt; <span class='message'>Found5batches</span></div><div class='output co'>#&gt; <span class='message'>Adjusting for0covariate(s) or covariate level(s)</span></div><div class='output co'>#&gt; Standardizing Data across genes</div><div class='output co'>#&gt; <span class='message'>Fitting L/S model and finding priors</span></div><div class='output co'>#&gt; <span class='message'>Finding parametric adjustments</span></div><div class='output co'>#&gt; <span class='message'>Adjusting the Data</span></div><div class='output co'>#&gt; <span class='message'>Using the 'mean only' version of ComBat</span></div><div class='output co'>#&gt; <span class='message'>Found5batches</span></div><div class='output co'>#&gt; <span class='message'>Adjusting for0covariate(s) or covariate level(s)</span></div><div class='output co'>#&gt; Standardizing Data across genes</div><div class='output co'>#&gt; <span class='message'>Fitting L/S model and finding priors</span></div><div class='output co'>#&gt; <span class='message'>Finding nonparametric adjustments</span></div><div class='output co'>#&gt; <span class='message'>Adjusting the Data</span></div><div class='output co'>#&gt; Using batch = 3 as a reference batch (this batch won't change)</div><div class='output co'>#&gt; <span class='message'>Found5batches</span></div><div class='output co'>#&gt; <span class='message'>Adjusting for2covariate(s) or covariate level(s)</span></div><div class='output co'>#&gt; Standardizing Data across genes</div><div class='output co'>#&gt; <span class='message'>Fitting L/S model and finding priors</span></div><div class='output co'>#&gt; <span class='message'>Finding parametric adjustments</span></div><div class='output co'>#&gt; <span class='message'>Adjusting the Data</span></div><div class='output co'>#&gt; List of length 5

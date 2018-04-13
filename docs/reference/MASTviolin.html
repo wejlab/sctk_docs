@@ -57,7 +57,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">singleCellTK</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.4</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.5</span>
       </span>
     </div>
 
@@ -143,15 +143,15 @@
     <p>Run MAST analysis on a SCtkExperiment object.</p>
     
 
-    <pre class="usage"><span class='fu'>MASTviolin</span>(<span class='no'>SCEdata</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"logcounts"</span>, <span class='no'>fcHurdleSig</span>, <span class='kw'>samplesize</span> <span class='kw'>=</span> <span class='fl'>49</span>,
+    <pre class="usage"><span class='fu'>MASTviolin</span>(<span class='no'>inSCE</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"logcounts"</span>, <span class='no'>fcHurdleSig</span>, <span class='kw'>samplesize</span> <span class='kw'>=</span> <span class='fl'>49</span>,
   <span class='kw'>threshP</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>variable</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>SCEdata</th>
-      <td><p>SCtkExperiment object</p></td>
+      <th>inSCE</th>
+      <td><p>Input SCtkExperiment object. Required</p></td>
     </tr>
     <tr>
       <th>useAssay</th>

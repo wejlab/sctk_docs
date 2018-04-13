@@ -54,7 +54,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">singleCellTK</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.4</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.8</span>
       </span>
     </div>
 
@@ -185,52 +185,22 @@
     </tbody><tbody>
       <tr>
         <th colspan="2">
-          <h2 id="section-dimensionality-reduction-and-filtering" class="hasAnchor"><a href="#section-dimensionality-reduction-and-filtering" class="anchor"></a>Dimensionality Reduction and Filtering</h2>
+          <h2 id="section-dimensionality-reduction-and-clustering" class="hasAnchor"><a href="#section-dimensionality-reduction-and-clustering" class="anchor"></a>Dimensionality Reduction and Clustering</h2>
           <p class="section-desc"></p>
         </th>
       </tr>
       <tr>
         <!--  -->
         <td>
-          <p><code><a href="getPCA.html">getPCA()</a></code> </p>
+          <p><code><a href="getPCA.html">getBiomarker()</a></code> <code><a href="getPCA.html">getPCA()</a></code> <code><a href="getPCA.html">getTSNE()</a></code> <code><a href="getPCA.html">plotBiomarker()</a></code> <code><a href="getPCA.html">plotPCA()</a></code> <code><a href="getPCA.html">plotTSNE()</a></code> </p>
         </td>
-        <td><p>Get PCA components for a SCtkE object</p></td>
-      </tr><tr>
-        <!--  -->
-        <td>
-          <p><code><a href="getTSNE.html">getTSNE()</a></code> </p>
-        </td>
-        <td><p>Get t-SNE components for a SCE object</p></td>
-      </tr><tr>
-        <!--  -->
-        <td>
-          <p><code><a href="getBiomarker.html">getBiomarker()</a></code> </p>
-        </td>
-        <td><p>getBiomarker</p></td>
+        <td><p>Get and plot PCA and t-SCE components for a SCtkE object</p></td>
       </tr><tr>
         <!--  -->
         <td>
           <p><code><a href="getClusterInputData.html">getClusterInputData()</a></code> </p>
         </td>
         <td><p>Get data to use as input clustering algorithms</p></td>
-      </tr><tr>
-        <!--  -->
-        <td>
-          <p><code><a href="plotBiomarker.html">plotBiomarker()</a></code> </p>
-        </td>
-        <td><p>plotBiomarker</p></td>
-      </tr><tr>
-        <!--  -->
-        <td>
-          <p><code><a href="plotPCA.html">plotPCA()</a></code> </p>
-        </td>
-        <td><p>Plot PCA</p></td>
-      </tr><tr>
-        <!--  -->
-        <td>
-          <p><code><a href="plotTSNE.html">plotTSNE()</a></code> </p>
-        </td>
-        <td><p>Plot t-SNE</p></td>
       </tr>
     </tbody><tbody>
       <tr>
@@ -263,27 +233,9 @@ in the data</p></td>
       <tr>
         <!--  -->
         <td>
-          <p><code><a href="scDiffEx.html">scDiffEx()</a></code> </p>
+          <p><code><a href="scDiffEx.html">scDiffEx()</a></code> <code><a href="scDiffEx.html">scDiffExDESeq2()</a></code> <code><a href="scDiffEx.html">scDiffExlimma()</a></code> <code><a href="scDiffEx.html">scDiffExANOVA()</a></code> </p>
         </td>
-        <td><p>Create a heatmap for differential expression analysis</p></td>
-      </tr><tr>
-        <!--  -->
-        <td>
-          <p><code><a href="scDiffExANOVA.html">scDiffExANOVA()</a></code> </p>
-        </td>
-        <td><p>Perform ANOVA analysis</p></td>
-      </tr><tr>
-        <!--  -->
-        <td>
-          <p><code><a href="scDiffExDESeq2.html">scDiffExDESeq2()</a></code> </p>
-        </td>
-        <td><p>Perform differential expression analysis with DESeq2</p></td>
-      </tr><tr>
-        <!--  -->
-        <td>
-          <p><code><a href="scDiffExlimma.html">scDiffExlimma()</a></code> </p>
-        </td>
-        <td><p>Perform differential expression analysis with limma</p></td>
+        <td><p>Perform differential expression analysis on a SCtkExperiment object</p></td>
       </tr><tr>
         <!--  -->
         <td>
@@ -293,27 +245,9 @@ in the data</p></td>
       </tr><tr>
         <!--  -->
         <td>
-          <p><code><a href="MAST.html">MAST()</a></code> </p>
+          <p><code><a href="MAST.html">MAST()</a></code> <code><a href="MAST.html">thresholdGenes()</a></code> <code><a href="MAST.html">MASTviolin()</a></code> <code><a href="MAST.html">MASTregression()</a></code> </p>
         </td>
         <td><p>MAST</p></td>
-      </tr><tr>
-        <!--  -->
-        <td>
-          <p><code><a href="MASTregression.html">MASTregression()</a></code> </p>
-        </td>
-        <td><p>MAST linear model</p></td>
-      </tr><tr>
-        <!--  -->
-        <td>
-          <p><code><a href="MASTviolin.html">MASTviolin()</a></code> </p>
-        </td>
-        <td><p>MAST Violin</p></td>
-      </tr><tr>
-        <!--  -->
-        <td>
-          <p><code><a href="thresholdGenes.html">thresholdGenes()</a></code> </p>
-        </td>
-        <td><p>thresholdGenes</p></td>
       </tr>
     </tbody><tbody>
       <tr>
@@ -325,13 +259,7 @@ in the data</p></td>
       <tr>
         <!--  -->
         <td>
-          <p><code><a href="gsvaPlot.html">gsvaPlot()</a></code> </p>
-        </td>
-        <td><p>gsvaPlot</p></td>
-      </tr><tr>
-        <!--  -->
-        <td>
-          <p><code><a href="gsvaSCE.html">gsvaSCE()</a></code> </p>
+          <p><code><a href="gsvaSCE.html">gsvaSCE()</a></code> <code><a href="gsvaSCE.html">gsvaPlot()</a></code> </p>
         </td>
         <td><p>gsvaSCE</p></td>
       </tr>
@@ -379,25 +307,11 @@ matrix.</p></td>
       </tr><tr>
         <!--  -->
         <td>
-          <p><code><a href="subDiffEx.html">subDiffEx()</a></code> </p>
+          <p><code><a href="subDiffEx.html">subDiffEx()</a></code> <code><a href="subDiffEx.html">subDiffExttest()</a></code> <code><a href="subDiffEx.html">subDiffExANOVA()</a></code> </p>
         </td>
         <td><p>Passes the output of generateSimulatedData() to differential expression
 tests, picking either t-tests or ANOVA for data with only two conditions or
 multiple conditions, respectively.</p></td>
-      </tr><tr>
-        <!--  -->
-        <td>
-          <p><code><a href="subDiffExANOVA.html">subDiffExANOVA()</a></code> </p>
-        </td>
-        <td><p>Runs ANOVA on all genes in a simulated dataset with more than 2 conditions,
-and adjusts for FDR.</p></td>
-      </tr><tr>
-        <!--  -->
-        <td>
-          <p><code><a href="subDiffExttest.html">subDiffExttest()</a></code> </p>
-        </td>
-        <td><p>Runs t-tests on all genes in a simulated dataset with 2 conditions, and
-adjusts for FDR.</p></td>
       </tr>
     </tbody><tbody>
       <tr>
@@ -424,6 +338,12 @@ subset</p></td>
       <tr>
         <!--  -->
         <td>
+          <p><code><a href="createSCE.html">createSCE()</a></code> </p>
+        </td>
+        <td><p>Create a SCtkExperiment object</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
           <p><code><a href="SCtkExperiment-class.html">SCtkExperiment-class</a></code> </p>
         </td>
         <td><p>A lightweight S4 extension to the SingleCellExperiment class to store
@@ -434,12 +354,6 @@ additional information.</p></td>
           <p><code><a href="SCtkExperiment.html">SCtkExperiment()</a></code> </p>
         </td>
         <td><p>Create a SCtkExperiment</p></td>
-      </tr><tr>
-        <!--  -->
-        <td>
-          <p><code><a href="createSCE.html">createSCE()</a></code> </p>
-        </td>
-        <td><p>Create a SCtkExperiment object</p></td>
       </tr><tr>
         <!--  -->
         <td>
@@ -465,7 +379,7 @@ additional information.</p></td>
         <td>
           <p><code><a href="alignSingleCellData.html">alignSingleCellData()</a></code> </p>
         </td>
-        <td><p>Align Single Cell RNA-Seq Data and Create a SCESet Object</p></td>
+        <td><p>Align Single Cell RNA-Seq Data and Create a SCtkExperiment Object</p></td>
       </tr><tr>
         <!--  -->
         <td>
@@ -482,7 +396,7 @@ additional information.</p></td>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#section-shiny-app">Shiny App</a></li>
       <li><a href="#section-data-summary-and-filtering">Data Summary and Filtering</a></li>
-      <li><a href="#section-dimensionality-reduction-and-filtering">Dimensionality Reduction and Filtering</a></li>
+      <li><a href="#section-dimensionality-reduction-and-clustering">Dimensionality Reduction and Clustering</a></li>
       <li><a href="#section-batch-correction">Batch Correction</a></li>
       <li><a href="#section-differential-expression">Differential Expression</a></li>
       <li><a href="#section-pathway-activity-analysis">Pathway Activity Analysis</a></li>
