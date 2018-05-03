@@ -25,6 +25,9 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
+
+
+
 <meta property="og:title" content="Perform differential expression analysis on a SCtkExperiment object — scDiffEx" />
 
 <meta property="og:description" content="Perform differential expression analysis on a SCtkExperiment object" />
@@ -38,8 +41,6 @@
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
-
-
 
 
   </head>
@@ -57,7 +58,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">singleCellTK</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.10</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.1.1</span>
       </span>
     </div>
 
@@ -137,11 +138,14 @@
     <div class="page-header">
     <h1>Perform differential expression analysis on a SCtkExperiment object</h1>
     
+    <div class="hidden name"><code>scDiffEx.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>Perform differential expression analysis on a SCtkExperiment object</p>
     
+    </div>
 
     <pre class="usage"><span class='fu'>scDiffEx</span>(<span class='no'>inSCE</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"logcounts"</span>, <span class='no'>condition</span>, <span class='kw'>covariates</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>significance</span> <span class='kw'>=</span> <span class='fl'>0.05</span>, <span class='kw'>ntop</span> <span class='kw'>=</span> <span class='fl'>500</span>, <span class='kw'>usesig</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='no'>diffexmethod</span>,

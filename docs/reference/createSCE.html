@@ -25,6 +25,9 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
+
+
+
 <meta property="og:title" content="Create a SCtkExperiment object — createSCE" />
 
 <meta property="og:description" content="From a file of counts and a file of annotation information, create a
@@ -39,8 +42,6 @@ SCtkExperiment object." />
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
-
-
 
 
   </head>
@@ -58,7 +59,7 @@ SCtkExperiment object." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">singleCellTK</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.10</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.1.1</span>
       </span>
     </div>
 
@@ -138,12 +139,15 @@ SCtkExperiment object." />
     <div class="page-header">
     <h1>Create a SCtkExperiment object</h1>
     
+    <div class="hidden name"><code>createSCE.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>From a file of counts and a file of annotation information, create a
 SCtkExperiment object.</p>
     
+    </div>
 
     <pre class="usage"><span class='fu'>createSCE</span>(<span class='kw'>assayFile</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>annotFile</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>featureFile</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>assayName</span> <span class='kw'>=</span> <span class='st'>"counts"</span>, <span class='kw'>inputDataFrames</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>createLogCounts</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>

@@ -25,6 +25,9 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
+
+
+
 <meta property="og:title" content="Filter Genes and Samples from a Single Cell Object — filterSCData" />
 
 <meta property="og:description" content="Filter Genes and Samples from a Single Cell Object" />
@@ -38,8 +41,6 @@
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
-
-
 
 
   </head>
@@ -57,7 +58,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">singleCellTK</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.10</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.1.1</span>
       </span>
     </div>
 
@@ -137,11 +138,14 @@
     <div class="page-header">
     <h1>Filter Genes and Samples from a Single Cell Object</h1>
     
+    <div class="hidden name"><code>filterSCData.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>Filter Genes and Samples from a Single Cell Object</p>
     
+    </div>
 
     <pre class="usage"><span class='fu'>filterSCData</span>(<span class='no'>inSCE</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"counts"</span>, <span class='kw'>deletesamples</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>removeNoExpress</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>removeBottom</span> <span class='kw'>=</span> <span class='fl'>0.5</span>, <span class='kw'>minimumDetectGenes</span> <span class='kw'>=</span> <span class='fl'>1700</span>,
