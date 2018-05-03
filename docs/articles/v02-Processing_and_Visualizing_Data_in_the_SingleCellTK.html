@@ -29,7 +29,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">singleCellTK</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.10</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.1.1</span>
       </span>
     </div>
 
@@ -115,8 +115,9 @@
             <address class="author_afil">
       The Section of Computational Biomedicine, Boston University School of Medicine, Boston, MA<br><h4 class="author">W. Evan Johnson</h4>
             <address class="author_afil">
-      The Section of Computational Biomedicine, Boston University School of Medicine, Boston, MA<br>
-</address>
+      The Section of Computational Biomedicine, Boston University School of Medicine, Boston, MA<br><div class="hidden name"><code>v02-Processing_and_Visualizing_Data_in_the_SingleCellTK.Rmd</code></div>
+
+    </address>
 </address>
 </div>
 
@@ -154,7 +155,7 @@ maits_sce &lt;-<span class="st"> </span><span class="kw"><a href="../reference/c
       <span class="dt">type=</span><span class="st">"html"</span>, <span class="dt">include.rownames=</span><span class="ot">FALSE</span>,
       <span class="dt">html.table.attributes=</span><span class="st">'class="table table-condensed"'</span>)</code></pre></div>
 <!-- html table generated in R 3.5.0 by xtable 1.8-2 package -->
-<!-- Sun Apr 22 15:30:03 2018 -->
+<!-- Thu May  3 10:53:00 2018 -->
 <table class="table">
 <tr>
 <th>
@@ -241,7 +242,7 @@ Genes with no expression across all samples
       <span class="dt">type=</span><span class="st">"html"</span>, <span class="dt">include.rownames=</span><span class="ot">FALSE</span>,
       <span class="dt">html.table.attributes=</span><span class="st">'class="table table-condensed"'</span>)</code></pre></div>
 <!-- html table generated in R 3.5.0 by xtable 1.8-2 package -->
-<!-- Sun Apr 22 15:30:03 2018 -->
+<!-- Thu May  3 10:53:00 2018 -->
 <table class="table">
 <tr>
 <th>
@@ -355,9 +356,9 @@ maits_subset &lt;-<span class="st"> </span><span class="kw"><a href="../referenc
 <pre><code>## (0.0144,0.163]  (0.163,0.334]   (0.334,0.53]   (0.53,0.755]   (0.755,1.01] 
 ##       1.104946       1.104946       1.104946       1.104946       1.104946 
 ##    (1.01,1.31]    (1.31,1.65]    (1.65,2.04]    (2.04,2.48]    (2.48,2.99] 
-##       1.104946       1.104946       1.104946       1.392792       1.595489 
+##       1.104946       1.104946       1.104946       1.392989       1.595489 
 ##    (2.99,3.58]    (3.58,4.25]    (4.25,5.02]    (5.02,5.91]    (5.91,6.92] 
-##       2.003844       2.477011       2.585636       2.901835       2.901835 
+##       2.003844       2.476637       2.585636       2.901835       2.901835 
 ##    (6.92,8.08]    (8.08,9.42]    (9.42,10.9]    (10.9,14.7] 
 ##       3.177592       4.004409       5.044739       7.947253</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">5</span>, <span class="dv">4</span>))
@@ -374,9 +375,9 @@ maits_subset &lt;-<span class="st"> </span><span class="kw"><a href="../referenc
 <pre><code>## (0.0144,0.163]  (0.163,0.334]   (0.334,0.53]   (0.53,0.755]   (0.755,1.01] 
 ##       1.104946       1.104946       1.104946       1.104946       1.104946 
 ##    (1.01,1.31]    (1.31,1.65]    (1.65,2.04]    (2.04,2.48]    (2.48,2.99] 
-##       1.104946       1.104946       1.104946       1.392792       1.595489 
+##       1.104946       1.104946       1.104946       1.392989       1.595489 
 ##    (2.99,3.58]    (3.58,4.25]    (4.25,5.02]    (5.02,5.91]    (5.91,6.92] 
-##       2.003844       2.477011       2.585636       2.901835       2.901835 
+##       2.003844       2.476637       2.585636       2.901835       2.901835 
 ##    (6.92,8.08]    (8.08,9.42]    (9.42,10.9]    (10.9,14.7] 
 ##       3.177592       4.004409       5.044739       7.947253</code></pre>
 <p>The resulting significantly differentially expressed genes can be visualized using a violin plot, linear model, or heatmap:</p>
@@ -385,9 +386,9 @@ maits_subset &lt;-<span class="st"> </span><span class="kw"><a href="../referenc
 <pre><code>## (0.0144,0.163]  (0.163,0.334]   (0.334,0.53]   (0.53,0.755]   (0.755,1.01] 
 ##       1.104946       1.104946       1.104946       1.104946       1.104946 
 ##    (1.01,1.31]    (1.31,1.65]    (1.65,2.04]    (2.04,2.48]    (2.48,2.99] 
-##       1.104946       1.104946       1.104946       1.392792       1.595489 
+##       1.104946       1.104946       1.104946       1.392989       1.595489 
 ##    (2.99,3.58]    (3.58,4.25]    (4.25,5.02]    (5.02,5.91]    (5.91,6.92] 
-##       2.003844       2.477011       2.585636       2.901835       2.901835 
+##       2.003844       2.476637       2.585636       2.901835       2.901835 
 ##    (6.92,8.08]    (8.08,9.42]    (9.42,10.9]    (10.9,14.7] 
 ##       3.177592       4.004409       5.044739       7.947253</code></pre>
 <p><img src="v02-Processing_and_Visualizing_Data_in_the_SingleCellTK_files/figure-html/maits_violin-1.png" width="700"></p>
@@ -396,9 +397,9 @@ maits_subset &lt;-<span class="st"> </span><span class="kw"><a href="../referenc
 <pre><code>## (0.0144,0.163]  (0.163,0.334]   (0.334,0.53]   (0.53,0.755]   (0.755,1.01] 
 ##       1.104946       1.104946       1.104946       1.104946       1.104946 
 ##    (1.01,1.31]    (1.31,1.65]    (1.65,2.04]    (2.04,2.48]    (2.48,2.99] 
-##       1.104946       1.104946       1.104946       1.392792       1.595489 
+##       1.104946       1.104946       1.104946       1.392989       1.595489 
 ##    (2.99,3.58]    (3.58,4.25]    (4.25,5.02]    (5.02,5.91]    (5.91,6.92] 
-##       2.003844       2.477011       2.585636       2.901835       2.901835 
+##       2.003844       2.476637       2.585636       2.901835       2.901835 
 ##    (6.92,8.08]    (8.08,9.42]    (9.42,10.9]    (10.9,14.7] 
 ##       3.177592       4.004409       5.044739       7.947253</code></pre>
 <p><img src="v02-Processing_and_Visualizing_Data_in_the_SingleCellTK_files/figure-html/maits_lm-1.png" width="700"></p>
@@ -423,7 +424,7 @@ maits_subset &lt;-<span class="st"> </span><span class="kw"><a href="../referenc
                      <span class="st">"REACTOME_STABILIZATION_OF_P53"</span>,
                      <span class="st">"REACTOME_SCF_BETA_TRCP_MEDIATED_DEGRADATION_OF_EMI1"</span>),
                     <span class="dt">parallel.sz=</span><span class="dv">1</span>)</code></pre></div>
-<pre><code>## Warning in .local(expr, gset.idx.list, ...): 157genes with constant
+<pre><code>## Warning in .local(expr, gset.idx.list, ...): 157 genes with constant
 ## expression values throuhgout the samples.</code></pre>
 <pre><code>## Warning in .local(expr, gset.idx.list, ...): Since argument method!
 ## ="ssgsea", genes with constant expression values are discarded.</code></pre>
@@ -484,7 +485,7 @@ bladder_sctke &lt;-<span class="st"> </span><span class="kw"><a href="../referen
 <div id="session-info" class="section level1 unnumbered">
 <h1 class="hasAnchor">
 <a href="#session-info" class="anchor"></a>Session info</h1>
-<pre><code>## R Under development (unstable) (2018-03-09 r74376)
+<pre><code>## R version 3.5.0 (2018-04-23)
 ## Platform: x86_64-apple-darwin15.6.0 (64-bit)
 ## Running under: macOS High Sierra 10.13.4
 ## 
@@ -500,45 +501,46 @@ bladder_sctke &lt;-<span class="st"> </span><span class="kw"><a href="../referen
 ## [8] methods   base     
 ## 
 ## other attached packages:
-##  [1] bladderbatch_1.17.0         GSEABase_1.41.2            
-##  [3] graph_1.57.1                annotate_1.57.3            
-##  [5] XML_3.98-1.10               org.Hs.eg.db_3.5.0         
-##  [7] AnnotationDbi_1.41.5        xtable_1.8-2               
-##  [9] singleCellTK_0.99.10        MAST_1.5.3                 
-## [11] SingleCellExperiment_1.1.3  SummarizedExperiment_1.9.16
-## [13] DelayedArray_0.5.30         BiocParallel_1.13.3        
-## [15] matrixStats_0.53.1          Biobase_2.39.2             
-## [17] GenomicRanges_1.31.23       GenomeInfoDb_1.15.5        
-## [19] IRanges_2.13.28             S4Vectors_0.17.41          
-## [21] BiocGenerics_0.25.3         BiocStyle_2.7.8            
+##  [1] bladderbatch_1.18.0         GSEABase_1.42.0            
+##  [3] graph_1.58.0                annotate_1.58.0            
+##  [5] XML_3.98-1.11               org.Hs.eg.db_3.6.0         
+##  [7] AnnotationDbi_1.42.0        xtable_1.8-2               
+##  [9] singleCellTK_1.1.1          MAST_1.6.0                 
+## [11] SingleCellExperiment_1.2.0  SummarizedExperiment_1.10.0
+## [13] DelayedArray_0.6.0          BiocParallel_1.14.0        
+## [15] matrixStats_0.53.1          Biobase_2.40.0             
+## [17] GenomicRanges_1.32.0        GenomeInfoDb_1.16.0        
+## [19] IRanges_2.14.0              S4Vectors_0.18.0           
+## [21] BiocGenerics_0.26.0         BiocStyle_2.8.0            
 ## 
 ## loaded via a namespace (and not attached):
 ##  [1] nlme_3.1-137           bitops_1.0-6           fs_1.2.2              
-##  [4] GSVA_1.27.2            bit64_0.9-7            RColorBrewer_1.1-2    
+##  [4] GSVA_1.28.0            bit64_0.9-7            RColorBrewer_1.1-2    
 ##  [7] rprojroot_1.3-2        tools_3.5.0            backports_1.1.2       
 ## [10] R6_2.2.2               mgcv_1.8-23            DBI_0.8               
 ## [13] lazyeval_0.2.1         colorspace_1.3-2       GetoptLong_0.1.6      
 ## [16] bit_1.1-12             compiler_3.5.0         xml2_1.2.0            
 ## [19] desc_1.1.1             labeling_0.3           bookdown_0.7          
-## [22] scales_0.5.0           genefilter_1.61.1      pkgdown_0.1.0.9000    
-## [25] commonmark_1.4         stringr_1.3.0          digest_0.6.15         
-## [28] rmarkdown_1.9          XVector_0.19.9         pkgconfig_2.0.1       
-## [31] htmltools_0.3.6        limma_3.35.14          rlang_0.2.0           
+## [22] scales_0.5.0           genefilter_1.62.0      pkgdown_1.0.0         
+## [25] commonmark_1.5         stringr_1.3.0          digest_0.6.15         
+## [28] rmarkdown_1.9          XVector_0.20.0         pkgconfig_2.0.1       
+## [31] htmltools_0.3.6        limma_3.36.0           rlang_0.2.0           
 ## [34] GlobalOptions_0.0.13   rstudioapi_0.7         RSQLite_2.1.0         
 ## [37] shiny_1.0.5            shape_1.4.4            RCurl_1.95-4.10       
 ## [40] magrittr_1.5           GenomeInfoDbData_1.1.0 Matrix_1.2-14         
 ## [43] Rcpp_0.12.16           munsell_0.4.3          abind_1.4-5           
-## [46] stringi_1.1.7          yaml_2.1.18            MASS_7.3-49           
-## [49] zlibbioc_1.25.0        Rtsne_0.13             plyr_1.8.4            
-## [52] grid_3.5.0             blob_1.1.1             crayon_1.3.4          
-## [55] lattice_0.20-35        splines_3.5.0          circlize_0.4.3        
-## [58] knitr_1.20             ComplexHeatmap_1.17.1  pillar_1.2.1          
-## [61] rjson_0.2.15           geneplotter_1.57.0     reshape2_1.4.3        
-## [64] evaluate_0.10.1        data.table_1.10.4-3    httpuv_1.3.6.2        
-## [67] gtable_0.2.0           assertthat_0.2.0       ggplot2_2.2.1         
-## [70] xfun_0.1               mime_0.5               GSVAdata_1.15.0       
-## [73] roxygen2_6.0.1         survival_2.42-3        tibble_1.4.2          
-## [76] shinythemes_1.1.1      memoise_1.1.0          sva_3.27.0</code></pre>
+## [46] stringi_1.1.7          yaml_2.1.19            MASS_7.3-50           
+## [49] zlibbioc_1.26.0        Rtsne_0.13             plyr_1.8.4            
+## [52] grid_3.5.0             blob_1.1.1             promises_1.0.1        
+## [55] crayon_1.3.4           lattice_0.20-35        splines_3.5.0         
+## [58] circlize_0.4.3         knitr_1.20             ComplexHeatmap_1.18.0 
+## [61] pillar_1.2.2           rjson_0.2.15           geneplotter_1.58.0    
+## [64] reshape2_1.4.3         evaluate_0.10.1        data.table_1.11.0     
+## [67] httpuv_1.4.1           gtable_0.2.0           assertthat_0.2.0      
+## [70] ggplot2_2.2.1          xfun_0.1               mime_0.5              
+## [73] GSVAdata_1.16.0        roxygen2_6.0.1         later_0.7.1           
+## [76] survival_2.42-3        tibble_1.4.2           shinythemes_1.1.1     
+## [79] memoise_1.1.0          sva_3.28.0</code></pre>
 </div>
   </div>
 

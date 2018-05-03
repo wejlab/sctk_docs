@@ -25,6 +25,9 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
+
+
+
 <meta property="og:title" content="Get and plot PCA and t-SCE components for a SCtkE object — getBiomarker" />
 
 <meta property="og:description" content="Selects the 500 most variable genes in the SCE, performs
@@ -42,8 +45,6 @@ the SCE object." />
 <![endif]-->
 
 
-
-
   </head>
 
   <body>
@@ -59,7 +60,7 @@ the SCE object." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">singleCellTK</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.99.10</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.1.1</span>
       </span>
     </div>
 
@@ -139,13 +140,16 @@ the SCE object." />
     <div class="page-header">
     <h1>Get and plot PCA and t-SCE components for a SCtkE object</h1>
     
+    <div class="hidden name"><code>getPCA.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>Selects the 500 most variable genes in the SCE, performs
 PCA or t-SNE based on them and stores the values in the reducedDims slot of
 the SCE object.</p>
     
+    </div>
 
     <pre class="usage"><span class='fu'>getBiomarker</span>(<span class='no'>inSCE</span>, <span class='no'>gene</span>, <span class='kw'>binary</span> <span class='kw'>=</span> <span class='st'>"Binary"</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"counts"</span>)
 
