@@ -58,7 +58,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">singleCellTK</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.1.1</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.1.4</span>
       </span>
     </div>
 
@@ -149,7 +149,8 @@
 
     <pre class="usage"><span class='fu'>gsvaSCE</span>(<span class='no'>inSCE</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"logcounts"</span>, <span class='no'>pathwaySource</span>, <span class='no'>pathwayNames</span>, <span class='no'>...</span>)
 
-<span class='fu'>gsvaPlot</span>(<span class='no'>inSCE</span>, <span class='no'>gsvaData</span>, <span class='no'>plotType</span>, <span class='kw'>condition</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+<span class='fu'>gsvaPlot</span>(<span class='no'>inSCE</span>, <span class='no'>gsvaData</span>, <span class='no'>plotType</span>, <span class='kw'>condition</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>show_column_names</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>show_row_names</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>text_size</span> <span class='kw'>=</span> <span class='fl'>12</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -191,6 +192,20 @@ parameter.</p></td>
       <td><p>The condition(s) to use for the Violin plot, or the
 condition(s) to add as color bars above the Heatmap. Required for Violin,
 optional for Heatmap.</p></td>
+    </tr>
+    <tr>
+      <th>show_column_names</th>
+      <td><p>Display the column labels on the heatmap. The
+default is TRUE</p></td>
+    </tr>
+    <tr>
+      <th>show_row_names</th>
+      <td><p>Display the row labels on the heatmap. The default
+is TRUE.</p></td>
+    </tr>
+    <tr>
+      <th>text_size</th>
+      <td><p>Text size for plots. The default is 12</p></td>
     </tr>
     </table>
     

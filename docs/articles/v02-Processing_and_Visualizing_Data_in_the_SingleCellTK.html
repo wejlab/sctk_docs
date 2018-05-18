@@ -29,7 +29,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">singleCellTK</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.1.1</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.1.4</span>
       </span>
     </div>
 
@@ -151,68 +151,38 @@ maits_sce &lt;-<span class="st"> </span><span class="kw"><a href="../reference/c
 <h2 class="hasAnchor">
 <a href="#summarizetable" class="anchor"></a>summarizeTable</h2>
 <p>You can get summary metrics with the <code>summarizeTable</code> function:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(<span class="kw"><a href="http://www.rdocumentation.org/packages/xtable/topics/xtable">xtable</a></span>(<span class="kw"><a href="../reference/summarizeTable.html">summarizeTable</a></span>(maits_sce, <span class="dt">useAssay =</span> <span class="st">"logtpm"</span>)),
-      <span class="dt">type=</span><span class="st">"html"</span>, <span class="dt">include.rownames=</span><span class="ot">FALSE</span>,
-      <span class="dt">html.table.attributes=</span><span class="st">'class="table table-condensed"'</span>)</code></pre></div>
-<!-- html table generated in R 3.5.0 by xtable 1.8-2 package -->
-<!-- Thu May  3 10:53:00 2018 -->
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="kw"><a href="../reference/summarizeTable.html">summarizeTable</a></span>(maits_sce, <span class="dt">useAssay =</span> <span class="st">"logtpm"</span>))</code></pre></div>
 <table class="table">
-<tr>
-<th>
-Metric
-</th>
-<th>
-Value
-</th>
+<thead><tr class="header">
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">Number of Samples</td>
+<td align="right">96</td>
 </tr>
-<tr>
-<td>
-Number of Samples
-</td>
-<td align="right">
-96
-</td>
+<tr class="even">
+<td align="left">Number of Genes</td>
+<td align="right">16302</td>
 </tr>
-<tr>
-<td>
-Number of Genes
-</td>
-<td align="right">
-16302
-</td>
+<tr class="odd">
+<td align="left">Average number of reads per cell</td>
+<td align="right">17867</td>
 </tr>
-<tr>
-<td>
-Average number of reads per cell
-</td>
-<td align="right">
-17867
-</td>
+<tr class="even">
+<td align="left">Average number of genes per cell</td>
+<td align="right">6833</td>
 </tr>
-<tr>
-<td>
-Average number of genes per cell
-</td>
-<td align="right">
-6833
-</td>
+<tr class="odd">
+<td align="left">Samples with &lt;1700 detected genes</td>
+<td align="right">5</td>
 </tr>
-<tr>
-<td>
-Samples with &lt;1700 detected genes
-</td>
-<td align="right">
-5
-</td>
+<tr class="even">
+<td align="left">Genes with no expression across all samples</td>
+<td align="right">0</td>
 </tr>
-<tr>
-<td>
-Genes with no expression across all samples
-</td>
-<td align="right">
-0
-</td>
-</tr>
+</tbody>
 </table>
 <p>Typically, these summary statistics would be run on a “counts” matrix, but here we have log(tpm) values so the average number of reads per cell is calculated from the normalized values instead of raw counts.</p>
 </div>
@@ -238,68 +208,38 @@ Genes with no expression across all samples
 <pre><code>## 
 ## TRUE 
 ##   74</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(<span class="kw"><a href="http://www.rdocumentation.org/packages/xtable/topics/xtable">xtable</a></span>(<span class="kw"><a href="../reference/summarizeTable.html">summarizeTable</a></span>(maits_subset, <span class="dt">useAssay =</span> <span class="st">"logtpm"</span>)),
-      <span class="dt">type=</span><span class="st">"html"</span>, <span class="dt">include.rownames=</span><span class="ot">FALSE</span>,
-      <span class="dt">html.table.attributes=</span><span class="st">'class="table table-condensed"'</span>)</code></pre></div>
-<!-- html table generated in R 3.5.0 by xtable 1.8-2 package -->
-<!-- Thu May  3 10:53:00 2018 -->
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="kw"><a href="../reference/summarizeTable.html">summarizeTable</a></span>(maits_subset, <span class="dt">useAssay =</span> <span class="st">"logtpm"</span>))</code></pre></div>
 <table class="table">
-<tr>
-<th>
-Metric
-</th>
-<th>
-Value
-</th>
+<thead><tr class="header">
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">Number of Samples</td>
+<td align="right">74</td>
 </tr>
-<tr>
-<td>
-Number of Samples
-</td>
-<td align="right">
-74
-</td>
+<tr class="even">
+<td align="left">Number of Genes</td>
+<td align="right">16302</td>
 </tr>
-<tr>
-<td>
-Number of Genes
-</td>
-<td align="right">
-16302
-</td>
+<tr class="odd">
+<td align="left">Average number of reads per cell</td>
+<td align="right">16292</td>
 </tr>
-<tr>
-<td>
-Average number of reads per cell
-</td>
-<td align="right">
-16292
-</td>
+<tr class="even">
+<td align="left">Average number of genes per cell</td>
+<td align="right">7539</td>
 </tr>
-<tr>
-<td>
-Average number of genes per cell
-</td>
-<td align="right">
-7539
-</td>
+<tr class="odd">
+<td align="left">Samples with &lt;1700 detected genes</td>
+<td align="right">0</td>
 </tr>
-<tr>
-<td>
-Samples with &lt;1700 detected genes
-</td>
-<td align="right">
-0
-</td>
+<tr class="even">
+<td align="left">Genes with no expression across all samples</td>
+<td align="right">157</td>
 </tr>
-<tr>
-<td>
-Genes with no expression across all samples
-</td>
-<td align="right">
-157
-</td>
-</tr>
+</tbody>
 </table>
 </div>
 <div id="visualization" class="section level2">
@@ -407,6 +347,7 @@ maits_subset &lt;-<span class="st"> </span><span class="kw"><a href="../referenc
            <span class="dt">geneList =</span> mast_results<span class="op">$</span>Gene[<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>], <span class="dt">annotationColors =</span> <span class="st">"auto"</span>,
            <span class="dt">displayRowLabels =</span> <span class="ot">FALSE</span>, <span class="dt">displayColumnLabels =</span> <span class="ot">FALSE</span>)</code></pre></div>
 <p><img src="v02-Processing_and_Visualizing_Data_in_the_SingleCellTK_files/figure-html/maits_heatmap-1.png" width="700"></p>
+<p>Among the top differentially expressed genes was interferon gamma, a cytokine that is known to be produced in response to stimulation.</p>
 </div>
 <div id="pathway-activity-with-gsva" class="section level3">
 <h3 class="hasAnchor">
@@ -458,6 +399,7 @@ maits_subset &lt;-<span class="st"> </span><span class="kw"><a href="../referenc
 <p><img src="v02-Processing_and_Visualizing_Data_in_the_SingleCellTK_files/figure-html/maits_gsva-1.png" width="700"></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/gsvaSCE.html">gsvaPlot</a></span>(maits_subset, gsvaRes, <span class="st">"Heatmap"</span>, <span class="st">"condition"</span>)</code></pre></div>
 <p><img src="v02-Processing_and_Visualizing_Data_in_the_SingleCellTK_files/figure-html/maits_gsva-2.png" width="700"></p>
+<p>Among the top pathways that showed increased activity in the stimulated cells was KEGG_PROTEASOME, indicating proteasome related genes showed increased activity in the stimulated T cells. This pathway includes interferon gamma.</p>
 </div>
 </div>
 </div>
@@ -467,20 +409,29 @@ maits_subset &lt;-<span class="st"> </span><span class="kw"><a href="../referenc
 <p>It is possible to use ComBat within the Single Cell Toolkit. This support is experimental, since ComBat was not designed for scRNA-Seq. Here, we will load the bladderbatch example data into a SingleCellExperiment object.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(bladderbatch)
 <span class="kw">data</span>(bladderdata)
-dat &lt;-<span class="st"> </span>bladderEset[<span class="dv">1</span><span class="op">:</span><span class="dv">50</span>,]
+dat &lt;-<span class="st"> </span>bladderEset
 
-pheno =<span class="st"> </span><span class="kw">pData</span>(dat)
-edata =<span class="st"> </span><span class="kw">exprs</span>(dat)
+pheno &lt;-<span class="st"> </span><span class="kw">pData</span>(dat)
+edata &lt;-<span class="st"> </span><span class="kw">exprs</span>(dat)
 bladder_sctke &lt;-<span class="st"> </span><span class="kw"><a href="../reference/createSCE.html">createSCE</a></span>(<span class="dt">assayFile =</span> edata,
                            <span class="dt">annotFile =</span> pheno,
                            <span class="dt">assayName =</span> <span class="st">"microarray"</span>,
                            <span class="dt">inputDataFrames =</span> <span class="ot">TRUE</span>,
-                           <span class="dt">createLogCounts =</span> <span class="ot">FALSE</span>)
-<span class="kw">assay</span>(bladder_sctke, <span class="st">"combat"</span>) &lt;-<span class="st"> </span><span class="kw"><a href="../reference/ComBatSCE.html">ComBatSCE</a></span>(<span class="dt">inSCE =</span> bladder_sctke,
+                           <span class="dt">createLogCounts =</span> <span class="ot">FALSE</span>)</code></pre></div>
+<p>The plotBatchVariance() function can be used to plot the percent variation explained by condition and batch across the dataset.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/plotBatchVariance.html">plotBatchVariance</a></span>(bladder_sctke, <span class="dt">useAssay=</span><span class="st">"microarray"</span>,
+                  <span class="dt">batch=</span><span class="st">"batch"</span>, <span class="dt">condition =</span> <span class="st">"cancer"</span>)</code></pre></div>
+<p><img src="v02-Processing_and_Visualizing_Data_in_the_SingleCellTK_files/figure-html/plot_var_microarray-1.png" width="700"></p>
+<p>The ComBatSCE() function can then be used to correct for batch effects</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">assay</span>(bladder_sctke, <span class="st">"combat"</span>) &lt;-<span class="st"> </span><span class="kw"><a href="../reference/ComBatSCE.html">ComBatSCE</a></span>(<span class="dt">inSCE =</span> bladder_sctke,
                                             <span class="dt">batch =</span> <span class="st">"batch"</span>,
                                             <span class="dt">useAssay =</span> <span class="st">"microarray"</span>,
                                             <span class="dt">covariates =</span> <span class="st">"cancer"</span>)</code></pre></div>
 <pre><code>## Standardizing Data across genes</code></pre>
+<p>After batch correction, a larger percentage of the explained variation can be explained by the condition</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/plotBatchVariance.html">plotBatchVariance</a></span>(bladder_sctke, <span class="dt">useAssay=</span><span class="st">"combat"</span>,
+                  <span class="dt">batch=</span><span class="st">"batch"</span>, <span class="dt">condition =</span> <span class="st">"cancer"</span>)</code></pre></div>
+<p><img src="v02-Processing_and_Visualizing_Data_in_the_SingleCellTK_files/figure-html/plot_var_postcombat-1.png" width="700"></p>
 </div>
 <div id="session-info" class="section level1 unnumbered">
 <h1 class="hasAnchor">
@@ -504,43 +455,43 @@ bladder_sctke &lt;-<span class="st"> </span><span class="kw"><a href="../referen
 ##  [1] bladderbatch_1.18.0         GSEABase_1.42.0            
 ##  [3] graph_1.58.0                annotate_1.58.0            
 ##  [5] XML_3.98-1.11               org.Hs.eg.db_3.6.0         
-##  [7] AnnotationDbi_1.42.0        xtable_1.8-2               
-##  [9] singleCellTK_1.1.1          MAST_1.6.0                 
-## [11] SingleCellExperiment_1.2.0  SummarizedExperiment_1.10.0
-## [13] DelayedArray_0.6.0          BiocParallel_1.14.0        
+##  [7] AnnotationDbi_1.42.1        xtable_1.8-2               
+##  [9] singleCellTK_1.1.4          MAST_1.6.1                 
+## [11] SingleCellExperiment_1.2.0  SummarizedExperiment_1.10.1
+## [13] DelayedArray_0.6.0          BiocParallel_1.14.1        
 ## [15] matrixStats_0.53.1          Biobase_2.40.0             
-## [17] GenomicRanges_1.32.0        GenomeInfoDb_1.16.0        
-## [19] IRanges_2.14.0              S4Vectors_0.18.0           
+## [17] GenomicRanges_1.32.2        GenomeInfoDb_1.16.0        
+## [19] IRanges_2.14.9              S4Vectors_0.18.1           
 ## [21] BiocGenerics_0.26.0         BiocStyle_2.8.0            
 ## 
 ## loaded via a namespace (and not attached):
 ##  [1] nlme_3.1-137           bitops_1.0-6           fs_1.2.2              
 ##  [4] GSVA_1.28.0            bit64_0.9-7            RColorBrewer_1.1-2    
 ##  [7] rprojroot_1.3-2        tools_3.5.0            backports_1.1.2       
-## [10] R6_2.2.2               mgcv_1.8-23            DBI_0.8               
+## [10] R6_2.2.2               mgcv_1.8-23            DBI_1.0.0             
 ## [13] lazyeval_0.2.1         colorspace_1.3-2       GetoptLong_0.1.6      
-## [16] bit_1.1-12             compiler_3.5.0         xml2_1.2.0            
-## [19] desc_1.1.1             labeling_0.3           bookdown_0.7          
+## [16] bit_1.1-13             compiler_3.5.0         xml2_1.2.0            
+## [19] desc_1.2.0             labeling_0.3           bookdown_0.7          
 ## [22] scales_0.5.0           genefilter_1.62.0      pkgdown_1.0.0         
-## [25] commonmark_1.5         stringr_1.3.0          digest_0.6.15         
+## [25] commonmark_1.5         stringr_1.3.1          digest_0.6.15         
 ## [28] rmarkdown_1.9          XVector_0.20.0         pkgconfig_2.0.1       
-## [31] htmltools_0.3.6        limma_3.36.0           rlang_0.2.0           
-## [34] GlobalOptions_0.0.13   rstudioapi_0.7         RSQLite_2.1.0         
-## [37] shiny_1.0.5            shape_1.4.4            RCurl_1.95-4.10       
-## [40] magrittr_1.5           GenomeInfoDbData_1.1.0 Matrix_1.2-14         
-## [43] Rcpp_0.12.16           munsell_0.4.3          abind_1.4-5           
-## [46] stringi_1.1.7          yaml_2.1.19            MASS_7.3-50           
-## [49] zlibbioc_1.26.0        Rtsne_0.13             plyr_1.8.4            
-## [52] grid_3.5.0             blob_1.1.1             promises_1.0.1        
-## [55] crayon_1.3.4           lattice_0.20-35        splines_3.5.0         
-## [58] circlize_0.4.3         knitr_1.20             ComplexHeatmap_1.18.0 
-## [61] pillar_1.2.2           rjson_0.2.15           geneplotter_1.58.0    
-## [64] reshape2_1.4.3         evaluate_0.10.1        data.table_1.11.0     
-## [67] httpuv_1.4.1           gtable_0.2.0           assertthat_0.2.0      
-## [70] ggplot2_2.2.1          xfun_0.1               mime_0.5              
-## [73] GSVAdata_1.16.0        roxygen2_6.0.1         later_0.7.1           
-## [76] survival_2.42-3        tibble_1.4.2           shinythemes_1.1.1     
-## [79] memoise_1.1.0          sva_3.28.0</code></pre>
+## [31] htmltools_0.3.6        limma_3.36.1           highr_0.6             
+## [34] rlang_0.2.0            GlobalOptions_0.0.13   rstudioapi_0.7        
+## [37] RSQLite_2.1.1          shiny_1.0.5            shape_1.4.4           
+## [40] RCurl_1.95-4.10        magrittr_1.5           GenomeInfoDbData_1.1.0
+## [43] Matrix_1.2-14          Rcpp_0.12.16           munsell_0.4.3         
+## [46] abind_1.4-5            stringi_1.2.2          yaml_2.1.19           
+## [49] MASS_7.3-50            zlibbioc_1.26.0        Rtsne_0.13            
+## [52] plyr_1.8.4             grid_3.5.0             blob_1.1.1            
+## [55] promises_1.0.1         crayon_1.3.4           lattice_0.20-35       
+## [58] splines_3.5.0          circlize_0.4.3         knitr_1.20            
+## [61] ComplexHeatmap_1.18.0  pillar_1.2.2           rjson_0.2.18          
+## [64] geneplotter_1.58.0     reshape2_1.4.3         evaluate_0.10.1       
+## [67] data.table_1.11.2      httpuv_1.4.3           gtable_0.2.0          
+## [70] assertthat_0.2.0       ggplot2_2.2.1          xfun_0.1              
+## [73] mime_0.5               GSVAdata_1.16.0        roxygen2_6.0.1        
+## [76] later_0.7.2            survival_2.42-3        tibble_1.4.2          
+## [79] shinythemes_1.1.1      memoise_1.1.0          sva_3.28.0</code></pre>
 </div>
   </div>
 
