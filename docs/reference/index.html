@@ -21,14 +21,17 @@
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
+<!-- sticky kit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
 
 
 
 <meta property="og:title" content="Function reference" />
+
 
 
 <!-- mathjax -->
@@ -55,7 +58,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">singleCellTK</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.1.4</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.1.18</span>
       </span>
     </div>
 
@@ -78,7 +81,7 @@
       <a href="../articles/v04-tab02_Data-Summary-and-Filtering.html">2: Data Summary and Filtering</a>
     </li>
     <li>
-      <a href="../articles/v05-tab03_Dimensionality-Reduction-and-Clustering.html">3: Dimensionality Reduction and Clustering</a>
+      <a href="../articles/v05-tab03_Visualization-and-Clustering.html">3: Visualization and Clustering</a>
     </li>
     <li>
       <a href="../articles/v06-tab04_Batch-Correction.html">4: Batch Correction</a>
@@ -139,6 +142,7 @@
     <table class="ref-index">
 
     <colgroup>
+      
       <col class="alias" />
       <col class="title" />
     </colgroup>
@@ -151,7 +155,7 @@
         </th>
       </tr>
       <tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="singleCellTK.html">singleCellTK()</a></code> </p>
         </td>
@@ -165,19 +169,19 @@
         </th>
       </tr>
       <tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="filterSCData.html">filterSCData()</a></code> </p>
         </td>
         <td><p>Filter Genes and Samples from a Single Cell Object</p></td>
       </tr><tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="summarizeTable.html">summarizeTable()</a></code> </p>
         </td>
         <td><p>Summarize SCtkExperiment</p></td>
       </tr><tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="convertGeneIDs.html">convertGeneIDs()</a></code> </p>
         </td>
@@ -191,13 +195,13 @@
         </th>
       </tr>
       <tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="getPCA.html">getBiomarker()</a></code> <code><a href="getPCA.html">getPCA()</a></code> <code><a href="getPCA.html">getTSNE()</a></code> <code><a href="getPCA.html">plotBiomarker()</a></code> <code><a href="getPCA.html">plotPCA()</a></code> <code><a href="getPCA.html">plotTSNE()</a></code> </p>
         </td>
         <td><p>Get and plot PCA and t-SCE components for a SCtkE object</p></td>
       </tr><tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="getClusterInputData.html">getClusterInputData()</a></code> </p>
         </td>
@@ -211,14 +215,14 @@
         </th>
       </tr>
       <tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="plotBatchVariance.html">plotBatchVariance()</a></code> </p>
         </td>
         <td><p>Plot the percent of the variation that is explained by batch and condition
 in the data</p></td>
       </tr><tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="ComBatSCE.html">ComBatSCE()</a></code> </p>
         </td>
@@ -232,19 +236,19 @@ in the data</p></td>
         </th>
       </tr>
       <tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="scDiffEx.html">scDiffEx()</a></code> <code><a href="scDiffEx.html">scDiffExDESeq2()</a></code> <code><a href="scDiffEx.html">scDiffExlimma()</a></code> <code><a href="scDiffEx.html">scDiffExANOVA()</a></code> </p>
         </td>
         <td><p>Perform differential expression analysis on a SCtkExperiment object</p></td>
       </tr><tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="plotDiffEx.html">plotDiffEx()</a></code> </p>
         </td>
         <td><p>Plot Differential Expression</p></td>
       </tr><tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="MAST.html">MAST()</a></code> <code><a href="MAST.html">thresholdGenes()</a></code> <code><a href="MAST.html">MASTviolin()</a></code> <code><a href="MAST.html">MASTregression()</a></code> </p>
         </td>
@@ -258,7 +262,7 @@ in the data</p></td>
         </th>
       </tr>
       <tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="gsvaSCE.html">gsvaSCE()</a></code> <code><a href="gsvaSCE.html">gsvaPlot()</a></code> </p>
         </td>
@@ -272,41 +276,41 @@ in the data</p></td>
         </th>
       </tr>
       <tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="calcEffectSizes.html">calcEffectSizes()</a></code> </p>
         </td>
         <td><p>Finds the effect sizes for all genes in the original dataset, regardless of
 significance.</p></td>
       </tr><tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="DownsampleCells.html">DownsampleCells()</a></code> </p>
         </td>
         <td><p>Estimate numbers of detected genes, significantly differentially expressed
 genes, and median significant effect size</p></td>
       </tr><tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="DownsampleDepth.html">DownsampleDepth()</a></code> </p>
         </td>
         <td><p>Estimate numbers of detected genes, significantly differentially expressed
 genes, and median significant effect size</p></td>
       </tr><tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="generateSimulatedData.html">generateSimulatedData()</a></code> </p>
         </td>
         <td><p>Generates a single simulated dataset, bootstrapping from the input counts
 matrix.</p></td>
       </tr><tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="iterateSimulations.html">iterateSimulations()</a></code> </p>
         </td>
         <td><p>Returns significance data from a snapshot.</p></td>
       </tr><tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="subDiffEx.html">subDiffEx()</a></code> <code><a href="subDiffEx.html">subDiffExttest()</a></code> <code><a href="subDiffEx.html">subDiffExANOVA()</a></code> </p>
         </td>
@@ -322,7 +326,7 @@ multiple conditions, respectively.</p></td>
         </th>
       </tr>
       <tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="mouseBrainSubsetSCE.html">mouseBrainSubsetSCE</a></code> </p>
         </td>
@@ -337,32 +341,32 @@ subset</p></td>
         </th>
       </tr>
       <tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="createSCE.html">createSCE()</a></code> </p>
         </td>
         <td><p>Create a SCtkExperiment object</p></td>
       </tr><tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="SCtkExperiment-class.html">SCtkExperiment-class</a></code> </p>
         </td>
         <td><p>A lightweight S4 extension to the SingleCellExperiment class to store
 additional information.</p></td>
       </tr><tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="SCtkExperiment.html">SCtkExperiment()</a></code> </p>
         </td>
         <td><p>Create a SCtkExperiment</p></td>
       </tr><tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="pcaVariances-set.html">`pcaVariances<-`()</a></code> </p>
         </td>
         <td><p>Set PCA variances</p></td>
       </tr><tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="pcaVariances.html">pcaVariances()</a></code> <code><a href="pcaVariances.html">`pcaVariances<-`(<i>&lt;SCtkExperiment&gt;</i>)</a></code> </p>
         </td>
@@ -376,13 +380,13 @@ additional information.</p></td>
         </th>
       </tr>
       <tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="alignSingleCellData.html">alignSingleCellData()</a></code> </p>
         </td>
         <td><p>Align Single Cell RNA-Seq Data and Create a SCtkExperiment Object</p></td>
       </tr><tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="parseRsubreadLogs.html">parseRsubreadLogs()</a></code> </p>
         </td>
@@ -411,7 +415,7 @@ additional information.</p></td>
 
       <footer>
       <div class="copyright">
-  <p>Developed by David Jenkins, Tyler Faits, Emma Briars, Sebastian Carrasco Pro, W. Evan Johnson.</p>
+  <p>Developed by David Jenkins, Tyler Faits, Mohammed Muzamil Khan, Emma Briars, Sebastian Carrasco Pro, W. Evan Johnson.</p>
 </div>
 
 <div class="pkgdown">

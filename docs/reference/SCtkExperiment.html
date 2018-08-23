@@ -21,9 +21,11 @@
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
+<!-- sticky kit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
 
 
@@ -32,6 +34,7 @@
 
 <meta property="og:description" content="Create a SCtkExperiment" />
 <meta name="twitter:card" content="summary" />
+
 
 
 <!-- mathjax -->
@@ -58,7 +61,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">singleCellTK</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.1.4</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.1.18</span>
       </span>
     </div>
 
@@ -81,7 +84,7 @@
       <a href="../articles/v04-tab02_Data-Summary-and-Filtering.html">2: Data Summary and Filtering</a>
     </li>
     <li>
-      <a href="../articles/v05-tab03_Dimensionality-Reduction-and-Clustering.html">3: Dimensionality Reduction and Clustering</a>
+      <a href="../articles/v05-tab03_Visualization-and-Clustering.html">3: Visualization and Clustering</a>
     </li>
     <li>
       <a href="../articles/v06-tab04_Batch-Correction.html">4: Batch Correction</a>
@@ -179,19 +182,19 @@ slot.</p>
 <span class='no'>newSCE</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='getPCA.html'>getPCA</a></span>(<span class='no'>newSCE</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"counts"</span>)
 <span class='co'>#View the percent variation of the PCA</span>
 <span class='fu'><a href='pcaVariances.html'>pcaVariances</a></span>(<span class='no'>newSCE</span>)</div><div class='output co'>#&gt; DataFrame with 30 rows and 1 column
-#&gt;                percentVar
-#&gt;                 &lt;numeric&gt;
-#&gt; PC1      0.37202971325744
-#&gt; PC2     0.104164155610064
-#&gt; PC3    0.0587940522542045
-#&gt; PC4    0.0418073722132211
-#&gt; PC5    0.0351723690429302
-#&gt; ...                   ...
-#&gt; PC26   0.0089467827999877
-#&gt; PC27  0.00873428610385569
-#&gt; PC28  0.00810555296764926
-#&gt; PC29  0.00732206352790352
-#&gt; PC30 7.33699240923443e-32</div><div class='input'>
+#&gt;               percentVar
+#&gt;                &lt;numeric&gt;
+#&gt; PC1    0.268020978932062
+#&gt; PC2     0.15516450073815
+#&gt; PC3   0.0740498509896174
+#&gt; PC4   0.0655109274462671
+#&gt; PC5   0.0505161060145296
+#&gt; ...                  ...
+#&gt; PC26 0.00672632989322181
+#&gt; PC27 0.00490804359387214
+#&gt; PC28  0.0047470942300841
+#&gt; PC29 0.00441731197240141
+#&gt; PC30 5.2857818014642e-32</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -209,7 +212,7 @@ slot.</p>
 
       <footer>
       <div class="copyright">
-  <p>Developed by David Jenkins, Tyler Faits, Emma Briars, Sebastian Carrasco Pro, W. Evan Johnson.</p>
+  <p>Developed by David Jenkins, Tyler Faits, Mohammed Muzamil Khan, Emma Briars, Sebastian Carrasco Pro, W. Evan Johnson.</p>
 </div>
 
 <div class="pkgdown">

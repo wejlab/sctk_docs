@@ -22,9 +22,11 @@ genes, and median significant effect size — DownsampleDepth • singleCellTK</
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
+<!-- sticky kit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
 
 
@@ -35,6 +37,7 @@ genes, and median significant effect size — DownsampleDepth" />
 <meta property="og:description" content="Estimate numbers of detected genes, significantly differentially expressed
 genes, and median significant effect size" />
 <meta name="twitter:card" content="summary" />
+
 
 
 <!-- mathjax -->
@@ -61,7 +64,7 @@ genes, and median significant effect size" />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">singleCellTK</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.1.4</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.1.18</span>
       </span>
     </div>
 
@@ -84,7 +87,7 @@ genes, and median significant effect size" />
       <a href="../articles/v04-tab02_Data-Summary-and-Filtering.html">2: Data Summary and Filtering</a>
     </li>
     <li>
-      <a href="../articles/v05-tab03_Dimensionality-Reduction-and-Clustering.html">3: Dimensionality Reduction and Clustering</a>
+      <a href="../articles/v05-tab03_Visualization-and-Clustering.html">3: Visualization and Clustering</a>
     </li>
     <li>
       <a href="../articles/v06-tab04_Batch-Correction.html">4: Batch Correction</a>
@@ -153,7 +156,8 @@ genes, and median significant effect size</p>
     </div>
 
     <pre class="usage"><span class='fu'>DownsampleDepth</span>(<span class='no'>originalData</span>, <span class='kw'>minCount</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>minCells</span> <span class='kw'>=</span> <span class='fl'>3</span>,
-  <span class='kw'>maxDepth</span> <span class='kw'>=</span> <span class='fl'>1e+07</span>, <span class='no'>realLabels</span>, <span class='kw'>depthResolution</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>iterations</span> <span class='kw'>=</span> <span class='fl'>10</span>)</pre>
+  <span class='kw'>maxDepth</span> <span class='kw'>=</span> <span class='fl'>1e+07</span>, <span class='no'>realLabels</span>, <span class='kw'>depthResolution</span> <span class='kw'>=</span> <span class='fl'>10</span>,
+  <span class='kw'>iterations</span> <span class='kw'>=</span> <span class='fl'>10</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -228,7 +232,7 @@ expressed, the median effect size defaults to infinity.</p>
 
       <footer>
       <div class="copyright">
-  <p>Developed by David Jenkins, Tyler Faits, Emma Briars, Sebastian Carrasco Pro, W. Evan Johnson.</p>
+  <p>Developed by David Jenkins, Tyler Faits, Mohammed Muzamil Khan, Emma Briars, Sebastian Carrasco Pro, W. Evan Johnson.</p>
 </div>
 
 <div class="pkgdown">

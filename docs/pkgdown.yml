@@ -1,12 +1,12 @@
 pandoc: 1.19.2.1
-pkgdown: 1.0.0
+pkgdown: 1.1.0
 pkgdown_sha: ~
 articles:
   v01-Introduction_to_singleCellTK: v01-Introduction_to_singleCellTK.html
   v02-Processing_and_Visualizing_Data_in_the_SingleCellTK: v02-Processing_and_Visualizing_Data_in_the_SingleCellTK.html
   v03-tab01_Upload: v03-tab01_Upload.html
   v04-tab02_Data-Summary-and-Filtering: v04-tab02_Data-Summary-and-Filtering.html
-  v05-tab03_Dimensionality-Reduction-and-Clustering: v05-tab03_Dimensionality-Reduction-and-Clustering.html
+  v05-tab03_Visualization-and-Clustering: v05-tab03_Visualization-and-Clustering.html
   v06-tab04_Batch-Correction: v06-tab04_Batch-Correction.html
   v07-tab05_Differential-Expression: v07-tab05_Differential-Expression.html
   v08-tab06_Pathway-Activity-Analysis: v08-tab06_Pathway-Activity-Analysis.html

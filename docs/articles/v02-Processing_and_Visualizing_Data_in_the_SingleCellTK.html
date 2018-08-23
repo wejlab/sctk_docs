@@ -8,8 +8,8 @@
 <title>Processing and Visualizing Data in the Single Cell Toolkit • singleCellTK</title>
 <!-- jquery --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/yeti/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script><script src="../pkgdown.js"></script><meta property="og:title" content="Processing and Visualizing Data in the Single Cell Toolkit">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
+<script src="../pkgdown.js"></script><meta property="og:title" content="Processing and Visualizing Data in the Single Cell Toolkit">
 <meta property="og:description" content="">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!--[if lt IE 9]>
@@ -29,7 +29,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">singleCellTK</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.1.4</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.1.18</span>
       </span>
     </div>
 
@@ -52,7 +52,7 @@
       <a href="../articles/v04-tab02_Data-Summary-and-Filtering.html">2: Data Summary and Filtering</a>
     </li>
     <li>
-      <a href="../articles/v05-tab03_Dimensionality-Reduction-and-Clustering.html">3: Dimensionality Reduction and Clustering</a>
+      <a href="../articles/v05-tab03_Visualization-and-Clustering.html">3: Visualization and Clustering</a>
     </li>
     <li>
       <a href="../articles/v06-tab04_Batch-Correction.html">4: Batch Correction</a>
@@ -292,16 +292,8 @@ maits_subset &lt;-<span class="st"> </span><span class="kw"><a href="../referenc
 <h3 class="hasAnchor">
 <a href="#adaptive-thresholding" class="anchor"></a>Adaptive Thresholding</h3>
 <p>First, an adaptive threshold is calculated by binning genes with similar expression levels.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">thresholds &lt;-<span class="st"> </span><span class="kw"><a href="../reference/MAST.html">thresholdGenes</a></span>(maits_subset, <span class="dt">useAssay =</span> <span class="st">"logtpm"</span>)</code></pre></div>
-<pre><code>## (0.0144,0.163]  (0.163,0.334]   (0.334,0.53]   (0.53,0.755]   (0.755,1.01] 
-##       1.104946       1.104946       1.104946       1.104946       1.104946 
-##    (1.01,1.31]    (1.31,1.65]    (1.65,2.04]    (2.04,2.48]    (2.48,2.99] 
-##       1.104946       1.104946       1.104946       1.392989       1.595489 
-##    (2.99,3.58]    (3.58,4.25]    (4.25,5.02]    (5.02,5.91]    (5.91,6.92] 
-##       2.003844       2.476637       2.585636       2.901835       2.901835 
-##    (6.92,8.08]    (8.08,9.42]    (9.42,10.9]    (10.9,14.7] 
-##       3.177592       4.004409       5.044739       7.947253</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">5</span>, <span class="dv">4</span>))
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">thresholds &lt;-<span class="st"> </span><span class="kw"><a href="../reference/MAST.html">thresholdGenes</a></span>(maits_subset, <span class="dt">useAssay =</span> <span class="st">"logtpm"</span>)
+<span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">5</span>, <span class="dv">4</span>))
 <span class="kw">plot</span>(thresholds)
 <span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</code></pre></div>
 <p><img src="v02-Processing_and_Visualizing_Data_in_the_SingleCellTK_files/figure-html/maits_thresh-1.png" width="700"></p>
@@ -312,36 +304,12 @@ maits_subset &lt;-<span class="st"> </span><span class="kw"><a href="../referenc
 <p>MAST analysis can be run with a single function</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mast_results &lt;-<span class="st"> </span><span class="kw"><a href="../reference/MAST.html">MAST</a></span>(maits_subset, <span class="dt">condition =</span> <span class="st">"condition"</span>, <span class="dt">useThresh =</span> <span class="ot">TRUE</span>,
                      <span class="dt">useAssay =</span> <span class="st">"logtpm"</span>)</code></pre></div>
-<pre><code>## (0.0144,0.163]  (0.163,0.334]   (0.334,0.53]   (0.53,0.755]   (0.755,1.01] 
-##       1.104946       1.104946       1.104946       1.104946       1.104946 
-##    (1.01,1.31]    (1.31,1.65]    (1.65,2.04]    (2.04,2.48]    (2.48,2.99] 
-##       1.104946       1.104946       1.104946       1.392989       1.595489 
-##    (2.99,3.58]    (3.58,4.25]    (4.25,5.02]    (5.02,5.91]    (5.91,6.92] 
-##       2.003844       2.476637       2.585636       2.901835       2.901835 
-##    (6.92,8.08]    (8.08,9.42]    (9.42,10.9]    (10.9,14.7] 
-##       3.177592       4.004409       5.044739       7.947253</code></pre>
 <p>The resulting significantly differentially expressed genes can be visualized using a violin plot, linear model, or heatmap:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/MAST.html">MASTviolin</a></span>(maits_subset, <span class="dt">useAssay =</span> <span class="st">"logtpm"</span>, <span class="dt">fcHurdleSig =</span> mast_results,
            <span class="dt">threshP =</span> <span class="ot">TRUE</span>, <span class="dt">condition =</span> <span class="st">"condition"</span>)</code></pre></div>
-<pre><code>## (0.0144,0.163]  (0.163,0.334]   (0.334,0.53]   (0.53,0.755]   (0.755,1.01] 
-##       1.104946       1.104946       1.104946       1.104946       1.104946 
-##    (1.01,1.31]    (1.31,1.65]    (1.65,2.04]    (2.04,2.48]    (2.48,2.99] 
-##       1.104946       1.104946       1.104946       1.392989       1.595489 
-##    (2.99,3.58]    (3.58,4.25]    (4.25,5.02]    (5.02,5.91]    (5.91,6.92] 
-##       2.003844       2.476637       2.585636       2.901835       2.901835 
-##    (6.92,8.08]    (8.08,9.42]    (9.42,10.9]    (10.9,14.7] 
-##       3.177592       4.004409       5.044739       7.947253</code></pre>
 <p><img src="v02-Processing_and_Visualizing_Data_in_the_SingleCellTK_files/figure-html/maits_violin-1.png" width="700"></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/MAST.html">MASTregression</a></span>(maits_subset, <span class="dt">useAssay =</span> <span class="st">"logtpm"</span>, <span class="dt">fcHurdleSig =</span> mast_results,
                <span class="dt">threshP =</span> <span class="ot">TRUE</span>, <span class="dt">condition =</span> <span class="st">"condition"</span>)</code></pre></div>
-<pre><code>## (0.0144,0.163]  (0.163,0.334]   (0.334,0.53]   (0.53,0.755]   (0.755,1.01] 
-##       1.104946       1.104946       1.104946       1.104946       1.104946 
-##    (1.01,1.31]    (1.31,1.65]    (1.65,2.04]    (2.04,2.48]    (2.48,2.99] 
-##       1.104946       1.104946       1.104946       1.392989       1.595489 
-##    (2.99,3.58]    (3.58,4.25]    (4.25,5.02]    (5.02,5.91]    (5.91,6.92] 
-##       2.003844       2.476637       2.585636       2.901835       2.901835 
-##    (6.92,8.08]    (8.08,9.42]    (9.42,10.9]    (10.9,14.7] 
-##       3.177592       4.004409       5.044739       7.947253</code></pre>
 <p><img src="v02-Processing_and_Visualizing_Data_in_the_SingleCellTK_files/figure-html/maits_lm-1.png" width="700"></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/plotDiffEx.html">plotDiffEx</a></span>(maits_subset, <span class="dt">useAssay =</span> <span class="st">"logtpm"</span>, <span class="dt">condition =</span> <span class="st">"condition"</span>,
            <span class="dt">geneList =</span> mast_results<span class="op">$</span>Gene[<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>], <span class="dt">annotationColors =</span> <span class="st">"auto"</span>,
@@ -436,9 +404,9 @@ bladder_sctke &lt;-<span class="st"> </span><span class="kw"><a href="../referen
 <div id="session-info" class="section level1 unnumbered">
 <h1 class="hasAnchor">
 <a href="#session-info" class="anchor"></a>Session info</h1>
-<pre><code>## R version 3.5.0 (2018-04-23)
+<pre><code>## R version 3.5.1 (2018-07-02)
 ## Platform: x86_64-apple-darwin15.6.0 (64-bit)
-## Running under: macOS High Sierra 10.13.4
+## Running under: macOS High Sierra 10.13.6
 ## 
 ## Matrix products: default
 ## BLAS: /Library/Frameworks/R.framework/Versions/3.5/Resources/lib/libRblas.0.dylib
@@ -454,44 +422,46 @@ bladder_sctke &lt;-<span class="st"> </span><span class="kw"><a href="../referen
 ## other attached packages:
 ##  [1] bladderbatch_1.18.0         GSEABase_1.42.0            
 ##  [3] graph_1.58.0                annotate_1.58.0            
-##  [5] XML_3.98-1.11               org.Hs.eg.db_3.6.0         
+##  [5] XML_3.98-1.16               org.Hs.eg.db_3.6.0         
 ##  [7] AnnotationDbi_1.42.1        xtable_1.8-2               
-##  [9] singleCellTK_1.1.4          MAST_1.6.1                 
+##  [9] singleCellTK_1.1.18         MAST_1.6.1                 
 ## [11] SingleCellExperiment_1.2.0  SummarizedExperiment_1.10.1
-## [13] DelayedArray_0.6.0          BiocParallel_1.14.1        
-## [15] matrixStats_0.53.1          Biobase_2.40.0             
-## [17] GenomicRanges_1.32.2        GenomeInfoDb_1.16.0        
-## [19] IRanges_2.14.9              S4Vectors_0.18.1           
-## [21] BiocGenerics_0.26.0         BiocStyle_2.8.0            
+## [13] DelayedArray_0.6.5          BiocParallel_1.14.2        
+## [15] matrixStats_0.54.0          Biobase_2.40.0             
+## [17] GenomicRanges_1.32.6        GenomeInfoDb_1.16.0        
+## [19] IRanges_2.14.10             S4Vectors_0.18.3           
+## [21] BiocGenerics_0.26.0         BiocStyle_2.8.2            
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] nlme_3.1-137           bitops_1.0-6           fs_1.2.2              
+##  [1] nlme_3.1-137           bitops_1.0-6           fs_1.2.5              
 ##  [4] GSVA_1.28.0            bit64_0.9-7            RColorBrewer_1.1-2    
-##  [7] rprojroot_1.3-2        tools_3.5.0            backports_1.1.2       
-## [10] R6_2.2.2               mgcv_1.8-23            DBI_1.0.0             
-## [13] lazyeval_0.2.1         colorspace_1.3-2       GetoptLong_0.1.6      
-## [16] bit_1.1-13             compiler_3.5.0         xml2_1.2.0            
-## [19] desc_1.2.0             labeling_0.3           bookdown_0.7          
-## [22] scales_0.5.0           genefilter_1.62.0      pkgdown_1.0.0         
-## [25] commonmark_1.5         stringr_1.3.1          digest_0.6.15         
-## [28] rmarkdown_1.9          XVector_0.20.0         pkgconfig_2.0.1       
-## [31] htmltools_0.3.6        limma_3.36.1           highr_0.6             
-## [34] rlang_0.2.0            GlobalOptions_0.0.13   rstudioapi_0.7        
-## [37] RSQLite_2.1.1          shiny_1.0.5            shape_1.4.4           
-## [40] RCurl_1.95-4.10        magrittr_1.5           GenomeInfoDbData_1.1.0
-## [43] Matrix_1.2-14          Rcpp_0.12.16           munsell_0.4.3         
-## [46] abind_1.4-5            stringi_1.2.2          yaml_2.1.19           
-## [49] MASS_7.3-50            zlibbioc_1.26.0        Rtsne_0.13            
-## [52] plyr_1.8.4             grid_3.5.0             blob_1.1.1            
-## [55] promises_1.0.1         crayon_1.3.4           lattice_0.20-35       
-## [58] splines_3.5.0          circlize_0.4.3         knitr_1.20            
-## [61] ComplexHeatmap_1.18.0  pillar_1.2.2           rjson_0.2.18          
-## [64] geneplotter_1.58.0     reshape2_1.4.3         evaluate_0.10.1       
-## [67] data.table_1.11.2      httpuv_1.4.3           gtable_0.2.0          
-## [70] assertthat_0.2.0       ggplot2_2.2.1          xfun_0.1              
-## [73] mime_0.5               GSVAdata_1.16.0        roxygen2_6.0.1        
-## [76] later_0.7.2            survival_2.42-3        tibble_1.4.2          
-## [79] shinythemes_1.1.1      memoise_1.1.0          sva_3.28.0</code></pre>
+##  [7] rprojroot_1.3-2        tools_3.5.1            backports_1.1.2       
+## [10] R6_2.2.2               mgcv_1.8-24            DBI_1.0.0             
+## [13] lazyeval_0.2.1         colorspace_1.3-2       GetoptLong_0.1.7      
+## [16] tidyselect_0.2.4       bit_1.1-14             compiler_3.5.1        
+## [19] xml2_1.2.0             desc_1.2.0             labeling_0.3          
+## [22] bookdown_0.7           scales_1.0.0           genefilter_1.62.0     
+## [25] pkgdown_1.1.0          commonmark_1.5         stringr_1.3.1         
+## [28] digest_0.6.15          rmarkdown_1.10         XVector_0.20.0        
+## [31] pkgconfig_2.0.2        htmltools_0.3.6        limma_3.36.2          
+## [34] highr_0.7              rlang_0.2.2            GlobalOptions_0.1.0   
+## [37] rstudioapi_0.7         RSQLite_2.1.1          shiny_1.1.0           
+## [40] shape_1.4.4            bindr_0.1.1            dplyr_0.7.6           
+## [43] RCurl_1.95-4.11        magrittr_1.5           GenomeInfoDbData_1.1.0
+## [46] Matrix_1.2-14          Rcpp_0.12.18           munsell_0.5.0         
+## [49] abind_1.4-5            stringi_1.2.4          yaml_2.2.0            
+## [52] MASS_7.3-50            zlibbioc_1.26.0        Rtsne_0.13            
+## [55] plyr_1.8.4             grid_3.5.1             blob_1.1.1            
+## [58] promises_1.0.1         crayon_1.3.4           lattice_0.20-35       
+## [61] splines_3.5.1          circlize_0.4.4         knitr_1.20            
+## [64] ComplexHeatmap_1.18.1  pillar_1.3.0           rjson_0.2.20          
+## [67] geneplotter_1.58.0     reshape2_1.4.3         glue_1.3.0            
+## [70] evaluate_0.11          data.table_1.11.4      httpuv_1.4.5          
+## [73] gtable_0.2.0           purrr_0.2.5            assertthat_0.2.0      
+## [76] ggplot2_3.0.0          xfun_0.3               mime_0.5              
+## [79] GSVAdata_1.16.0        later_0.7.3            roxygen2_6.1.0        
+## [82] survival_2.42-6        tibble_1.4.2           shinythemes_1.1.1     
+## [85] memoise_1.1.0          bindrcpp_0.2.2         sva_3.28.0</code></pre>
 </div>
   </div>
 
@@ -520,7 +490,7 @@ bladder_sctke &lt;-<span class="st"> </span><span class="kw"><a href="../referen
 
 
       <footer><div class="copyright">
-  <p>Developed by David Jenkins, Tyler Faits, Emma Briars, Sebastian Carrasco Pro, W. Evan Johnson.</p>
+  <p>Developed by David Jenkins, Tyler Faits, Mohammed Muzamil Khan, Emma Briars, Sebastian Carrasco Pro, W. Evan Johnson.</p>
 </div>
 
 <div class="pkgdown">
