@@ -30,7 +30,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">singleCellTK</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.1.18</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.1.20</span>
       </span>
     </div>
 
@@ -118,15 +118,16 @@
 <h3 class="hasAnchor">
 <a href="#release-version" class="anchor"></a>Release Version</h3>
 <p>You can download the release version of the Single Cell Toolkit in <a href="https://bioconductor.org/packages/release/bioc/html/singleCellTK.html">Bioconductor v3.7</a>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">source</span>(<span class="st">"https://bioconductor.org/biocLite.R"</span>)
-<span class="kw">biocLite</span>(<span class="st">"singleCellTK"</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="cf">if</span> (<span class="op">!</span><span class="kw">requireNamespace</span>(<span class="st">"BiocManager"</span>, <span class="dt">quietly=</span><span class="ot">TRUE</span>))
+  <span class="kw">install.packages</span>(<span class="st">"BiocManager"</span>)
+BiocManager<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/BiocManager/topics/install">install</a></span>(<span class="st">"singleCellTK"</span>)</code></pre></div>
 </div>
 <div id="devel-version" class="section level3">
 <h3 class="hasAnchor">
 <a href="#devel-version" class="anchor"></a>Devel Version</h3>
 <p>You can download the development version of the Single Cell Toolkit in <a href="https://bioconductor.org/packages/devel/bioc/html/singleCellTK.html">Bioconductor v3.8</a> or from this repository:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># install.packages("devtools")</span>
-devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"compbiomed/singleCellTK"</span>, <span class="dt">ref=</span><span class="st">"r_3_4"</span>)</code></pre></div>
+devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"compbiomed/singleCellTK"</span>)</code></pre></div>
 </div>
 <div id="r-3-4-version" class="section level3">
 <h3 class="hasAnchor">
@@ -138,14 +139,15 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 <h4 class="hasAnchor">
 <a href="#troubleshooting-installation" class="anchor"></a>Troubleshooting Installation</h4>
 <p>For the majority of users, the commands above will install the latest version of the singleCellTK without any errors. Rarely, you may encounter an error due to previously installed versions of some packages that are required for the singleCellTK. If you encounter an error during installation, use the commands below to check the version of Bioconductor that is installed:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">source</span>(<span class="st">"https://bioconductor.org/biocLite.R"</span>)
-<span class="kw">biocVersion</span>()</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="cf">if</span> (<span class="op">!</span><span class="kw">requireNamespace</span>(<span class="st">"BiocManager"</span>, <span class="dt">quietly=</span><span class="ot">TRUE</span>))
+    <span class="kw">install.packages</span>(<span class="st">"BiocManager"</span>)
+BiocManager<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/BiocManager/topics/version">version</a></span>()</code></pre></div>
 <p>If the version number is not 3.6 or higher, you must upgrade Bioconductor to install the toolkit:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">biocLite</span>(<span class="st">"BiocUpgrade"</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">BiocManager<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/BiocManager/topics/install">install</a></span>()</code></pre></div>
 <p>After you install Bioconductor 3.6 or higher, you should be able to install the toolkit using <code><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">devtools::install_github("compbiomed/singleCellTK")</a></code>. If you still encounter an error, ensure your Bioconductor packages are up to date by running the following command.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">biocValid</span>()</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">BiocManager<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/BiocManager/topics/valid">valid</a></span>()</code></pre></div>
 <p>If the command above does not return <code>TRUE</code>, run the following command to update your R packages:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">biocLite</span>()</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">BiocManager<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/BiocManager/topics/install">install</a></span>()</code></pre></div>
 <p>Then, try to install the toolkit again:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"compbiomed/singleCellTK"</span>)</code></pre></div>
 <p>If you still encounter an error, please <a href="mailto:dfj@bu.edu">contact us</a> and we’d be happy to help.</p>
