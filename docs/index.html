@@ -30,7 +30,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">singleCellTK</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.1.20</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.3.0</span>
       </span>
     </div>
 
@@ -106,11 +106,10 @@
       
       </header><div class="row">
   <div class="contents col-md-9">
-    
-
-<div id="single-cell-tk" class="section level1">
+    <div id="single-cell-tk" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#single-cell-tk" class="anchor"></a>Single Cell TK</h1></div>
+
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
@@ -127,14 +126,14 @@ BiocManager<span class="op">::</span><span class="kw"><a href="http://www.rdocum
 <a href="#devel-version" class="anchor"></a>Devel Version</h3>
 <p>You can download the development version of the Single Cell Toolkit in <a href="https://bioconductor.org/packages/devel/bioc/html/singleCellTK.html">Bioconductor v3.8</a> or from this repository:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># install.packages("devtools")</span>
-devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"compbiomed/singleCellTK"</span>)</code></pre></div>
+devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/reexports">install_github</a></span>(<span class="st">"compbiomed/singleCellTK"</span>)</code></pre></div>
 </div>
 <div id="r-3-4-version" class="section level3">
 <h3 class="hasAnchor">
 <a href="#r-3-4-version" class="anchor"></a>R 3.4 Version</h3>
 <p>If you are still running an earlier version of R instead of 3.5, you can install the following version from this repository:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># install.packages("devtools")</span>
-devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"compbiomed/singleCellTK"</span>, <span class="dt">ref=</span><span class="st">"r_3_4"</span>)</code></pre></div>
+devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/reexports">install_github</a></span>(<span class="st">"compbiomed/singleCellTK"</span>, <span class="dt">ref=</span><span class="st">"r_3_4"</span>)</code></pre></div>
 <div id="troubleshooting-installation" class="section level4">
 <h4 class="hasAnchor">
 <a href="#troubleshooting-installation" class="anchor"></a>Troubleshooting Installation</h4>
@@ -144,12 +143,12 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 BiocManager<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/BiocManager/topics/version">version</a></span>()</code></pre></div>
 <p>If the version number is not 3.6 or higher, you must upgrade Bioconductor to install the toolkit:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">BiocManager<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/BiocManager/topics/install">install</a></span>()</code></pre></div>
-<p>After you install Bioconductor 3.6 or higher, you should be able to install the toolkit using <code><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">devtools::install_github("compbiomed/singleCellTK")</a></code>. If you still encounter an error, ensure your Bioconductor packages are up to date by running the following command.</p>
+<p>After you install Bioconductor 3.6 or higher, you should be able to install the toolkit using <code><a href="http://www.rdocumentation.org/packages/devtools/topics/reexports">devtools::install_github("compbiomed/singleCellTK")</a></code>. If you still encounter an error, ensure your Bioconductor packages are up to date by running the following command.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">BiocManager<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/BiocManager/topics/valid">valid</a></span>()</code></pre></div>
 <p>If the command above does not return <code>TRUE</code>, run the following command to update your R packages:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">BiocManager<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/BiocManager/topics/install">install</a></span>()</code></pre></div>
 <p>Then, try to install the toolkit again:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"compbiomed/singleCellTK"</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/reexports">install_github</a></span>(<span class="st">"compbiomed/singleCellTK"</span>)</code></pre></div>
 <p>If you still encounter an error, please <a href="mailto:dfj@bu.edu">contact us</a> and we’d be happy to help.</p>
 </div>
 </div>
@@ -172,7 +171,6 @@ BiocManager<span class="op">::</span><span class="kw"><a href="http://www.rdocum
 <p>Join us on <a href="https://compbiomed.slack.com/">slack</a>!</p>
 </div>
 </div>
-
   </div>
 
   <div class="col-md-3" id="sidebar">
@@ -208,7 +206,10 @@ BiocManager<span class="op">::</span><span class="kw"><a href="http://www.rdocum
   <div class="dev-status">
 <h2>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://travis-ci.org/compbiomed/singleCellTK"><img src="https://travis-ci.org/compbiomed/singleCellTK.svg?branch=master" alt="Build Status"></a></li>
+<li><a href="https://travis-ci.org/compbiomed/singleCellTK"><img src="https://travis-ci.org/compbiomed/singleCellTK.svg?branch=master" alt="Travis build status"></a></li>
+<li><a href="https://codecov.io/gh/compbiomed/singleCellTK"><img src="https://codecov.io/gh/compbiomed/singleCellTK/branch/master/graph/badge.svg" alt="codecov"></a></li>
+<li><a href="https://bioconductor.org/checkResults/release/bioc-LATEST/singleCellTK"><img src="http://www.bioconductor.org/shields/build/release/bioc/singleCellTK.svg" alt="BioC status"></a></li>
+<li><a href="https://www.tidyverse.org/lifecycle/#stable"><img src="https://img.shields.io/badge/lifecycle-stable-brightgreen.svg" alt="lifecycle"></a></li>
 </ul>
 </div>
 </div>
