@@ -6,8 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Estimate numbers of detected genes, significantly differentially expressed
-genes, and median significant effect size — DownsampleCells • singleCellTK</title>
+<title>Uniform Manifold Approximation and Projection(UMAP) algorithm for
+dimension reduction. — getUMAP • singleCellTK</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -31,11 +31,11 @@ genes, and median significant effect size — DownsampleCells • singleCellTK</
 
 
 
-<meta property="og:title" content="Estimate numbers of detected genes, significantly differentially expressed
-genes, and median significant effect size — DownsampleCells" />
+<meta property="og:title" content="Uniform Manifold Approximation and Projection(UMAP) algorithm for
+dimension reduction. — getUMAP" />
 
-<meta property="og:description" content="Estimate numbers of detected genes, significantly differentially expressed
-genes, and median significant effect size" />
+<meta property="og:description" content="Uniform Manifold Approximation and Projection(UMAP) algorithm for
+dimension reduction." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -144,95 +144,66 @@ genes, and median significant effect size" />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Estimate numbers of detected genes, significantly differentially expressed
-genes, and median significant effect size</h1>
+    <h1>Uniform Manifold Approximation and Projection(UMAP) algorithm for
+dimension reduction.</h1>
     
-    <div class="hidden name"><code>DownsampleCells.Rd</code></div>
+    <div class="hidden name"><code>getUMAP.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Estimate numbers of detected genes, significantly differentially expressed
-genes, and median significant effect size</p>
+    <p>Uniform Manifold Approximation and Projection(UMAP) algorithm for
+dimension reduction.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>DownsampleCells</span>(<span class='no'>originalData</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"counts"</span>, <span class='kw'>minCountDetec</span> <span class='kw'>=</span> <span class='fl'>10</span>,
-  <span class='kw'>minCellsDetec</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>minCellnum</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>maxCellnum</span> <span class='kw'>=</span> <span class='fl'>1000</span>, <span class='no'>realLabels</span>,
-  <span class='kw'>depthResolution</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>iterations</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>totalReads</span> <span class='kw'>=</span> <span class='fl'>1e+06</span>)</pre>
+    <pre class="usage"><span class='fu'>getUMAP</span>(<span class='no'>inSCE</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"logcounts"</span>, <span class='kw'>reducedDimName</span> <span class='kw'>=</span> <span class='st'>"UMAP"</span>,
+  <span class='kw'>n_neighbors</span> <span class='kw'>=</span> <span class='fl'>5</span>, <span class='kw'>n_iterations</span> <span class='kw'>=</span> <span class='fl'>200</span>, <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>1</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>originalData</th>
-      <td><p>SCtkExperiment. The SCtkExperiment object storing all
-assay data from the shiny app.</p></td>
+      <th>inSCE</th>
+      <td><p>Input SCtkExperiment object. Required</p></td>
     </tr>
     <tr>
       <th>useAssay</th>
-      <td><p>Character. The name of the assay to be used for subsampling.</p></td>
+      <td><p>Indicate which assay to use. The default is "logcounts".</p></td>
     </tr>
     <tr>
-      <th>minCountDetec</th>
-      <td><p>Numeric. The minimum number of reads found for a gene to
-be considered detected.</p></td>
+      <th>reducedDimName</th>
+      <td><p>a name to store the results of the dimension reduction
+coordinates obtained from this method. This is stored in the SingleCellExperiment
+object in the reducedDims slot. Required.</p></td>
     </tr>
     <tr>
-      <th>minCellsDetec</th>
-      <td><p>Numeric. The minimum number of cells a gene must have at
-least 1 read in for it to be considered detected.</p></td>
+      <th>n_neighbors</th>
+      <td><p>specify the number of nearest neighbors. Default is 5.</p></td>
     </tr>
     <tr>
-      <th>minCellnum</th>
-      <td><p>Numeric. The minimum number of virtual cells to include in
-the smallest simulated dataset.</p></td>
+      <th>n_iterations</th>
+      <td><p>number of iterations performed during layout optimization.
+Default is 200.</p></td>
     </tr>
     <tr>
-      <th>maxCellnum</th>
-      <td><p>Numeric. The maximum number of virtual cells to include in
-the largest simulated dataset</p></td>
-    </tr>
-    <tr>
-      <th>realLabels</th>
-      <td><p>Character. The name of the condition of interest. Must match
-a name from sample data. If only two factors present in the corresponding
-colData, will default to t-test. If multiple factors, will default to ANOVA.</p></td>
-    </tr>
-    <tr>
-      <th>depthResolution</th>
-      <td><p>Numeric. How many different read depth should the
-script simulate? Will simulate a number of experimental designs ranging from
-10 reads to maxReadDepth, with logarithmic spacing.</p></td>
-    </tr>
-    <tr>
-      <th>iterations</th>
-      <td><p>Numeric. How many times should each experimental design be
-simulated?</p></td>
-    </tr>
-    <tr>
-      <th>totalReads</th>
-      <td><p>Numeric. How many aligned reads to put in each simulated
-dataset.</p></td>
+      <th>alpha</th>
+      <td><p>initial value of "learning rate" of layout optimization. Default is 1.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A 3-dimensional array, with dimensions = c(iterations,
-depthResolution, 3). [,,1] contains the number of detected genes in each
-simulated dataset, [,,2] contains the number of significantly differentially
-expressed genes in each simulation, and [,,3] contains the mediansignificant
-effect size in each simulation. If no genes are significantly differentially
-expressed, the median effect size defaults to infinity.</p>
+    <p>a SCtkExperiment object with the reduced dimensions updated under
+reducedDimName specified.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://www.rdocumentation.org/packages/utils/topics/data'>data</a></span>(<span class='st'>"mouseBrainSubsetSCE"</span>)
-<span class='no'>subset</span> <span class='kw'>&lt;-</span> <span class='no'>mouseBrainSubsetSCE</span>[<span class='fl'>1</span>:<span class='fl'>1000</span>,]
-<span class='no'>res</span> <span class='kw'>&lt;-</span> <span class='fu'>DownsampleCells</span>(<span class='no'>subset</span>,
-                       <span class='kw'>realLabels</span> <span class='kw'>=</span> <span class='st'>"level1class"</span>,
-                       <span class='kw'>iterations</span><span class='kw'>=</span><span class='fl'>2</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: no non-missing arguments to min; returning Inf</span></div><div class='input'>
+    <pre class="examples"><div class='input'><span class='no'>umap_res</span> <span class='kw'>&lt;-</span> <span class='fu'>getUMAP</span>(<span class='kw'>inSCE</span> <span class='kw'>=</span> <span class='no'>mouseBrainSubsetSCE</span>, <span class='kw'>useAssay</span> <span class='kw'>=</span> <span class='st'>"counts"</span>,
+                    <span class='kw'>reducedDimName</span> <span class='kw'>=</span> <span class='st'>"UMAP"</span>, <span class='kw'>n_neighbors</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>n_iterations</span> <span class='kw'>=</span> <span class='fl'>200</span>,
+                    <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>1</span>)
+<span class='fu'>reducedDims</span>(<span class='no'>umap_res</span>)</div><div class='output co'>#&gt; List of length 5
+#&gt; names(5): PCA_counts PCA_logcounts TSNE_counts TSNE_logcounts UMAP</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
