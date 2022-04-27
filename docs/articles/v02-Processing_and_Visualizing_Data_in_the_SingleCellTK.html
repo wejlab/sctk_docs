@@ -6,18 +6,21 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Processing and Visualizing Data in the Single Cell Toolkit • singleCellTK</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/yeti/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><meta property="og:title" content="Processing and Visualizing Data in the Single Cell Toolkit">
-<meta property="og:description" content="">
-<meta name="twitter:card" content="summary">
+<meta property="og:description" content="singleCellTK">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
-<body>
+<body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -30,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">singleCellTK</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.5.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.9.1</span>
       </span>
     </div>
 
@@ -40,7 +43,7 @@
   <a href="../articles/v01-Introduction_to_singleCellTK.html">Introduction to singleCellTK</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Interactive Shiny Analysis
      
     <span class="caret"></span>
@@ -50,13 +53,13 @@
       <a href="../articles/v03-tab01_Upload.html">1: Upload</a>
     </li>
     <li>
-      <a href="../articles/v04-tab02_Data-Summary-and-Filtering.html">2: Data Summary and Filtering</a>
+      <a href="../articles/v04-tab02_QC-and-Filtering.html">2: Data Summary and Filtering</a>
     </li>
     <li>
-      <a href="../articles/v05-tab03_Visualization-and-Clustering.html">3: Visualization and Clustering</a>
+      <a href="../articles/v06-tab04_Batch-Correction.html">3: Batch Correction</a>
     </li>
     <li>
-      <a href="../articles/v06-tab04_Batch-Correction.html">4: Batch Correction</a>
+      <a href="../articles/v05-tab03_Visualization-and-Clustering.html">4: Visualization and Clustering</a>
     </li>
     <li>
       <a href="../articles/v07-tab05_Differential-Expression.html">5: Differential Expression</a>
@@ -70,7 +73,7 @@
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Command Line Analysis
      
     <span class="caret"></span>
@@ -90,7 +93,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/compbiomed/singleCellTK">
+  <a href="https://github.com/wevanjohnson/singleCellTK" class="external-link">
     <span class="fa fa-github"></span>
      
   </a>
@@ -104,19 +107,21 @@
 <!--/.navbar -->
 
       
+
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1>Processing and Visualizing Data in the Single Cell Toolkit</h1>
-                        <h4 class="author">David Jenkins</h4>
+      <h1 data-toc-skip>Processing and Visualizing Data in the Single Cell Toolkit</h1>
+                        <h4 data-toc-skip class="author">David Jenkins</h4>
             <address class="author_afil">
-      The Section of Computational Biomedicine, Boston University School of Medicine, Boston, MA<br><a class="author_email" href="mailto:#"></a><a href="mailto:dfj@bu.edu">dfj@bu.edu</a>
+      The Section of Computational Biomedicine, Boston University School of Medicine, Boston, MAProgram in Bioinformatics, Boston University, Boston, MA<br><a class="author_email" href="mailto:#"></a><a href="mailto:dfj@bu.edu" class="email">dfj@bu.edu</a>
       </address>
-                              <h4 class="author">Tyler Faits</h4>
+                              <h4 data-toc-skip class="author">Tyler Faits</h4>
             <address class="author_afil">
-      The Section of Computational Biomedicine, Boston University School of Medicine, Boston, MA<br><h4 class="author">W. Evan Johnson</h4>
+      The Section of Computational Biomedicine, Boston University School of Medicine, Boston, MAProgram in Bioinformatics, Boston University, Boston, MA<br><h4 data-toc-skip class="author">W. Evan Johnson</h4>
             <address class="author_afil">
-      The Section of Computational Biomedicine, Boston University School of Medicine, Boston, MA<br><div class="hidden name"><code>v02-Processing_and_Visualizing_Data_in_the_SingleCellTK.Rmd</code></div>
+      The Section of Computational Biomedicine, Boston University School of Medicine, Boston, MAProgram in Bioinformatics, Boston University, Boston, MA<br><small class="dont-index">Source: <a href="https://github.com/wevanjohnson/singleCellTK/blob/HEAD/vignettes/v02-Processing_and_Visualizing_Data_in_the_SingleCellTK.Rmd" class="external-link"><code>vignettes/v02-Processing_and_Visualizing_Data_in_the_SingleCellTK.Rmd</code></a></small>
+      <div class="hidden name"><code>v02-Processing_and_Visualizing_Data_in_the_SingleCellTK.Rmd</code></div>
 
     </address>
 </address>
@@ -124,35 +129,37 @@
 
     
     
-<div id="introduction" class="section level1">
-<h1 class="hasAnchor">
-<a href="#introduction" class="anchor"></a>Introduction</h1>
+<div class="section level2">
+<h2 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h2>
 <p>The analysis modules available through the Shiny app are also available as R functions for standard R console processing of single cell RNA-Seq data using a SCtkExperiment object. At any stage, you can load the Shiny App to interactively visualize and analyze a data set, but this vignette will show a standard workflow run entirely through the R console.</p>
 </div>
-<div id="maits-example" class="section level1">
-<h1 class="hasAnchor">
-<a href="#maits-example" class="anchor"></a>MAITS Example</h1>
-<p>The MAST package contains a convenient scRNA-Seq example data set of 96 Mucosal Associated Invariant T cells (MAITs), half of which were stimulated with cytokines to induce a response. For more details, consult the <a href="https://www.bioconductor.org/packages/release/bioc/html/MAST.html">MAST package</a> and <a href="https://www.bioconductor.org/packages/release/bioc/vignettes/MAST/inst/doc/MAITAnalysis.html">vignette</a>.</p>
+<div class="section level2">
+<h2 id="maits-example">MAITS Example<a class="anchor" aria-label="anchor" href="#maits-example"></a>
+</h2>
+<p>The MAST package contains a convenient scRNA-Seq example data set of 96 Mucosal Associated Invariant T cells (MAITs), half of which were stimulated with cytokines to induce a response. For more details, consult the <a href="https://www.bioconductor.org/packages/release/bioc/html/MAST.html" class="external-link">MAST package</a> and <a href="https://www.bioconductor.org/packages/release/bioc/vignettes/MAST/inst/doc/MAITAnalysis.html" class="external-link">vignette</a>.</p>
 <p>We will first convert the MAST example dataset to a SCtkExperiment object.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/message">suppressPackageStartupMessages</a></span>({
-  <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(MAST)
-  <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(singleCellTK)
-  <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(xtable)
-})
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/message.html" class="external-link">suppressPackageStartupMessages</a></span><span class="op">(</span><span class="op">{</span>
+  <span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/RGLab/MAST/" class="external-link">MAST</a></span><span class="op">)</span>
+  <span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://compbiomed.github.io/sctk_docs/" class="external-link">singleCellTK</a></span><span class="op">)</span>
+  <span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="http://xtable.r-forge.r-project.org/" class="external-link">xtable</a></span><span class="op">)</span>
+<span class="op">}</span><span class="op">)</span>
 
-<span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/data">data</a></span>(maits, <span class="dt">package=</span><span class="st">"MAST"</span>)
-maits_sce &lt;-<span class="st"> </span><span class="kw"><a href="../reference/createSCE.html">createSCE</a></span>(<span class="dt">assayFile =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/t">t</a></span>(maits<span class="op">$</span>expressionmat),
-                       <span class="dt">annotFile =</span> maits<span class="op">$</span>cdat,
-                       <span class="dt">featureFile =</span> maits<span class="op">$</span>fdat,
-                       <span class="dt">assayName =</span> <span class="st">"logtpm"</span>,
-                       <span class="dt">inputDataFrames =</span> <span class="ot">TRUE</span>,
-                       <span class="dt">createLogCounts =</span> <span class="ot">FALSE</span>)
-<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/rm">rm</a></span>(maits)</code></pre></div>
-<div id="summarizetable" class="section level2">
-<h2 class="hasAnchor">
-<a href="#summarizetable" class="anchor"></a>summarizeTable</h2>
+<span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">maits</span>, package<span class="op">=</span><span class="st">"MAST"</span><span class="op">)</span>
+<span class="va">maits_sce</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/createSCE.html">createSCE</a></span><span class="op">(</span>assayFile <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/DelayedArray/man/DelayedMatrix-utils.html" class="external-link">t</a></span><span class="op">(</span><span class="va">maits</span><span class="op">$</span><span class="va">expressionmat</span><span class="op">)</span>,
+                       annotFile <span class="op">=</span> <span class="va">maits</span><span class="op">$</span><span class="va">cdat</span>,
+                       featureFile <span class="op">=</span> <span class="va">maits</span><span class="op">$</span><span class="va">fdat</span>,
+                       assayName <span class="op">=</span> <span class="st">"logtpm"</span>,
+                       inputDataFrames <span class="op">=</span> <span class="cn">TRUE</span>,
+                       createLogCounts <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/rm.html" class="external-link">rm</a></span><span class="op">(</span><span class="va">maits</span><span class="op">)</span></code></pre></div>
+<div class="section level3">
+<h3 id="summarizetable">summarizeTable<a class="anchor" aria-label="anchor" href="#summarizetable"></a>
+</h3>
 <p>You can get summary metrics with the <code>summarizeTable</code> function:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="kw"><a href="../reference/summarizeTable.html">summarizeTable</a></span>(maits_sce, <span class="dt">useAssay =</span> <span class="st">"logtpm"</span>))</code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html" class="external-link">kable</a></span><span class="op">(</span><span class="fu"><a href="../reference/summarizeTable.html">summarizeTable</a></span><span class="op">(</span><span class="va">maits_sce</span>, useAssay <span class="op">=</span> <span class="st">"logtpm"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="left">Metric</th>
@@ -160,7 +167,7 @@ maits_sce &lt;-<span class="st"> </span><span class="kw"><a href="../reference/c
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td align="left">Number of Samples</td>
+<td align="left">Number of Cells</td>
 <td align="right">96</td>
 </tr>
 <tr class="even">
@@ -176,40 +183,43 @@ maits_sce &lt;-<span class="st"> </span><span class="kw"><a href="../reference/c
 <td align="right">6833</td>
 </tr>
 <tr class="odd">
-<td align="left">Samples with &lt;1700 detected genes</td>
+<td align="left">Cells with &lt;1700 detected genes</td>
 <td align="right">5</td>
 </tr>
 <tr class="even">
-<td align="left">Genes with no expression across all samples</td>
+<td align="left">Genes with no expression across all cells</td>
 <td align="right">0</td>
 </tr>
 </tbody>
 </table>
 <p>Typically, these summary statistics would be run on a “counts” matrix, but here we have log(tpm) values so the average number of reads per cell is calculated from the normalized values instead of raw counts.</p>
 </div>
-<div id="filtering-by-annotation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#filtering-by-annotation" class="anchor"></a>Filtering by Annotation</h2>
+<div class="section level3">
+<h3 id="filtering-by-annotation">Filtering by Annotation<a class="anchor" aria-label="anchor" href="#filtering-by-annotation"></a>
+</h3>
 <p>Explore the available annotations in the data:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/colnames">colnames</a></span>(<span class="kw">colData</span>(maits_sce))</code></pre></div>
-<pre><code>##  [1] "wellKey"          "condition"        "nGeneOn"         
-##  [4] "libSize"          "PercentToHuman"   "MedianCVCoverage"
-##  [7] "PCRDuplicate"     "exonRate"         "pastFastqc"      
-## [10] "ncells"           "ngeneson"         "cngeneson"       
-## [13] "TRAV1"            "TRBV6"            "TRBV4"           
-## [16] "TRBV20"           "alpha"            "beta"            
-## [19] "ac"               "bc"               "ourfilter"</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/table">table</a></span>(<span class="kw">colData</span>(maits_sce)<span class="op">$</span>ourfilter)</code></pre></div>
-<pre><code>## 
-## FALSE  TRUE 
-##    22    74</code></pre>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/SummarizedExperiment/man/SummarizedExperiment-class.html" class="external-link">colData</a></span><span class="op">(</span><span class="va">maits_sce</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<pre><code><span class="co">##  [1] "wellKey"          "condition"        "nGeneOn"          "libSize"         </span>
+<span class="co">##  [5] "PercentToHuman"   "MedianCVCoverage" "PCRDuplicate"     "exonRate"        </span>
+<span class="co">##  [9] "pastFastqc"       "ncells"           "ngeneson"         "cngeneson"       </span>
+<span class="co">## [13] "TRAV1"            "TRBV6"            "TRBV4"            "TRBV20"          </span>
+<span class="co">## [17] "alpha"            "beta"             "ac"               "bc"              </span>
+<span class="co">## [21] "ourfilter"</span></code></pre>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/DelayedArray/man/DelayedArray-utils.html" class="external-link">table</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/SummarizedExperiment/man/SummarizedExperiment-class.html" class="external-link">colData</a></span><span class="op">(</span><span class="va">maits_sce</span><span class="op">)</span><span class="op">$</span><span class="va">ourfilter</span><span class="op">)</span></code></pre></div>
+<pre><code><span class="co">## </span>
+<span class="co">## FALSE  TRUE </span>
+<span class="co">##    22    74</span></code></pre>
 <p>The data has a filtered dataset with 74 ‘pass filter’ samples, let’s subset the data to include the pass filter samples</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">maits_subset &lt;-<span class="st"> </span>maits_sce[, <span class="kw">colData</span>(maits_sce)<span class="op">$</span>ourfilter]
-<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/table">table</a></span>(<span class="kw">colData</span>(maits_subset)<span class="op">$</span>ourfilter)</code></pre></div>
-<pre><code>## 
-## TRUE 
-##   74</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="kw"><a href="../reference/summarizeTable.html">summarizeTable</a></span>(maits_subset, <span class="dt">useAssay =</span> <span class="st">"logtpm"</span>))</code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">maits_subset</span> <span class="op">&lt;-</span> <span class="va">maits_sce</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/pkg/SummarizedExperiment/man/SummarizedExperiment-class.html" class="external-link">colData</a></span><span class="op">(</span><span class="va">maits_sce</span><span class="op">)</span><span class="op">$</span><span class="va">ourfilter</span><span class="op">]</span>
+<span class="fu"><a href="https://rdrr.io/pkg/DelayedArray/man/DelayedArray-utils.html" class="external-link">table</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/SummarizedExperiment/man/SummarizedExperiment-class.html" class="external-link">colData</a></span><span class="op">(</span><span class="va">maits_subset</span><span class="op">)</span><span class="op">$</span><span class="va">ourfilter</span><span class="op">)</span></code></pre></div>
+<pre><code><span class="co">## </span>
+<span class="co">## TRUE </span>
+<span class="co">##   74</span></code></pre>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html" class="external-link">kable</a></span><span class="op">(</span><span class="fu"><a href="../reference/summarizeTable.html">summarizeTable</a></span><span class="op">(</span><span class="va">maits_subset</span>, useAssay <span class="op">=</span> <span class="st">"logtpm"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="left">Metric</th>
@@ -217,7 +227,7 @@ maits_sce &lt;-<span class="st"> </span><span class="kw"><a href="../reference/c
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td align="left">Number of Samples</td>
+<td align="left">Number of Cells</td>
 <td align="right">74</td>
 </tr>
 <tr class="even">
@@ -233,99 +243,110 @@ maits_sce &lt;-<span class="st"> </span><span class="kw"><a href="../reference/c
 <td align="right">7539</td>
 </tr>
 <tr class="odd">
-<td align="left">Samples with &lt;1700 detected genes</td>
+<td align="left">Cells with &lt;1700 detected genes</td>
 <td align="right">0</td>
 </tr>
 <tr class="even">
-<td align="left">Genes with no expression across all samples</td>
+<td align="left">Genes with no expression across all cells</td>
 <td align="right">157</td>
 </tr>
 </tbody>
 </table>
 </div>
-<div id="visualization" class="section level2">
-<h2 class="hasAnchor">
-<a href="#visualization" class="anchor"></a>Visualization</h2>
+<div class="section level3">
+<h3 id="visualization">Visualization<a class="anchor" aria-label="anchor" href="#visualization"></a>
+</h3>
 <p>Initially, there are no reduced dimensionality datasets stored in the object</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">reducedDims</span>(maits_subset)</code></pre></div>
-<pre><code>## List of length 0
-## names(0):</code></pre>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/SingleCellExperiment/man/reducedDims.html" class="external-link">reducedDims</a></span><span class="op">(</span><span class="va">maits_subset</span><span class="op">)</span></code></pre></div>
+<pre><code><span class="co">## List of length 0</span>
+<span class="co">## names(0):</span></code></pre>
 <p>PCA and t-SNE can be added to the object with the getPCA() and getTSNE() functions:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">maits_subset &lt;-<span class="st"> </span><span class="kw"><a href="../reference/getPCA.html">getPCA</a></span>(maits_subset, <span class="dt">useAssay =</span> <span class="st">"logtpm"</span>,
-                       <span class="dt">reducedDimName =</span> <span class="st">"PCA_logtpm"</span>)
-maits_subset &lt;-<span class="st"> </span><span class="kw"><a href="../reference/getTSNE.html">getTSNE</a></span>(maits_subset, <span class="dt">useAssay =</span> <span class="st">"logtpm"</span>,
-                        <span class="dt">reducedDimName =</span> <span class="st">"TSNE_logtpm"</span>)
-<span class="kw">reducedDims</span>(maits_subset)</code></pre></div>
-<pre><code>## List of length 2
-## names(2): PCA_logtpm TSNE_logtpm</code></pre>
-<div id="pca" class="section level3">
-<h3 class="hasAnchor">
-<a href="#pca" class="anchor"></a>PCA</h3>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">maits_subset</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/getPCA.html">getPCA</a></span><span class="op">(</span><span class="va">maits_subset</span>, useAssay <span class="op">=</span> <span class="st">"logtpm"</span>,
+                       reducedDimName <span class="op">=</span> <span class="st">"PCA_logtpm"</span><span class="op">)</span>
+<span class="va">maits_subset</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/getTSNE.html">getTSNE</a></span><span class="op">(</span><span class="va">maits_subset</span>, useAssay <span class="op">=</span> <span class="st">"logtpm"</span>,
+                        reducedDimName <span class="op">=</span> <span class="st">"TSNE_logtpm"</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/pkg/SingleCellExperiment/man/reducedDims.html" class="external-link">reducedDims</a></span><span class="op">(</span><span class="va">maits_subset</span><span class="op">)</span></code></pre></div>
+<pre><code><span class="co">## List of length 2</span>
+<span class="co">## names(2): PCA_logtpm TSNE_logtpm</span></code></pre>
+<div class="section level4">
+<h4 id="pca">PCA<a class="anchor" aria-label="anchor" href="#pca"></a>
+</h4>
 <p>PCA data can be visualized with the plotPCA() function:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/plotPCA.html">plotPCA</a></span>(maits_subset, <span class="dt">reducedDimName =</span> <span class="st">"PCA_logtpm"</span>, <span class="dt">colorBy =</span> <span class="st">"condition"</span>)</code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/plotPCA.html">plotPCA</a></span><span class="op">(</span><span class="va">maits_subset</span>, reducedDimName <span class="op">=</span> <span class="st">"PCA_logtpm"</span>, colorBy <span class="op">=</span> <span class="st">"condition"</span><span class="op">)</span></code></pre></div>
 <p><img src="v02-Processing_and_Visualizing_Data_in_the_SingleCellTK_files/figure-html/maits_pca-1.png" width="700"></p>
 </div>
-<div id="t-sne" class="section level3">
-<h3 class="hasAnchor">
-<a href="#t-sne" class="anchor"></a>t-SNE</h3>
+<div class="section level4">
+<h4 id="t-sne">t-SNE<a class="anchor" aria-label="anchor" href="#t-sne"></a>
+</h4>
 <p>t-SNE data can be visualized with the plotTSNE() function:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/plotTSNE.html">plotTSNE</a></span>(maits_subset, <span class="dt">reducedDimName =</span> <span class="st">"TSNE_logtpm"</span>, <span class="dt">colorBy =</span> <span class="st">"condition"</span>)</code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/plotTSNE.html">plotTSNE</a></span><span class="op">(</span><span class="va">maits_subset</span>, reducedDimName <span class="op">=</span> <span class="st">"TSNE_logtpm"</span>, colorBy <span class="op">=</span> <span class="st">"condition"</span><span class="op">)</span></code></pre></div>
 <p><img src="v02-Processing_and_Visualizing_Data_in_the_SingleCellTK_files/figure-html/maits_tsne-1.png" width="700"></p>
 </div>
 </div>
-<div id="converting-gene-names" class="section level2">
-<h2 class="hasAnchor">
-<a href="#converting-gene-names" class="anchor"></a>Converting Gene Names</h2>
+<div class="section level3">
+<h3 id="converting-gene-names">Converting Gene Names<a class="anchor" aria-label="anchor" href="#converting-gene-names"></a>
+</h3>
 <p>The singleCellTK has the ability to convert gene ids to various formats using the org.*.eg.db Bioconductor annotation packages. These packages are not installed by default, so these must be manually installed before this function will work.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/message">suppressPackageStartupMessages</a></span>({
-  <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(org.Hs.eg.db)
-})
-maits_entrez &lt;-<span class="st"> </span>maits_subset
-maits_subset &lt;-<span class="st"> </span><span class="kw"><a href="../reference/convertGeneIDs.html">convertGeneIDs</a></span>(maits_subset, <span class="dt">inSymbol =</span> <span class="st">"ENTREZID"</span>,
-                               <span class="dt">outSymbol =</span> <span class="st">"SYMBOL"</span>, <span class="dt">database =</span> <span class="st">"org.Hs.eg.db"</span>)
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/message.html" class="external-link">suppressPackageStartupMessages</a></span><span class="op">(</span><span class="op">{</span>
+  <span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">org.Hs.eg.db</span><span class="op">)</span>
+<span class="op">}</span><span class="op">)</span>
+<span class="va">maits_entrez</span> <span class="op">&lt;-</span> <span class="va">maits_subset</span>
+<span class="va">maits_subset</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/convertGeneIDs.html">convertGeneIDs</a></span><span class="op">(</span><span class="va">maits_subset</span>, inSymbol <span class="op">=</span> <span class="st">"ENTREZID"</span>,
+                               outSymbol <span class="op">=</span> <span class="st">"SYMBOL"</span>, database <span class="op">=</span> <span class="st">"org.Hs.eg.db"</span><span class="op">)</span>
 <span class="co">#to remove confusion for MAST about the gene name:</span>
-<span class="kw">rowData</span>(maits_subset)<span class="op">$</span>primerid &lt;-<span class="st"> </span><span class="ot">NULL</span></code></pre></div>
+<span class="fu"><a href="https://rdrr.io/pkg/SummarizedExperiment/man/SummarizedExperiment-class.html" class="external-link">rowData</a></span><span class="op">(</span><span class="va">maits_subset</span><span class="op">)</span><span class="op">$</span><span class="va">primerid</span> <span class="op">&lt;-</span> <span class="cn">NULL</span></code></pre></div>
 </div>
-<div id="differential-expression-with-mast" class="section level2">
-<h2 class="hasAnchor">
-<a href="#differential-expression-with-mast" class="anchor"></a>Differential Expression with MAST</h2>
+<div class="section level3">
+<h3 id="differential-expression-with-mast">Differential Expression with MAST<a class="anchor" aria-label="anchor" href="#differential-expression-with-mast"></a>
+</h3>
 <p>MAST is a popular package for performing differential expression analysis on scRNA-Seq data that models the effect of dropouts using a bimodal distribution and by including the cellular detection rate into the differential expression model. Functions in the toolkit allow you to perform this analysis on a SCtkExperiment object.</p>
-<div id="adaptive-thresholding" class="section level3">
-<h3 class="hasAnchor">
-<a href="#adaptive-thresholding" class="anchor"></a>Adaptive Thresholding</h3>
+<div class="section level4">
+<h4 id="adaptive-thresholding">Adaptive Thresholding<a class="anchor" aria-label="anchor" href="#adaptive-thresholding"></a>
+</h4>
 <p>First, an adaptive threshold is calculated by binning genes with similar expression levels.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">thresholds &lt;-<span class="st"> </span><span class="kw"><a href="../reference/MAST.html">thresholdGenes</a></span>(maits_subset, <span class="dt">useAssay =</span> <span class="st">"logtpm"</span>)
-<span class="kw"><a href="https://www.rdocumentation.org/packages/graphics/topics/par">par</a></span>(<span class="dt">mfrow =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">5</span>, <span class="dv">4</span>))
-<span class="kw"><a href="https://www.rdocumentation.org/packages/graphics/topics/plot">plot</a></span>(thresholds)
-<span class="kw"><a href="https://www.rdocumentation.org/packages/graphics/topics/par">par</a></span>(<span class="dt">mfrow =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">1</span>, <span class="dv">1</span>))</code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">thresholds</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/MAST.html">thresholdGenes</a></span><span class="op">(</span><span class="va">maits_subset</span>, useAssay <span class="op">=</span> <span class="st">"logtpm"</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/graphics/par.html" class="external-link">par</a></span><span class="op">(</span>mfrow <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">4</span><span class="op">)</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">thresholds</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/graphics/par.html" class="external-link">par</a></span><span class="op">(</span>mfrow <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <p><img src="v02-Processing_and_Visualizing_Data_in_the_SingleCellTK_files/figure-html/maits_thresh-1.png" width="700"></p>
 </div>
-<div id="run-mast" class="section level3">
-<h3 class="hasAnchor">
-<a href="#run-mast" class="anchor"></a>Run MAST</h3>
+<div class="section level4">
+<h4 id="run-mast">Run MAST<a class="anchor" aria-label="anchor" href="#run-mast"></a>
+</h4>
 <p>MAST analysis can be run with a single function</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mast_results &lt;-<span class="st"> </span><span class="kw"><a href="../reference/MAST.html">MAST</a></span>(maits_subset, <span class="dt">condition =</span> <span class="st">"condition"</span>, <span class="dt">useThresh =</span> <span class="ot">TRUE</span>,
-                     <span class="dt">useAssay =</span> <span class="st">"logtpm"</span>)</code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">mast_results</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/MAST.html">MAST</a></span><span class="op">(</span><span class="va">maits_subset</span>, condition <span class="op">=</span> <span class="st">"condition"</span>, useThresh <span class="op">=</span> <span class="cn">TRUE</span>,
+                     useAssay <span class="op">=</span> <span class="st">"logtpm"</span><span class="op">)</span></code></pre></div>
 <p>The resulting significantly differentially expressed genes can be visualized using a violin plot, linear model, or heatmap:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/MAST.html">MASTviolin</a></span>(maits_subset, <span class="dt">useAssay =</span> <span class="st">"logtpm"</span>, <span class="dt">fcHurdleSig =</span> mast_results,
-           <span class="dt">threshP =</span> <span class="ot">TRUE</span>, <span class="dt">condition =</span> <span class="st">"condition"</span>)</code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/MAST.html">MASTviolin</a></span><span class="op">(</span><span class="va">maits_subset</span>, useAssay <span class="op">=</span> <span class="st">"logtpm"</span>, fcHurdleSig <span class="op">=</span> <span class="va">mast_results</span>,
+           threshP <span class="op">=</span> <span class="cn">TRUE</span>, condition <span class="op">=</span> <span class="st">"condition"</span><span class="op">)</span></code></pre></div>
 <p><img src="v02-Processing_and_Visualizing_Data_in_the_SingleCellTK_files/figure-html/maits_violin-1.png" width="700"></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/MAST.html">MASTregression</a></span>(maits_subset, <span class="dt">useAssay =</span> <span class="st">"logtpm"</span>, <span class="dt">fcHurdleSig =</span> mast_results,
-               <span class="dt">threshP =</span> <span class="ot">TRUE</span>, <span class="dt">condition =</span> <span class="st">"condition"</span>)</code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/MAST.html">MASTregression</a></span><span class="op">(</span><span class="va">maits_subset</span>, useAssay <span class="op">=</span> <span class="st">"logtpm"</span>, fcHurdleSig <span class="op">=</span> <span class="va">mast_results</span>,
+               threshP <span class="op">=</span> <span class="cn">TRUE</span>, condition <span class="op">=</span> <span class="st">"condition"</span><span class="op">)</span></code></pre></div>
 <p><img src="v02-Processing_and_Visualizing_Data_in_the_SingleCellTK_files/figure-html/maits_lm-1.png" width="700"></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/plotDiffEx.html">plotDiffEx</a></span>(maits_subset, <span class="dt">useAssay =</span> <span class="st">"logtpm"</span>, <span class="dt">condition =</span> <span class="st">"condition"</span>,
-           <span class="dt">geneList =</span> mast_results<span class="op">$</span>Gene[<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>], <span class="dt">annotationColors =</span> <span class="st">"auto"</span>,
-           <span class="dt">displayRowLabels =</span> <span class="ot">FALSE</span>, <span class="dt">displayColumnLabels =</span> <span class="ot">FALSE</span>)</code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/plotDiffEx.html">plotDiffEx</a></span><span class="op">(</span><span class="va">maits_subset</span>, useAssay <span class="op">=</span> <span class="st">"logtpm"</span>, condition <span class="op">=</span> <span class="st">"condition"</span>,
+           geneList <span class="op">=</span> <span class="va">mast_results</span><span class="op">$</span><span class="va">Gene</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">100</span><span class="op">]</span>, annotationColors <span class="op">=</span> <span class="st">"auto"</span>,
+           displayRowLabels <span class="op">=</span> <span class="cn">FALSE</span>, displayColumnLabels <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
 <p><img src="v02-Processing_and_Visualizing_Data_in_the_SingleCellTK_files/figure-html/maits_heatmap-1.png" width="700"></p>
 <p>Among the top differentially expressed genes was interferon gamma, a cytokine that is known to be produced in response to stimulation.</p>
 </div>
-<div id="pathway-activity-with-gsva" class="section level3">
-<h3 class="hasAnchor">
-<a href="#pathway-activity-with-gsva" class="anchor"></a>Pathway Activity with GSVA</h3>
+<div class="section level4">
+<h4 id="pathway-activity-with-gsva">Pathway Activity with GSVA<a class="anchor" aria-label="anchor" href="#pathway-activity-with-gsva"></a>
+</h4>
 <p>The singleCellTK supports pathway activity analysis using the GSVA package. Currently, the toolkit supports performing this analysis on human datasets with entrez IDs. Data can be visualized as a violin plot or a heatmap.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">gsvaRes &lt;-<span class="st"> </span><span class="kw"><a href="../reference/gsvaSCE.html">gsvaSCE</a></span>(maits_entrez, <span class="dt">useAssay =</span> <span class="st">"logtpm"</span>,
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">gsvaRes</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/gsvaSCE.html">gsvaSCE</a></span><span class="op">(</span><span class="va">maits_entrez</span>, useAssay <span class="op">=</span> <span class="st">"logtpm"</span>,
                    <span class="st">"MSigDB c2 (Human, Entrez ID only)"</span>,
-                   <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"KEGG_PROTEASOME"</span>,
+                   <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"KEGG_PROTEASOME"</span>,
                      <span class="st">"REACTOME_VIF_MEDIATED_DEGRADATION_OF_APOBEC3G"</span>,
                      <span class="st">"REACTOME_P53_INDEPENDENT_DNA_DAMAGE_RESPONSE"</span>,
                      <span class="st">"BIOCARTA_PROTEASOME_PATHWAY"</span>,
@@ -333,177 +354,204 @@ maits_subset &lt;-<span class="st"> </span><span class="kw"><a href="../referenc
                      <span class="st">"REACTOME_REGULATION_OF_ORNITHINE_DECARBOXYLASE"</span>,
                      <span class="st">"REACTOME_CYTOSOLIC_TRNA_AMINOACYLATION"</span>,
                      <span class="st">"REACTOME_STABILIZATION_OF_P53"</span>,
-                     <span class="st">"REACTOME_SCF_BETA_TRCP_MEDIATED_DEGRADATION_OF_EMI1"</span>),
-                    <span class="dt">parallel.sz=</span><span class="dv">1</span>)</code></pre></div>
-<pre><code>## Warning in .local(expr, gset.idx.list, ...): 157 genes with constant
-## expression values throuhgout the samples.</code></pre>
-<pre><code>## Warning in .local(expr, gset.idx.list, ...): Since argument method!
-## ="ssgsea", genes with constant expression values are discarded.</code></pre>
+                     <span class="st">"REACTOME_SCF_BETA_TRCP_MEDIATED_DEGRADATION_OF_EMI1"</span><span class="op">)</span>,
+                    parallel.sz<span class="op">=</span><span class="fl">1</span><span class="op">)</span></code></pre></div>
+<pre><code><span class="co">## Warning in .filterFeatures(expr, method): 157 genes with constant expression</span>
+<span class="co">## values throuhgout the samples.</span></code></pre>
+<pre><code><span class="co">## Warning in .filterFeatures(expr, method): Since argument method!="ssgsea", genes</span>
+<span class="co">## with constant expression values are discarded.</span></code></pre>
 <pre><code>## Estimating GSVA scores for 9 gene sets.
-## Computing observed enrichment scores
 ## Estimating ECDFs with Gaussian kernels
-## Using parallel with 1 cores
 ## 
-  |                                                                       
-  |                                                                 |   0%
-  |                                                                       
-  |=======                                                          |  11%
-  |                                                                       
-  |==============                                                   |  22%
-  |                                                                       
-  |======================                                           |  33%
-  |                                                                       
-  |=============================                                    |  44%
-  |                                                                       
-  |====================================                             |  56%
-  |                                                                       
-  |===========================================                      |  67%
-  |                                                                       
-  |===================================================              |  78%
-  |                                                                       
-  |==========================================================       |  89%
-  |                                                                       
-  |=================================================================| 100%</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/Random">set.seed</a></span>(<span class="dv">1234</span>)
-<span class="kw"><a href="../reference/gsvaSCE.html">gsvaPlot</a></span>(maits_subset, gsvaRes, <span class="st">"Violin"</span>, <span class="st">"condition"</span>)</code></pre></div>
+  |                                                                            
+  |                                                                      |   0%
+  |                                                                            
+  |========                                                              |  11%
+  |                                                                            
+  |================                                                      |  22%
+  |                                                                            
+  |=======================                                               |  33%
+  |                                                                            
+  |===============================                                       |  44%
+  |                                                                            
+  |=======================================                               |  56%
+  |                                                                            
+  |===============================================                       |  67%
+  |                                                                            
+  |======================================================                |  78%
+  |                                                                            
+  |==============================================================        |  89%
+  |                                                                            
+  |======================================================================| 100%</code></pre>
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1234</span><span class="op">)</span>
+<span class="fu"><a href="../reference/gsvaSCE.html">gsvaPlot</a></span><span class="op">(</span><span class="va">maits_subset</span>, <span class="va">gsvaRes</span>, <span class="st">"Violin"</span>, <span class="st">"condition"</span><span class="op">)</span></code></pre></div>
 <p><img src="v02-Processing_and_Visualizing_Data_in_the_SingleCellTK_files/figure-html/maits_gsva-1.png" width="700"></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/gsvaSCE.html">gsvaPlot</a></span>(maits_subset, gsvaRes, <span class="st">"Heatmap"</span>, <span class="st">"condition"</span>)</code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/gsvaSCE.html">gsvaPlot</a></span><span class="op">(</span><span class="va">maits_subset</span>, <span class="va">gsvaRes</span>, <span class="st">"Heatmap"</span>, <span class="st">"condition"</span><span class="op">)</span></code></pre></div>
 <p><img src="v02-Processing_and_Visualizing_Data_in_the_SingleCellTK_files/figure-html/maits_gsva-2.png" width="700"></p>
 <p>Among the top pathways that showed increased activity in the stimulated cells was KEGG_PROTEASOME, indicating proteasome related genes showed increased activity in the stimulated T cells. This pathway includes interferon gamma.</p>
 </div>
 </div>
 </div>
-<div id="batch-effects-example" class="section level1">
-<h1 class="hasAnchor">
-<a href="#batch-effects-example" class="anchor"></a>Batch Effects Example</h1>
+<div class="section level2">
+<h2 id="batch-effects-example">Batch Effects Example<a class="anchor" aria-label="anchor" href="#batch-effects-example"></a>
+</h2>
 <p>It is possible to use ComBat within the Single Cell Toolkit. This support is experimental, since ComBat was not designed for scRNA-Seq. Here, we will load the bladderbatch example data into a SingleCellExperiment object.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(bladderbatch)
-<span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/data">data</a></span>(bladderdata)
-dat &lt;-<span class="st"> </span>bladderEset
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">bladderbatch</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">bladderdata</span><span class="op">)</span>
+<span class="va">dat</span> <span class="op">&lt;-</span> <span class="va">bladderEset</span>
 
-pheno &lt;-<span class="st"> </span><span class="kw">pData</span>(dat)
-edata &lt;-<span class="st"> </span><span class="kw">exprs</span>(dat)
-bladder_sctke &lt;-<span class="st"> </span><span class="kw"><a href="../reference/createSCE.html">createSCE</a></span>(<span class="dt">assayFile =</span> edata,
-                           <span class="dt">annotFile =</span> pheno,
-                           <span class="dt">assayName =</span> <span class="st">"microarray"</span>,
-                           <span class="dt">inputDataFrames =</span> <span class="ot">TRUE</span>,
-                           <span class="dt">createLogCounts =</span> <span class="ot">FALSE</span>)</code></pre></div>
+<span class="va">pheno</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/Biobase/man/phenoData.html" class="external-link">pData</a></span><span class="op">(</span><span class="va">dat</span><span class="op">)</span>
+<span class="va">edata</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/Biobase/man/exprs.html" class="external-link">exprs</a></span><span class="op">(</span><span class="va">dat</span><span class="op">)</span>
+<span class="va">bladder_sctke</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/createSCE.html">createSCE</a></span><span class="op">(</span>assayFile <span class="op">=</span> <span class="va">edata</span>,
+                           annotFile <span class="op">=</span> <span class="va">pheno</span>,
+                           assayName <span class="op">=</span> <span class="st">"microarray"</span>,
+                           inputDataFrames <span class="op">=</span> <span class="cn">TRUE</span>,
+                           createLogCounts <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
 <p>The plotBatchVariance() function can be used to plot the percent variation explained by condition and batch across the dataset.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/plotBatchVariance.html">plotBatchVariance</a></span>(bladder_sctke, <span class="dt">useAssay=</span><span class="st">"microarray"</span>,
-                  <span class="dt">batch=</span><span class="st">"batch"</span>, <span class="dt">condition =</span> <span class="st">"cancer"</span>)</code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/plotBatchVariance.html">plotBatchVariance</a></span><span class="op">(</span><span class="va">bladder_sctke</span>, useAssay<span class="op">=</span><span class="st">"microarray"</span>,
+                  batch<span class="op">=</span><span class="st">"batch"</span>, condition <span class="op">=</span> <span class="st">"cancer"</span><span class="op">)</span></code></pre></div>
+<pre><code><span class="co">## Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please</span>
+<span class="co">## use `guide = "none"` instead.</span></code></pre>
 <p><img src="v02-Processing_and_Visualizing_Data_in_the_SingleCellTK_files/figure-html/plot_var_microarray-1.png" width="700"></p>
 <p>The ComBatSCE() function can then be used to correct for batch effects</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">assay</span>(bladder_sctke, <span class="st">"combat"</span>) &lt;-<span class="st"> </span><span class="kw"><a href="../reference/ComBatSCE.html">ComBatSCE</a></span>(<span class="dt">inSCE =</span> bladder_sctke,
-                                            <span class="dt">batch =</span> <span class="st">"batch"</span>,
-                                            <span class="dt">useAssay =</span> <span class="st">"microarray"</span>,
-                                            <span class="dt">covariates =</span> <span class="st">"cancer"</span>)</code></pre></div>
-<pre><code>## Standardizing Data across genes</code></pre>
+<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/SummarizedExperiment/man/SummarizedExperiment-class.html" class="external-link">assay</a></span><span class="op">(</span><span class="va">bladder_sctke</span>, <span class="st">"combat"</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/ComBatSCE.html">ComBatSCE</a></span><span class="op">(</span>inSCE <span class="op">=</span> <span class="va">bladder_sctke</span>,
+                                            batch <span class="op">=</span> <span class="st">"batch"</span>,
+                                            useAssay <span class="op">=</span> <span class="st">"microarray"</span>,
+                                            covariates <span class="op">=</span> <span class="st">"cancer"</span><span class="op">)</span></code></pre></div>
 <p>After batch correction, a larger percentage of the explained variation can be explained by the condition</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/plotBatchVariance.html">plotBatchVariance</a></span>(bladder_sctke, <span class="dt">useAssay=</span><span class="st">"combat"</span>,
-                  <span class="dt">batch=</span><span class="st">"batch"</span>, <span class="dt">condition =</span> <span class="st">"cancer"</span>)</code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/plotBatchVariance.html">plotBatchVariance</a></span><span class="op">(</span><span class="va">bladder_sctke</span>, useAssay<span class="op">=</span><span class="st">"combat"</span>,
+                  batch<span class="op">=</span><span class="st">"batch"</span>, condition <span class="op">=</span> <span class="st">"cancer"</span><span class="op">)</span></code></pre></div>
+<pre><code><span class="co">## Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please</span>
+<span class="co">## use `guide = "none"` instead.</span></code></pre>
 <p><img src="v02-Processing_and_Visualizing_Data_in_the_SingleCellTK_files/figure-html/plot_var_postcombat-1.png" width="700"></p>
 </div>
-<div id="session-info" class="section level1 unnumbered">
-<h1 class="hasAnchor">
-<a href="#session-info" class="anchor"></a>Session info</h1>
-<pre><code>## R version 3.6.0 (2019-04-26)
-## Platform: x86_64-apple-darwin15.6.0 (64-bit)
-## Running under: macOS Mojave 10.14.4
-## 
-## Matrix products: default
-## BLAS:   /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRblas.0.dylib
-## LAPACK: /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRlapack.dylib
-## 
-## locale:
-## [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
-## 
-## attached base packages:
-## [1] parallel  stats4    stats     graphics  grDevices utils     datasets 
-## [8] methods   base     
-## 
-## other attached packages:
-##  [1] bladderbatch_1.21.0         GSEABase_1.46.0            
-##  [3] graph_1.62.0                annotate_1.62.0            
-##  [5] XML_3.98-1.19               org.Hs.eg.db_3.8.2         
-##  [7] AnnotationDbi_1.46.0        xtable_1.8-4               
-##  [9] singleCellTK_1.5.0          MAST_1.10.0                
-## [11] SingleCellExperiment_1.6.0  SummarizedExperiment_1.14.0
-## [13] DelayedArray_0.10.0         BiocParallel_1.18.0        
-## [15] matrixStats_0.54.0          Biobase_2.44.0             
-## [17] GenomicRanges_1.36.0        GenomeInfoDb_1.20.0        
-## [19] IRanges_2.18.0              S4Vectors_0.22.0           
-## [21] BiocGenerics_0.30.0         BiocStyle_2.12.0           
-## 
-## loaded via a namespace (and not attached):
-##  [1] Rtsne_0.15             minqa_1.2.4            colorspace_1.4-1      
-##  [4] rjson_0.2.20           rprojroot_1.3-2        GSVAdata_1.19.0       
-##  [7] circlize_0.4.6         XVector_0.24.0         GlobalOptions_0.1.0   
-## [10] fs_1.3.0               clue_0.3-57            rstudioapi_0.10       
-## [13] roxygen2_6.1.1         bit64_0.9-7            xml2_1.2.0            
-## [16] splines_3.6.0          geneplotter_1.62.0     knitr_1.22            
-## [19] shinythemes_1.1.2      nloptr_1.2.1           cluster_2.0.9         
-## [22] png_0.1-7              shiny_1.3.2            BiocManager_1.30.4    
-## [25] compiler_3.6.0         backports_1.1.4        assertthat_0.2.1      
-## [28] Matrix_1.2-17          lazyeval_0.2.2         limma_3.40.0          
-## [31] later_0.8.0            htmltools_0.3.6        prettyunits_1.0.2     
-## [34] tools_3.6.0            gtable_0.3.0           glue_1.3.1            
-## [37] GenomeInfoDbData_1.2.1 reshape2_1.4.3         dplyr_0.8.0.1         
-## [40] Rcpp_1.0.1             pkgdown_1.3.0          nlme_3.1-139          
-## [43] xfun_0.6               stringr_1.4.0          lme4_1.1-21           
-## [46] mime_0.6               zlibbioc_1.30.0        MASS_7.3-51.4         
-## [49] scales_1.0.0           hms_0.4.2              promises_1.0.1        
-## [52] RColorBrewer_1.1-2     ComplexHeatmap_2.0.0   yaml_2.2.0            
-## [55] memoise_1.1.0          ggplot2_3.1.1          stringi_1.4.3         
-## [58] RSQLite_2.1.1          GSVA_1.32.0            genefilter_1.66.0     
-## [61] highr_0.8              desc_1.2.0             blme_1.0-4            
-## [64] boot_1.3-22            shape_1.4.4            rlang_0.3.4           
-## [67] pkgconfig_2.0.2        commonmark_1.7         bitops_1.0-6          
-## [70] evaluate_0.13          lattice_0.20-38        purrr_0.3.2           
-## [73] labeling_0.3           bit_1.1-14             tidyselect_0.2.5      
-## [76] plyr_1.8.4             magrittr_1.5           bookdown_0.9          
-## [79] R6_2.4.0               DBI_1.0.0              mgcv_1.8-28           
-## [82] pillar_1.3.1           survival_2.44-1.1      abind_1.4-5           
-## [85] RCurl_1.95-4.12        tibble_2.1.1           crayon_1.3.4          
-## [88] rmarkdown_1.12         GetoptLong_0.1.7       progress_1.2.0        
-## [91] grid_3.6.0             sva_3.32.0             data.table_1.12.2     
-## [94] blob_1.1.1             digest_0.6.18          httpuv_1.5.1          
-## [97] munsell_0.5.0</code></pre>
+<div class="section level2">
+<h2 class="unnumbered" id="session-info">Session info<a class="anchor" aria-label="anchor" href="#session-info"></a>
+</h2>
+<pre><code><span class="co">## R version 4.1.2 (2021-11-01)</span>
+<span class="co">## Platform: x86_64-apple-darwin17.0 (64-bit)</span>
+<span class="co">## Running under: macOS Big Sur 10.16</span>
+<span class="co">## </span>
+<span class="co">## Matrix products: default</span>
+<span class="co">## BLAS:   /Library/Frameworks/R.framework/Versions/4.1/Resources/lib/libRblas.0.dylib</span>
+<span class="co">## LAPACK: /Library/Frameworks/R.framework/Versions/4.1/Resources/lib/libRlapack.dylib</span>
+<span class="co">## </span>
+<span class="co">## locale:</span>
+<span class="co">## [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8</span>
+<span class="co">## </span>
+<span class="co">## attached base packages:</span>
+<span class="co">## [1] stats4    stats     graphics  grDevices utils     datasets  methods  </span>
+<span class="co">## [8] base     </span>
+<span class="co">## </span>
+<span class="co">## other attached packages:</span>
+<span class="co">##  [1] bladderbatch_1.32.0         GSEABase_1.56.0            </span>
+<span class="co">##  [3] graph_1.72.0                annotate_1.72.0            </span>
+<span class="co">##  [5] XML_3.99-0.9                org.Hs.eg.db_3.14.0        </span>
+<span class="co">##  [7] AnnotationDbi_1.56.2        xtable_1.8-4               </span>
+<span class="co">##  [9] singleCellTK_1.9.1          DelayedArray_0.20.0        </span>
+<span class="co">## [11] Matrix_1.4-0                MAST_1.20.0                </span>
+<span class="co">## [13] SingleCellExperiment_1.16.0 SummarizedExperiment_1.24.0</span>
+<span class="co">## [15] Biobase_2.54.0              GenomicRanges_1.46.1       </span>
+<span class="co">## [17] GenomeInfoDb_1.30.1         IRanges_2.28.0             </span>
+<span class="co">## [19] S4Vectors_0.32.4            BiocGenerics_0.40.0        </span>
+<span class="co">## [21] MatrixGenerics_1.6.0        matrixStats_0.62.0         </span>
+<span class="co">## [23] BiocStyle_2.22.0           </span>
+<span class="co">## </span>
+<span class="co">## loaded via a namespace (and not attached):</span>
+<span class="co">##   [1] circlize_0.4.14           systemfonts_1.0.4        </span>
+<span class="co">##   [3] plyr_1.8.7                splines_4.1.2            </span>
+<span class="co">##   [5] BiocParallel_1.28.3       ggplot2_3.3.5            </span>
+<span class="co">##   [7] sva_3.42.0                digest_0.6.29            </span>
+<span class="co">##   [9] foreach_1.5.2             htmltools_0.5.2          </span>
+<span class="co">##  [11] magick_2.7.3              fansi_1.0.3              </span>
+<span class="co">##  [13] magrittr_2.0.3            memoise_2.0.1            </span>
+<span class="co">##  [15] ScaledMatrix_1.2.0        cluster_2.1.2            </span>
+<span class="co">##  [17] doParallel_1.0.17         GSVAdata_1.30.0          </span>
+<span class="co">##  [19] limma_3.50.3              ComplexHeatmap_2.10.0    </span>
+<span class="co">##  [21] Biostrings_2.62.0         pkgdown_2.0.2            </span>
+<span class="co">##  [23] prettyunits_1.1.1         colorspace_2.0-3         </span>
+<span class="co">##  [25] blob_1.2.3                textshaping_0.3.6        </span>
+<span class="co">##  [27] xfun_0.30                 dplyr_1.0.8              </span>
+<span class="co">##  [29] crayon_1.5.1              RCurl_1.98-1.6           </span>
+<span class="co">##  [31] jsonlite_1.8.0            genefilter_1.76.0        </span>
+<span class="co">##  [33] survival_3.3-1            iterators_1.0.14         </span>
+<span class="co">##  [35] glue_1.6.2                gtable_0.3.0             </span>
+<span class="co">##  [37] zlibbioc_1.40.0           XVector_0.34.0           </span>
+<span class="co">##  [39] GetoptLong_1.0.5          BiocSingular_1.10.0      </span>
+<span class="co">##  [41] Rhdf5lib_1.16.0           shape_1.4.6              </span>
+<span class="co">##  [43] HDF5Array_1.22.1          abind_1.4-5              </span>
+<span class="co">##  [45] scales_1.2.0              edgeR_3.36.0             </span>
+<span class="co">##  [47] DBI_1.1.2                 Rcpp_1.0.8.3             </span>
+<span class="co">##  [49] progress_1.2.2            clue_0.3-60              </span>
+<span class="co">##  [51] bit_4.0.4                 rsvd_1.0.5               </span>
+<span class="co">##  [53] GSVA_1.42.0               httr_1.4.2               </span>
+<span class="co">##  [55] RColorBrewer_1.1-3        ellipsis_0.3.2           </span>
+<span class="co">##  [57] pkgconfig_2.0.3           farver_2.1.0             </span>
+<span class="co">##  [59] sass_0.4.1                locfit_1.5-9.5           </span>
+<span class="co">##  [61] utf8_1.2.2                tidyselect_1.1.2         </span>
+<span class="co">##  [63] labeling_0.4.2            rlang_1.0.2              </span>
+<span class="co">##  [65] reshape2_1.4.4            munsell_0.5.0            </span>
+<span class="co">##  [67] tools_4.1.2               cachem_1.0.6             </span>
+<span class="co">##  [69] cli_3.2.0                 generics_0.1.2           </span>
+<span class="co">##  [71] RSQLite_2.2.12            evaluate_0.15            </span>
+<span class="co">##  [73] stringr_1.4.0             fastmap_1.1.0            </span>
+<span class="co">##  [75] yaml_2.3.5                ragg_1.2.2               </span>
+<span class="co">##  [77] knitr_1.38                bit64_4.0.5              </span>
+<span class="co">##  [79] fs_1.5.2                  purrr_0.3.4              </span>
+<span class="co">##  [81] KEGGREST_1.34.0           nlme_3.1-155             </span>
+<span class="co">##  [83] sparseMatrixStats_1.6.0   compiler_4.1.2           </span>
+<span class="co">##  [85] rstudioapi_0.13           png_0.1-7                </span>
+<span class="co">##  [87] tibble_3.1.6              bslib_0.3.1              </span>
+<span class="co">##  [89] stringi_1.7.6             highr_0.9                </span>
+<span class="co">##  [91] desc_1.4.1                lattice_0.20-45          </span>
+<span class="co">##  [93] vctrs_0.4.1               pillar_1.7.0             </span>
+<span class="co">##  [95] lifecycle_1.0.1           rhdf5filters_1.6.0       </span>
+<span class="co">##  [97] BiocManager_1.30.16       jquerylib_0.1.4          </span>
+<span class="co">##  [99] GlobalOptions_0.1.2       data.table_1.14.2        </span>
+<span class="co">## [101] bitops_1.0-7              irlba_2.3.5              </span>
+<span class="co">## [103] R6_2.5.1                  bookdown_0.25            </span>
+<span class="co">## [105] codetools_0.2-18          assertthat_0.2.1         </span>
+<span class="co">## [107] rhdf5_2.38.1              rprojroot_2.0.3          </span>
+<span class="co">## [109] rjson_0.2.21              withr_2.5.0              </span>
+<span class="co">## [111] GenomeInfoDbData_1.2.7    mgcv_1.8-39              </span>
+<span class="co">## [113] parallel_4.1.2            hms_1.1.1                </span>
+<span class="co">## [115] grid_4.1.2                beachmat_2.10.0          </span>
+<span class="co">## [117] rmarkdown_2.14            DelayedMatrixStats_1.16.0</span>
+<span class="co">## [119] Rtsne_0.16</span></code></pre>
 </div>
   </div>
 
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-        <div id="tocnav">
-      <h2 class="hasAnchor">
-<a href="#tocnav" class="anchor"></a>Contents</h2>
-      <ul class="nav nav-pills nav-stacked">
-<li><a href="#introduction">Introduction</a></li>
-      <li>
-<a href="#maits-example">MAITS Example</a><ul class="nav nav-pills nav-stacked">
-<li><a href="#summarizetable">summarizeTable</a></li>
-      <li><a href="#filtering-by-annotation">Filtering by Annotation</a></li>
-      <li><a href="#visualization">Visualization</a></li>
-      <li><a href="#converting-gene-names">Converting Gene Names</a></li>
-      <li><a href="#differential-expression-with-mast">Differential Expression with MAST</a></li>
-      </ul>
-</li>
-      <li><a href="#batch-effects-example">Batch Effects Example</a></li>
-      <li><a href="#session-info">Session info</a></li>
-      </ul>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+
+        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
+    </nav>
 </div>
-      </div>
 
 </div>
+
 
 
       <footer><div class="copyright">
-  <p>Developed by David Jenkins, Tyler Faits, Mohammed Muzamil Khan, Emma Briars, Sebastian Carrasco Pro, W. Evan Johnson.</p>
+  <p></p>
+<p>Developed by David Jenkins, Tyler Faits, Mohammed Muzamil Khan, Zhe Wang, Emma Briars, Sebastian Carrasco Pro, W. Evan Johnson.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
 </div>
+
       </footer>
 </div>
+
+  
+
 
   
 

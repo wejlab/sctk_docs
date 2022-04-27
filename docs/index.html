@@ -6,19 +6,22 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Interactive Analysis of Single Cell RNA-Seq Data • singleCellTK</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/yeti/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
+<script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script><meta property="og:title" content="Interactive Analysis of Single Cell RNA-Seq Data">
 <meta property="og:description" content="Run common single cell analysis directly through your browser
     including differential expression, downsampling analysis, and clustering.">
-<meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
-<body>
+<body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -31,7 +34,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">singleCellTK</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.5.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.9.1</span>
       </span>
     </div>
 
@@ -41,7 +44,7 @@
   <a href="articles/v01-Introduction_to_singleCellTK.html">Introduction to singleCellTK</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Interactive Shiny Analysis
      
     <span class="caret"></span>
@@ -51,13 +54,13 @@
       <a href="articles/v03-tab01_Upload.html">1: Upload</a>
     </li>
     <li>
-      <a href="articles/v04-tab02_Data-Summary-and-Filtering.html">2: Data Summary and Filtering</a>
+      <a href="articles/v04-tab02_QC-and-Filtering.html">2: Data Summary and Filtering</a>
     </li>
     <li>
-      <a href="articles/v05-tab03_Visualization-and-Clustering.html">3: Visualization and Clustering</a>
+      <a href="articles/v06-tab04_Batch-Correction.html">3: Batch Correction</a>
     </li>
     <li>
-      <a href="articles/v06-tab04_Batch-Correction.html">4: Batch Correction</a>
+      <a href="articles/v05-tab03_Visualization-and-Clustering.html">4: Visualization and Clustering</a>
     </li>
     <li>
       <a href="articles/v07-tab05_Differential-Expression.html">5: Differential Expression</a>
@@ -71,7 +74,7 @@
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Command Line Analysis
      
     <span class="caret"></span>
@@ -91,7 +94,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/compbiomed/singleCellTK">
+  <a href="https://github.com/wevanjohnson/singleCellTK" class="external-link">
     <span class="fa fa-github"></span>
      
   </a>
@@ -105,126 +108,163 @@
 <!--/.navbar -->
 
       
+
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="single-cell-tk" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#single-cell-tk" class="anchor"></a>Single Cell TK</h1></div>
-
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
-<div id="release-version" class="section level3">
-<h3 class="hasAnchor">
-<a href="#release-version" class="anchor"></a>Release Version</h3>
-<p>You can download the release version of the Single Cell Toolkit in <a href="https://bioconductor.org/packages/release/bioc/html/singleCellTK.html">Bioconductor v3.9</a>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="cf">if</span> (<span class="op">!</span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/ns-load">requireNamespace</a></span>(<span class="st">"BiocManager"</span>, <span class="dt">quietly=</span><span class="ot">TRUE</span>))
-  <span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages</a></span>(<span class="st">"BiocManager"</span>)
-BiocManager<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/BiocManager/topics/install">install</a></span>(<span class="st">"singleCellTK"</span>)</code></pre></div>
+<div class="section level1">
+<div class="page-header"><h1 id="the-single-cell-toolkit-singlecelltk-or-sctk">The Single Cell Toolkit (singleCellTK or SCTK)<a class="anchor" aria-label="anchor" href="#the-single-cell-toolkit-singlecelltk-or-sctk"></a>
+</h1></div>
+<!--
+[![Travis build status](https://travis-ci.org/compbiomed/singleCellTK.svg?branch=master)](https://travis-ci.org/compbiomed/singleCellTK)
+[![codecov](https://codecov.io/gh/compbiomed/singleCellTK/branch/master/graph/badge.svg)](https://codecov.io/gh/compbiomed/singleCellTK)
+[![BioC status](https://www.bioconductor.org/shields/build/release/bioc/singleCellTK.svg)](https://bioconductor.org/checkResults/release/bioc-LATEST/singleCellTK) 
+[![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
+-->
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
+<div class="section level3">
+<h3 id="current-release-version">Current Release Version<a class="anchor" aria-label="anchor" href="#current-release-version"></a>
+</h3>
+<p>You can download the release version of the Single Cell Toolkit from this repository:</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># install.packages("devtools")</span>
+<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"wevanjohnson/singleCellTK"</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="devel-version" class="section level3">
-<h3 class="hasAnchor">
-<a href="#devel-version" class="anchor"></a>Devel Version</h3>
-<p>You can download the development version of the Single Cell Toolkit in <a href="https://bioconductor.org/packages/devel/bioc/html/singleCellTK.html">Bioconductor v3.10</a> or from this repository:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># install.packages("devtools")</span>
-devtools<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/devtools/topics/reexports">install_github</a></span>(<span class="st">"compbiomed/singleCellTK"</span>)</code></pre></div>
-</div>
-<div id="r-3-4-version" class="section level3">
-<h3 class="hasAnchor">
-<a href="#r-3-4-version" class="anchor"></a>R 3.4 Version</h3>
-<p>If you are still running an earlier version of R than 3.5, you can install the following version from this repository:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># install.packages("devtools")</span>
-devtools<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/devtools/topics/reexports">install_github</a></span>(<span class="st">"compbiomed/singleCellTK"</span>, <span class="dt">ref=</span><span class="st">"r_3_4"</span>)</code></pre></div>
-<div id="troubleshooting-installation" class="section level4">
-<h4 class="hasAnchor">
-<a href="#troubleshooting-installation" class="anchor"></a>Troubleshooting Installation</h4>
-<p>For the majority of users, the commands above will install the latest version of the singleCellTK without any errors. Rarely, you may encounter an error due to previously installed versions of some packages that are required for the singleCellTK. If you encounter an error during installation, use the commands below to check the version of Bioconductor that is installed:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="cf">if</span> (<span class="op">!</span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/ns-load">requireNamespace</a></span>(<span class="st">"BiocManager"</span>, <span class="dt">quietly=</span><span class="ot">TRUE</span>))
-    <span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages</a></span>(<span class="st">"BiocManager"</span>)
-BiocManager<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/BiocManager/topics/version">version</a></span>()</code></pre></div>
-<p>If the version number is not 3.6 or higher, you must upgrade Bioconductor to install the toolkit:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">BiocManager<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/BiocManager/topics/install">install</a></span>()</code></pre></div>
-<p>After you install Bioconductor 3.6 or higher, you should be able to install the toolkit using <code><a href="https://www.rdocumentation.org/packages/devtools/topics/reexports">devtools::install_github("compbiomed/singleCellTK")</a></code>. If you still encounter an error, ensure your Bioconductor packages are up to date by running the following command.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">BiocManager<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/BiocManager/topics/valid">valid</a></span>()</code></pre></div>
+<div class="section level3">
+<h3 id="troubleshooting-installation">Troubleshooting Installation<a class="anchor" aria-label="anchor" href="#troubleshooting-installation"></a>
+</h3>
+<p>For the majority of users, the commands above will install the latest version of the singleCellTK without any errors. Rarely, you may encounter an error due to previously installed versions of some packages or missing packages that are required for the singleCellTK. If you encounter an error during installation, use the commands below to check the version of Bioconductor that is installed:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/ns-load.html" class="external-link">requireNamespace</a></span><span class="op">(</span><span class="st">"BiocManager"</span>, quietly<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span>
+    <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"BiocManager"</span><span class="op">)</span>
+<span class="fu">BiocManager</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/BiocManager/man/version.html" class="external-link">version</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<p>If the version number is not 3.14 or higher, you must upgrade Bioconductor to install the toolkit:</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">BiocManager</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/BiocManager/man/install.html" class="external-link">install</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<p>After you install Bioconductor 3.14 or higher, you should be able to install the toolkit using <code>devtools::install_github("wevanjohnson/singleCellTK")</code>. If you still encounter an error, ensure your Bioconductor packages are up to date by running the following command.</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">BiocManager</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/BiocManager/man/valid.html" class="external-link">valid</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p>If the command above does not return <code>TRUE</code>, run the following command to update your R packages:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">BiocManager<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/BiocManager/topics/install">install</a></span>()</code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">BiocManager</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/BiocManager/man/install.html" class="external-link">install</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p>Then, try to install the toolkit again:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">devtools<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/devtools/topics/reexports">install_github</a></span>(<span class="st">"compbiomed/singleCellTK"</span>)</code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"wevanjohnson/singleCellTK"</span><span class="op">)</span></code></pre></div>
 <p>If you still encounter an error, please <a href="mailto:dfj@bu.edu">contact us</a> and we’d be happy to help.</p>
 </div>
 </div>
+<div class="section level2">
+<h2 id="quick-start">Quick start<a class="anchor" aria-label="anchor" href="#quick-start"></a>
+</h2>
+<p>You can use the example data aleady available within the app, or you can upload your own data. To get started, simply run the singleCellTK function:</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://compbiomed.github.io/sctk_docs/" class="external-link">singleCellTK</a></span><span class="op">)</span>
+<span class="fu"><a href="reference/singleCellTK.html">singleCellTK</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<p>And then follow the point and click interface or directions to navigate the app. For more detailed instructions, click on the tabs at the top or links below for more help.</p>
+<div class="section level3">
+<h3 id="interactive-analysis">Interactive Analysis<a class="anchor" aria-label="anchor" href="#interactive-analysis"></a>
+</h3>
+<ul>
+<li><a href="https://compbiomed.github.io/sctk_docs/articles/v03-tab01_Upload.html" class="external-link">Upload Tab</a></li>
+<li><a href="https://compbiomed.github.io/sctk_docs/articles/v04-tab02_Data-Summary-and-Filtering.html" class="external-link">Data Summary and Filtering Tab</a></li>
+<li><a href="https://compbiomed.github.io/sctk_docs/articles/v05-tab03_Visualization-and-Clustering.html" class="external-link">Visualization and Clustering Tab</a></li>
+<li><a href="https://compbiomed.github.io/sctk_docs/articles/v06-tab04_Batch-Correction.html" class="external-link">Batch Correction Tab</a></li>
+<li><a href="https://compbiomed.github.io/sctk_docs/articles/v07-tab05_Differential-Expression.html" class="external-link">Differential Expression Tab</a></li>
+<li><a href="https://compbiomed.github.io/sctk_docs/articles/v08-tab06_Pathway-Activity-Analysis.html" class="external-link">Pathway Activity Analysis Tab</a></li>
+<li><a href="https://compbiomed.github.io/sctk_docs/articles/v09-tab07_Sample-Size.html" class="external-link">Sample Size Tab</a></li>
+</ul>
 </div>
-<div id="develop-singlecelltk" class="section level2">
-<h2 class="hasAnchor">
-<a href="#develop-singlecelltk" class="anchor"></a>Develop singleCellTK</h2>
+<div class="section level3">
+<h3 id="r-console-analysis">R Console Analysis<a class="anchor" aria-label="anchor" href="#r-console-analysis"></a>
+</h3>
+<ul>
+<li><a href="v02-Processing_and_Visualizing_Data_in_the_SingleCellTK.html">Processing and Visualizing Data in the Single Cell Toolkit</a></li>
+<li><a href="https://compbiomed.github.io/sctk_docs/articles/v10-Aligning_and_Quantifying_scRNA-Seq_Data.html" class="external-link">Aligning and Quantifying scRNA-Seq Data</a></li>
+</ul>
+</div>
+</div>
+<div class="section level2">
+<h2 id="develop-singlecelltk">Develop singleCellTK<a class="anchor" aria-label="anchor" href="#develop-singlecelltk"></a>
+</h2>
 <p>To contribute to singleCellTK, follow these steps:</p>
 <p><strong>Note</strong>: Development of the singleCellTK is done using the latest version of R.</p>
-<ol>
+<ol style="list-style-type: decimal">
 <li>Fork the repo using the “Fork” button above.</li>
 <li>Download a local copy of your forked repository “<code>git clone https://github.com/{username}/singleCellTK.git</code>”</li>
 <li>Open Rstudio</li>
 <li>Go to “File” -&gt; “New Project” -&gt; “Existing Directory” and select your git repository directory</li>
 </ol>
-<p>You can then make your changes and test your code using the Rstudio build tools. There is a lot of information about building packages available here: <a href="http://r-pkgs.had.co.nz/" class="uri">http://r-pkgs.had.co.nz/</a>.</p>
-<p>Information about building shiny packages is available here: <a href="http://shiny.rstudio.com/tutorial/" class="uri">http://shiny.rstudio.com/tutorial/</a>.</p>
+<p>You can then make your changes and test your code using the Rstudio build tools. There is a lot of information about building packages available here: <a href="http://r-pkgs.had.co.nz/" class="external-link uri">http://r-pkgs.had.co.nz/</a>.</p>
+<p>Information about building shiny packages is available here: <a href="http://shiny.rstudio.com/tutorial/" class="external-link uri">http://shiny.rstudio.com/tutorial/</a>.</p>
 <p>When you are ready to upload your changes, commit them locally, push them to your forked repo, and make a pull request to the compbiomed repository.</p>
-<p>Report bugs and request features on our <a href="https://github.com/compbiomed/singleCellTK/issues">GitHub issue tracker</a>.</p>
-<p>Join us on <a href="https://compbiomed.slack.com/">slack</a>!</p>
+<p>Report bugs and request features on our <a href="https://github.com/wevanjohnson/singleCellTK/issues" class="external-link">GitHub issue tracker</a>.</p>
+<p>Join us on <a href="https://compbiomed.slack.com/" class="external-link">slack</a>!</p>
 </div>
 </div>
   </div>
 
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Download from BIOC at <br><a href="https://www.bioconductor.org/packages/singleCellTK">https://​www.bioconductor.org/​packages/​singleCellTK</a>
-</li>
-<li>Report a bug at <br><a href="https://github.com/compbiomed/singleCellTK/issues">https://​github.com/​compbiomed/​singleCellTK/​issues</a>
-</li>
+<li><a href="https://www.bioconductor.org/packages/singleCellTK" class="external-link">View on Bioconductor</a></li>
+<li><a href="https://github.com/wevanjohnson/singleCellTK/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/wevanjohnson/singleCellTK/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
+
 <div class="license">
-<h2>License</h2>
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li>
-<a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a>
+<a href="https://opensource.org/licenses/mit-license.php" class="external-link">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a>
 </li>
 </ul>
 </div>
-<div class="developers">
-<h2>Developers</h2>
+
+
+<div class="citation">
+<h2 data-toc-skip>Citation</h2>
 <ul class="list-unstyled">
-<li>David Jenkins <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0002-7451-4288" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" alt="ORCID" height="16"></a> </li>
+<li><a href="authors.html#citation">Citing singleCellTK</a></li>
+</ul>
+</div>
+
+<div class="developers">
+<h2 data-toc-skip>Developers</h2>
+<ul class="list-unstyled">
+<li>David Jenkins <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0002-7451-4288" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
 <li>Tyler Faits <br><small class="roles"> Author </small>  </li>
 <li>Mohammed Muzamil Khan <br><small class="roles"> Author </small>  </li>
-<li>Emma Briars <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0001-9350-5523" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" alt="ORCID" height="16"></a> </li>
+<li>Zhe Wang <br><small class="roles"> Author </small>  </li>
+<li>Emma Briars <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0001-9350-5523" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
 <li>Sebastian Carrasco Pro <br><small class="roles"> Author </small>  </li>
-<li>W. Evan Johnson <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0002-6247-6595" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" alt="ORCID" height="16"></a> </li>
+<li>W. Evan Johnson <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0002-6247-6595" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
-<ul class="list-unstyled">
-<li><a href="https://travis-ci.org/compbiomed/singleCellTK"><img src="https://travis-ci.org/compbiomed/singleCellTK.svg?branch=master" alt="Travis build status"></a></li>
-<li><a href="https://codecov.io/gh/compbiomed/singleCellTK"><img src="https://codecov.io/gh/compbiomed/singleCellTK/branch/master/graph/badge.svg" alt="codecov"></a></li>
-<li><a href="https://bioconductor.org/checkResults/release/bioc-LATEST/singleCellTK"><img src="https://www.bioconductor.org/shields/build/release/bioc/singleCellTK.svg" alt="BioC status"></a></li>
-<li><a href="https://www.tidyverse.org/lifecycle/#stable"><img src="https://img.shields.io/badge/lifecycle-stable-brightgreen.svg" alt="lifecycle"></a></li>
-</ul>
+
+
+  </div>
 </div>
-</div>
-</div>
+
 
       <footer><div class="copyright">
-  <p>Developed by David Jenkins, Tyler Faits, Mohammed Muzamil Khan, Emma Briars, Sebastian Carrasco Pro, W. Evan Johnson.</p>
+  <p></p>
+<p>Developed by David Jenkins, Tyler Faits, Mohammed Muzamil Khan, Zhe Wang, Emma Briars, Sebastian Carrasco Pro, W. Evan Johnson.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
 </div>
+
       </footer>
 </div>
+
+  
+
 
   
 
